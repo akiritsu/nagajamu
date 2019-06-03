@@ -1,0 +1,44 @@
+# Site settings
+title: 那伽邪無
+owner: DeerRIDER
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://nagajamu.com" # the base hostname & protocol for your site
+
+permalink: /:title/
+
+# other links
+personal_link: http://nekiri.com
+twitter_username: 
+facebook_username: 
+github_username:  akiritsu
+email: akiritsu@outlook.com
+weibo_username: 5786851727
+zhihu_username: luowangqiankun
+linkedIn_username: 
+
+description_footer: Private tech notes
+
+disqus_shortname: akiritsu
+
+# Build settings
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# url
+category_dir: category/
+tag_dir: tag/
+
+# excerpt
+excerpt_separator: "\n\n\n\n"
+
+# The 'gems' configuration option has been renamed to 'plugins'. Please update your config file accordingly.
+ 
+plugins:
+ - jekyll-sitemap
+ - jekyll-mermaid
+
+# Path to notes
+notes: "http://nagajamu.com/notes"

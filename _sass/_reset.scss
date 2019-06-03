@@ -1,0 +1,146 @@
+body,
+html,
+div,
+header,
+footer,
+nav,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+html {
+    height: 100%;
+}
+body {
+    font-family: 'Helvetica Neue',Helvetica,Arial,'Microsoft YaHei',sans-serif;
+    color: #333;
+    background-image: url(../img/bgp.jpg);
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 190px;
+}
+a {
+    text-decoration: none;
+}
+button {
+    border: none;
+    outline: none;
+}
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+}
+
+///////////
+h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+h2 {
+    font-size: 22px;
+    font-weight: 600;
+    border-bottom: 1.2px solid rgba(229, 235, 238, 0.905);
+    margin: 20px 0 15px;
+    padding: 0 0 13px 0;
+    color: black;
+}
+h3 {
+    font-size: 19px;
+    margin: 13px 0 13px;
+    padding: 0 0 12px 0;
+    color: black;	
+    border-bottom: 0.8px solid rgba(229, 235, 238, 0.705);
+}
+h4 {
+    font-size: 18px;
+    margin: 25px 0 10px;
+}
+h5 {
+    font-size: 17.5px;
+    margin: 20px 0 10px;
+}
+h6 {
+    font-size: 16.5px;
+    margin: 12px 0 5px;
+}
+blockquote {
+    color: #444;
+    border-left: 5px solid #D6DBDF;
+    padding-left: 15px;
+    background: rgba(112,138,153,.1);
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    p:last-of-type{
+        margin: 0;
+    }
+}
+table {
+    border-top: 2px solid #777;
+    border-bottom: 2px solid #777;
+    margin: 8px 0;
+    border-collapse: collapse;
+    thead {
+        border-bottom: 1px solid #777;
+        background-color: #aaa;
+        color: #fff;
+    }
+    th {
+        padding: 2px 10px;
+        text-align: left;
+    }
+    tbody {
+        tr {
+            &:nth-of-type(2n+1) {
+                background-color: #f8f8fd;
+            }
+            &:nth-of-type(2n) {
+                background-color: #e5eaed;
+            }
+        }
+    }
+    td {
+        padding: 2px 10px;
+    }
+}
+p {
+    font-size: 17.5px;
+    margin: 0 0 15px;
+}
+img {
+    max-width: 100%;
+}
+
+code {
+  font-family: Monaco, "source code pro regular", Menlo,"Microsoft YaHei Mono",Consolas,"Courier New",monospace,sans-serif; 
+  font-size: 90%;
+}
+pre {
+    margin: 12px 0;
+     padding: 8px 12px;
+     word-wrap: break-word;      /* IE 5.5-7 */
+     white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
+     white-space: pre-wrap;      /* current browsers */
+     > code {
+         margin: 0;
+         padding: 0;
+        font-size: 13px;
+        border: none;
+     }
+}
+
