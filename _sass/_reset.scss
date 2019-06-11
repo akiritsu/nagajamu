@@ -27,7 +27,7 @@ html {
     height: 100%;
 }
 body {
-    font-family: 'Helvetica Neue',Helvetica,Arial,'Microsoft YaHei',sans-serif;
+    font-family: 'Fira Code', 'WenQuanYi Micro Hei', 'Droid Sans Mono', 'Helvetica Neue', 'Microsoft YaHei',Tahoma, Arial;
     color: #333;
     background-image: url(../img/bgp.jpg);
     position: relative;
@@ -43,19 +43,24 @@ button {
 }
 hr {
     border: 0;
-    border-top: 1px solid #eee;
+    border-top: 0.8px solid rgba(50, 28, 92, 0.37);
     margin: 20px 0;
 }
 
 ///////////
 h1 {
-    font-size: 24px;
+    font-size: 23px;
     font-weight: 600;
+    border-bottom: 0.8px solid rgba(50, 28, 92, 0.37);
+    margin: 3px 0 15px;
+    padding: 0 0 8px 0;
+    text-transform: uppercase;
+
 }
 h2 {
-    font-size: 22px;
+    font-size: 21px;
     font-weight: 600;
-    border-bottom: 1.2px solid rgba(229, 235, 238, 0.905);
+    border-bottom: 0.7px solid rgba(50, 28, 92, 0.37);
     margin: 20px 0 15px;
     padding: 0 0 13px 0;
     color: black;
@@ -65,7 +70,7 @@ h3 {
     margin: 13px 0 13px;
     padding: 0 0 12px 0;
     color: black;	
-    border-bottom: 0.8px solid rgba(229, 235, 238, 0.705);
+    border-bottom: 0.23px solid rgba(50, 28, 92, 0.37);
 }
 h4 {
     font-size: 18px;
@@ -127,7 +132,7 @@ img {
 }
 
 code {
-  font-family: Monaco, "source code pro regular", Menlo,"Microsoft YaHei Mono",Consolas,"Courier New",monospace,sans-serif; 
+  font-family: 'Fira Code', 'WenQuanYi Micro Hei', Monaco, "source code pro regular", Menlo,"Microsoft YaHei Mono", Consolas, "Courier New", monospace, sans-serif; 
   font-size: 90%;
 }
 pre {
@@ -143,4 +148,3 @@ pre {
         border: none;
      }
 }
-

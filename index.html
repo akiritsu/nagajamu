@@ -9,7 +9,7 @@ layout: default
 <script type="text/javascript" src="{{ site.baseurl }}/assets/js/index.js"></script>
 <div class="page clearfix" index>
   <div class="left">
-    <h2><b>Topics</b></h2>
+    <h1>TROPICOS</h1>
     <ul>
       <!-- Post area begin -->
       <div class="post-area ">
@@ -28,7 +28,7 @@ layout: default
             {% for posts in category %} {% for post in posts %} {% if post.url
             %}
             <a href="{{ post.url }}" class="post-link">
-              <h2>{{ post.title }}</h2>
+              <h3>{{ post.title }}</h3>
             </a>
             {% endif %} {% endfor %} {% endfor %}
           </div>
@@ -46,12 +46,13 @@ layout: default
       <!-- Categories -->
       <div class="side">
         <div>
-          <i class="fa fa-list"></i>
-          Categories
+                    <p class="categories-list-header">
+              <i class="fa fa-th-list"></i>
+              CATEGORIES</p>
         </div>
         <div class="cate-list">
           <a href="javascript:;" class="categories-list-item" cate="All">
-            All<span class="my-badge"> {{ site.posts | size }}</span>
+            ALL<span class="my-badge"> {{ site.posts | size }}</span>
           </a>
           {% for category in site.categories %}
           <a
@@ -68,29 +69,52 @@ layout: default
       <!-- Tags -->
       <div class="side">
         <div>
-          <i class="fa fa-tags"></i>
-          Tags
+          
+          <p class="categories-list-header">
+              <i class="fa fa-tags"></i>
+            TAGS</p>
         </div>
         <div class="tags-cloud">
-          {% assign first = site.tags.first %} {% assign max = first[1].size %}
-          {% assign min = max %} {% for tag in site.tags offset:1 %} {% if
-          tag[1].size > max %} {% assign max = tag[1].size %} {% elsif
-          tag[1].size < min %} {% assign min = tag[1].size %} {% endif %} {%
-          endfor %} {% if max == min %} {% assign diff = 1 %} {% else %} {%
-          assign diff = max | minus: min %} {% endif %} {% for tag in site.tags
-          %} {% assign temp = tag[1].size | minus: min | times: 36 | divided_by:
-          diff %} {% assign base = temp | divided_by: 4 %} {% assign remain =
-          temp | modulo: 4 %} {% if remain == 0 %} {% assign size = base | plus:
-          9 %} {% elsif remain == 1 or remain == 2 %} {% assign size = base |
-          plus: 9 | append: '.5' %} {% else %} {% assign size = base | plus: 10
-          %} {% endif %} {% if remain == 0 or remain == 1 %} {% assign color = 9
-          | minus: base %} {% else %} {% assign color = 8 | minus: base %} {%
-          endif %}
+          {% assign first = site.tags.first %}
+          {% assign max = first[1].size %}
+          {% assign min = max %} 
+          {% for tag in site.tags offset:1 %} 
+            {% if tag[1].size > max %} 
+              {% assign max = tag[1].size %} 
+            {% elsif tag[1].size < min %}
+              {% assign min = tag[1].size %} 
+            {% endif %} 
+          {% endfor %} 
+
+          {% if max == min %} 
+            {% assign diff = 1 %} 
+          {% else %}
+            {% assign diff = max | minus: min %} 
+          {% endif %} 
+
+          {% for tag in site.tags %} 
+            {% assign temp = tag[1].size | minus: min | times: 34 | divided_by: diff %} 
+            {% assign base = temp | divided_by: 5 | plus: 3 %} 
+            {% assign remain = temp | modulo: 5 %} 
+            {% if remain == 0 %} 
+              {% assign size = base | plus: 7 %} 
+            {% elsif remain == 1 or remain == 2 %} 
+              {% assign size = base | plus: 9 %} 
+            {% else %} 
+              {% assign size = base | plus: 9 %} 
+            {% endif %} 
+            {% if remain == 0 %} 
+              {% assign color = 8 | minus: base %} 
+            {% elsif remain == 1 %} 
+              {% assign color = 8 | minus: base %} 
+            {% elsif remain == 2 %}
+              {% assign color = 9 | minus: base %}
+            {% else %}
+              {% assign color = 9 | minus: base %}
+            {% endif %}
           <a
             href="{{ site.baseurl }}/{{ site.tag_dir }}#{{ tag[0] }}"
-            style="font-size: {{ size }}pt; color: #{{ color }}{{ color }}{{
-              color
-            }};"
+            style="font-size: {{ size }}pt; color: #{{ color }}{{ color }}{{ color }};"
             >{{ tag[0] }}</a
           >
           {% endfor %}

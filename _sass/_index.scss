@@ -96,7 +96,7 @@
                             display: block;
                             width: 100%;
                             padding: 2px 0;
-                            border-bottom: 1px solid #eee;
+                            border-bottom: 0.7px solid rgba(50, 28, 92, 0.37);
                             &:hover {
                                 background-color: #dbdfee;
                                 .badge {
@@ -146,13 +146,13 @@
                     }
                 }
 		.cate-list {
-		font-weight: bold;
+		font-weight: 600;
                     a {
 			color: black;
-			font-size: 108%;
-                        padding: 10px 15px 10px 15px;
+			font-size: 19px;
+                        padding: 7px 17px 7px 17px;
                         &:hover {
-                            background-color: rgba(216, 203, 110, 1);
+                            background-color: rgba(27, 12, 44, 0.363);
                         }
                     }
 		}
@@ -189,16 +189,17 @@
 /* categories list */
 .categories-list-header {
 	display: block;
-	padding: 12px 15px;
-	border-bottom: 1px solid #c0c0c0;
+	padding: 2px 0px 0px 5px;
+	border-bottom: none;
 	font-size: 16px;
-	font-weight: bold;
+    font-weight: 400;
+    margin: 0 0 0 0;
 }
 .categories-list-item{
 	display: block;
-	padding:8px 15px; 
-	border-bottom:1px solid #ddd; 
-
+	padding:8px 12px 4px 12px; 
+	border-bottom: 0.7px solid rgba(50, 28, 92, 0.206); 
+    font-size: 20px;
 	transition:0.4s ease;
 	-webkit-transition:0.4s ease;
 	-moz-transition:0.4s ease;
@@ -209,15 +210,15 @@
 }
 .categories-list-item:hover{
 	background-color: rgba(0,0,10,0.075);
-	color: #983;
+	color: rgba(25, 1, 63, 0.383);
 }
 .categories-list-item .my-badge{
-	font-size: 15px;
-	font-weight: bold;
+	font-size: 20px;
+	font-weight: 400;
 	color: #fff;
-	background-color: #666;
-	padding: 0 7px 1px 7px;
-	border-radius: 19px;
+	background-color: rgba(50, 28, 92, 0.37);
+	padding: 0px 7px 1px 7px;
+	border-radius: 14px;
 	float: right;
 	transition:0.4s ease;
 	-webkit-transition:0.4s ease;

@@ -14,7 +14,7 @@ date: 2019-5-24
 ## 1. Bash Settings
 ##--------------------------------------------------------
 
-nano ~/.bash_profile
+nano ~/.bashrc
 
 # In .bash_profile
 # [Appended] History configurations
@@ -81,8 +81,11 @@ stack \ # Haskell syntax checker
 idris \ # IDRIS support
 agda \ # Agda support
 arander \ # Visual front end for XRandR
-yaourt
-
+yaourt \ # Frontend to pacman with AUR/ABS support
+shadowsock-qt5 \ # Socks5 proxy
+proxychains \ #  Use socks5 server with CLI tools, conf file: /etc/proxychains.conf
+\
+ 
 ##--------------------------------------------------------
 ## 6. Configure i3wm and install themes
 ##--------------------------------------------------------
@@ -205,16 +208,25 @@ Dash
 Emacs Friendly Keymap
 Git History
 GitLens
+LaTeX Compile
+LaTeX Language support
+LaTeX Preview
+LaTeX Workshop
 Markdown All in one
 Markdown PDF
+Markdown TOC
+md2pdf
 Material Icon Theme
 Prettier
 Python
 Settings Sync
+Todo Tree
+Todo Highlight
 shell-format
 vscode-pdf
 vscode-scheme
 """
+
 
 
 ##--------------------------------------------------------
