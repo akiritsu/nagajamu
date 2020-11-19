@@ -1,21 +1,0 @@
-Welcome to MOLTE: a Modular Optimal Learning Testing Environment, designed for Bayesian ranking and selection problem, stochastic bandits or sequentialexperimental design problems.
-
-This Matlab-based environment is ran and tested on Matlab R2015a. 
-
-The simulator allows the comparison of anumber of learning policies (represented as a series of .m modules) in the context of awide range of problems (each represented in its own .m module) which makes it easy toadd new algorithms and new test problems. State-of-the-art policies and various problemclasses are provided in the package. The choice of problems and policies is guided througha spreadsheet-based interface. Different graphical metrics are included. We offer MOLTEas an easy-to-use tool for the research community that will make it possible to performmuch more comprehensive testing, spanning a broader selection of algorithms and testproblems. 
-
-This environment uses a spreadsheet for convenient user input. A sample input is provided in ‘ProblemsandAlgorithms.xls’. In order to compare different policies on different problem classes, please add them in the 'Run' sheet following the sample structures as listed. To start the comparison, run MOLTE.m.
-
-For the purpose of easy demonstration, several parameters are set to a relatively small value to reduce the running time. In order to obtain meaningful comparison results, suggested parameter values are listed as follows:
- 
-MOLTE.m: a meaningful value of numP is, for example, around 100 to 1000;
-	 a meaningful value of numTruth is around 500 to 100;
-
-ontune.m: numSamples should be set to 500 to 1000 to get a meaningful parameter tuning result
-
-offtune.m: numSamples should be set to 500 to 1000 to get a meaningful parameter tuning result    
-
-*Please be aware that, tuning is time consuming if the numSamples is set to the reasonable values. Besides, depending on the chosen problem class (e.g. dimensions, level of discretization, belief model) and number/type (e.g. whether requiring tuning) of competing policies, the comparison may take hours to days to run.
-
-
-More information can be found in the MOLTE Manual.
