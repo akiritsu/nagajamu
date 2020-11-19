@@ -1,7 +1,7 @@
 # Site Settings
-title               : Nagajamu.com
+title               : Nagajamu
 owner               : "DeerRIDER"
-## url                : "https://nagajamu.com"
+url                : "https://nagajamu.com"
 ## baseurl            : ""
 permalink           : /:title/
 description         : "Personal notes of DeerRIDER"
