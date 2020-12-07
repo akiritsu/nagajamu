@@ -17,6 +17,7 @@ permalink: /
 2. *Mathematics: the Loss of Certainty*
 3. Analysis
 
+{{site.bgtext}}
 
 ## Quick Access
 

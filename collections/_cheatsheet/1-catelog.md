@@ -1,5 +1,4 @@
 ---
-
 title: "Sylloge of Reference Cards and Cheat Sheets"
 ---
 

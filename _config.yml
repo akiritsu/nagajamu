@@ -19,6 +19,7 @@ sass:
   sass_dir          : src/_sass
 
 # Collections
+collection_order    : ["posts", "cheatsheet", "mathematics", "literature", "theoretical_cs", "pl_theory", "pl_practice", "formal_method", "modern_ai", "operating_system", "theorem_proving", "type_theory"]
 collections:
   cheatsheet:
     output          : true
@@ -50,7 +51,7 @@ collections:
     alias           : "PL Theory"
   posts:
     output          : false
-    alias           : "Others"
+    alias           : "Posts"
   theorem_proving:
     output          : true
     permalink       : /:collection/:title/
@@ -63,6 +64,9 @@ collections:
     output          : true
     permalink       : /:collection/:title/
     alias           : "Type Theory"
+  literature:
+    output          : true
+    permalink       : /:collection/:title/
     
 # Social Media Accounts
 email               : "akiritsu@outlook.com" 
@@ -71,7 +75,7 @@ github              : "akiritsu"
 # Global Variables
 statement           : "Designed by DeerRIDER, All Rights Reserved"
 toc_level           : 3
-bgtext              : "ABCFGHKLMNPQRSVWXYZabcdefghijklmnopqrstuvwxyz@#$%&*+-;/[]<>~" # texts randomly displayed in background
+bgtext              : "αβγδεζηθικλμνξοπρστυφχψω∷∫∮∝∞∧∨∑∏∪∩∈∵∴⊥‖∠⌒⊙≌∽√" # texts randomly displayed in background
 # Disqus settings（disqus.com）
 disqus_username     : akiritsu
 

@@ -1,5 +1,4 @@
 ---
-
 title: "Setup A Productive Working Environment in Manjaro"
 ---
 

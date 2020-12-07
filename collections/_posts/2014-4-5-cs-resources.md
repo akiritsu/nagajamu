@@ -1,5 +1,4 @@
 ---
-
 title: Free Resource Collection for Theoretical Computer Science
 category: TCS
 date: 2018-11-06

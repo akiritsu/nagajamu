@@ -1,5 +1,4 @@
 ---
-
 title: Personal Answers to EOPL
 ---
 

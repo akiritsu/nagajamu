@@ -1,5 +1,4 @@
 ---
-
 title: "Mathematical Logic and Theoretical Computer Science"
 categories: TCS
 tags: Logic Proof Set Recursion Model Computing

@@ -1,5 +1,4 @@
 ---
-
 title: "Learning Notes of Software Foundations"
 ---
 

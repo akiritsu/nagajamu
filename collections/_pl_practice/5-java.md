@@ -1,5 +1,4 @@
 ---
-
 title: Former Learning Notes of Java
 date: 2014-6-14
 category: PL

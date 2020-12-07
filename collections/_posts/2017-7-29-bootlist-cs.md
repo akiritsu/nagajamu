@@ -1,5 +1,4 @@
 ---
-
 title: 156 Most Valuable Books for Computer Science Learners
 ---
 

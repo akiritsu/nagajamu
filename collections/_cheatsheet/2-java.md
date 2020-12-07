@@ -1,5 +1,4 @@
 ---
-
 title: Former Learning Notes of Java
 ---
 

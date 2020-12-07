@@ -1,5 +1,4 @@
 ---
-
 title: Simple Notes of the Little Schemer
 ---
 

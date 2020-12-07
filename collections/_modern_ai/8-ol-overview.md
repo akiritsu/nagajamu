@@ -1,5 +1,4 @@
 ---
-
 title: "An Overview of Optimal Learning and Approximate Dynamic Programming"
 ---
 

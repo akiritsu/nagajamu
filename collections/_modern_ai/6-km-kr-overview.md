@@ -1,5 +1,4 @@
 ---
-
 title: "An Overview of Knowledge Management and Knowledge Representation"
 ---
 

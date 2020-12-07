@@ -1,5 +1,4 @@
 ---
-
 title: "An Overview of Automated Theorem Proving"
 ---
 

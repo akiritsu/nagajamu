@@ -1,5 +1,4 @@
 ---
-
 title: "Programming Philosophy and Tricks"
 categories: PL
 tags: Tricks Programming

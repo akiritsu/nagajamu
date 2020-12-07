@@ -1,5 +1,4 @@
 ---
-
 title: Brief Notes of Practical Common Lisp
 ---
 
