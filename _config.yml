@@ -104,9 +104,15 @@ disqus_username     : akiritsu
 
 # Default page configuration
 defaults:
+  -
+    scope:
+      path: "_posts" # an empty string here means all files in the project
+    values:
+      layout: "post"
   -    
     scope:
-      path: 
+      path: ""
+      type: notes # file under notes
     values:
       layout: "post"
 
