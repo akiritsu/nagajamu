@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Brief Notes of Practical Common Lisp
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "古典文学书籍集萃"
 
 ---

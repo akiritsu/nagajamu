@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Learning Notes of Programming Language Pragmatics"
 ---
 

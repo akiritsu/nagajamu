@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "An Overview of Artificial Intelligence and Its Application"
 ---
 

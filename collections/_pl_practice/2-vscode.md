@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "VSCode Tutorial, Quick Reference and Extensions"
 categories: OTH
 tags: VSCode Tricks

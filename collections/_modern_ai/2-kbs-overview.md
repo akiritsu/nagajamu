@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "An Overview of Knowledge-based Systems"
 ---
 

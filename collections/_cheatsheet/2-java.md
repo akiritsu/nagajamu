@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Former Learning Notes of Java
 ---
 

@@ -66,16 +66,7 @@ collections:
     
 # Social Media Accounts
 email               : "akiritsu@outlook.com" 
-linkedin            : 
 github              : "akiritsu" 
-gitlab              :
-website             :
-twitter             :
-facebook            :
-instagram           :
-youtube             :
-steam               :
-weibo               :
 
 # Global Variables
 statement           : "Designed by DeerRIDER, All Rights Reserved"
@@ -86,26 +77,11 @@ disqus_username     : akiritsu
 
 # Default page configuration
 defaults:
-  -
-    scope:
-      path: "_posts" # an empty string here means all files in the project
-    values:
-      layout: "post"
   -    
     scope:
-      path: ""
-      type: notes # file under notes
+      path: 
     values:
       layout: "post"
-      tags: n0t3s
-      author: aaa
-  -    
-    scope:
-      path: ""
-      type: portfolio
-    values:
-      layout: "post"
-      tags: pfl
 
 # Plugins
 plugins:

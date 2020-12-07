@@ -1,0 +1,89 @@
+---
+
+title: 非数学专业本科数学学习路径指南
+---
+
+# 数学科普
+1. 基本概念及方法 - 科朗，罗宾《什么是数学》，
+2. 数学思想，发展和危机 - 克莱因《数学，确定性的丧失》
+3. 框架，分支及其意义 - 《普林斯顿数学指南》
+
+# 本科数学
+
+## 基础
+
+1. 数学分析 
+    * 中文 - 徐森林、薛春华《数学分析》；英文 - 卓里奇《数学分析》，Rudin《数学分析》
+    * 视频 - 陈纪修 https://www.bilibili.com/video/BV12s411h7v4；史济怀 https://www.bilibili.com/video/BV1ZW411e7PF
+2. 高等代数
+    * 中文 - 姚慕生《高等代数学》，张贤科《高等代数学》
+    * 视频 - 谢启鸿 https://www.bilibili.com/video/BV1mJ411r7ZB，习题课 https://www.bilibili.com/video/BV1X7411F7fK
+## 分析学
+1. 复变函数
+    * 基础 - 余家荣 《复变函数》；英文 - Alfhor《复分析》，stein《复分析》
+    * 视频 - 刘太顺 https://www.bilibili.com/video/BV1GW411t7Yo
+2. 实变函数（数学分析的延伸）
+    * 基础 - 程其襄 《实变函数与泛函分析基础》，夏道行《实变函数与泛函分析》；进阶 - 周民强 《时变函数论》；英文 - Stein《实分析》，Evens《函数上的好性质》
+    * 视频 - 陈闯 https://www.bilibili.com/video/BV1ax411C7iR
+3. 泛函分析（综合代数、几何、分析学，研究更抽象的空间）
+    * 基础 - 程其襄 《实变函数与泛函分析基础》；进阶 - 张恭庆 《泛函分析》
+    * 视频 - 孙炯 https://www.bilibili.com/video/BV1zW411s7o8
+4. 常微分方程（ODE）
+    * 基础 - 丁同仁 《常微分方程》，王高雄 《常微分方程》；英文 - Arnold《常微分方程》
+    * 视频 - 张伟年 https://www.bilibili.com/video/BV1rW41147ih
+5. 偏微分方程（PDE，数学物理方法）
+    * 基础 - 梁昆淼 《数学物理方法》；英文 - Evens 《PDE》
+    * 视频 - 朱长江 https://www.bilibili.com/video/BV1ut411a7YT
+6. 调和分析
+7. 动力系统
+   * 《One-Dimensional Dynamics》
+## 代数学
+1. 抽象代数（近世代数，包括群论，环论，域论，模论，格论，伽罗瓦理论等）
+   * 基础 - 韩世安 《近世代数》；进阶 - 徐明耀 《抽象代数》；英文 - Hungerford《代数学》，姚慕生《抽象代数》
+   * 视频 - 邓少强（包含 https://www.bilibili.com/video/BV1TW411t7h7
+2. 交换代数
+    * 基础 - Atiyah《交换代数导引》；补充 - 冯克勤《交换代数基础》
+3. 同调代数
+   * GTM4 
+4. 李群，李代数
+5. 群表示论
+   * 入门 - 冯克勤；进阶 - Serre 
+6. 代数数论
+   * 冯克勤《代数数论》，冯克勤《代数数论简史》，加藤和也《数论I，II》，岩泽健吉《局部类域论》 
+7. 代数曲线
+    * 格里菲斯《代数曲线》
+## 几何学
+1. 空间解析几何
+2. 微分几何
+   1. 古典微分几何
+       * 基础 - 梅向明 《微分几何》
+       * 视频 - 贺群 https://www.bilibili.com/video/BV1rW411475Q
+   2. 现代微分几何（拓扑学为前置课程）
+      1. 微分流形
+      2. 黎曼几何
+         * Do Carmo《黎曼几何》，伍洪熙《黎曼几何初步》 
+3. 拓扑学
+   1. 点集拓扑（实变函数、复变函数为前置课程）
+      * 基础 - **熊金城 《点集拓扑讲义》**
+      * 视频 - 王彦英 https://www.bilibili.com/video/BV1wx411z73K
+   2. 代数拓扑
+      * Munkres《代数拓扑基础》 
+   4. 微分拓扑
+      * 张筑生《微分拓扑新讲》，Milnor《从微分观点看拓扑》，《Morse理论》 
+   6. 几何拓扑
+## 应用数学
+1. 概率论
+2. 数值分析
+3. 统计推断
+4. 离散数学 
+
+# 形式化证明
+1. Mathematical Components: https://math-comp.github.io/
+
+# 前沿研究
+1. 顶级刊物 Annals of Mathematics
+2. 科普读物：Theorems of the 21st Century
+
+# 引用
+1. 现代数学 | 清华学霸带你理清现代数学脉络，https://mp.weixin.qq.com/s/hbo7b0YR6FAdBzx8wtiuhA
+2. 基础数学方向的研究生到底要学些什么，https://zhuanlan.zhihu.com/p/141279634

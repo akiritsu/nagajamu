@@ -1,4 +1,4 @@
 ---
-layout: post
+
 title: 高等代数学习笔记
 ---

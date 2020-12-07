@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "An Overview of Program Analysis and Verification"
 ---
 

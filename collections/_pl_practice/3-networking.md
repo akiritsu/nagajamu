@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Basics of Computer Networking
 category: OTH
 tags: Networking

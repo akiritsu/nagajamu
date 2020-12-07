@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Basics of Linux Operating Systems
 ---
 
@@ -401,7 +401,7 @@ passwd命令用于设置用户的认证信息，包括用户密码、密码过�
 ## Linux命令行技巧
 
 ---
-layout: post
+
 title: 六个Linux技巧
 ---
 

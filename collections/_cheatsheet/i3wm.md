@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: i3wm-Cheatsheet
 ---
 **This cheatsheet does not relate to default settings.**

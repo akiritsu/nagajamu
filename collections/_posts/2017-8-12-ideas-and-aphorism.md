@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: 值得留意的观点
 ---
 

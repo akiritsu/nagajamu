@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Emacs Tricks and Reference Card"
 categories: OTH
 tags: Emacs

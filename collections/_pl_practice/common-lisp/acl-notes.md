@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Ansi Common Lisp
 ---
 

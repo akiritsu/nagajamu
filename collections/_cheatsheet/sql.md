@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: T-SQL Cheatsheet
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Simple Notes of the Little Schemer
 ---
 

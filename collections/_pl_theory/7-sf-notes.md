@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Learning Notes of Software Foundations"
 ---
 

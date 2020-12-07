@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "An Overview of Operating System Concepts, Design and Implementation"
 ---
 

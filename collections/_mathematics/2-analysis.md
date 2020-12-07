@@ -1,4 +1,4 @@
 ---
-layout: post
+
 title: 数学分析学习笔记
 ---

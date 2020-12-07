@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Mathematical Foundations for Data Science"
 categories: TCS
 tags: DS

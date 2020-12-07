@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Personal Answers to EOPL
 ---
 

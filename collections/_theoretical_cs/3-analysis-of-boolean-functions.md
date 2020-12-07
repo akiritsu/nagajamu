@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Analysis and Manipulation of Boolean Functions"
 categories: TCS
 tags: BDD Boolean Function Logic
