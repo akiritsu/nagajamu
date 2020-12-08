@@ -17,8 +17,6 @@ permalink: /
 2. *Mathematics: the Loss of Certainty*
 3. Analysis
 
-{{site.bgtext}}
-
 ## Quick Access
 
 [Analysis]({{site.url}}/mathematics/2-analysis/)
@@ -26,6 +24,8 @@ permalink: /
 [数学分析 复旦 陈纪修](https://www.bilibili.com/video/BV12s411h7)
 
 [逻辑谬误和认知偏差集合]({{site.url}}/cognitive-bias-and-logical-fallacy/)
+
+[阅读资料及草稿]({{site.url}}/rnd/)
 
 <br>
 ----

@@ -1,4 +1,4 @@
-# Site Settings
+# 1. Site Settings
 title               : Nagajamu
 owner               : "DeerRIDER"
 url                : "https://nagajamu.com"
@@ -6,19 +6,10 @@ url                : "https://nagajamu.com"
 permalink           : /:title/
 description         : "Personal notes of DeerRIDER"
 markdown            : kramdown
+statement           : "Designed by DeerRIDER, All Rights Reserved"
+bgtext              : "αβγδεζηθικλμνξοπρστυφχψω∷∫∮∝∞∧∨∑∏∪∩∈∵∴⊥‖∠⌒⊙≌∽√" # texts randomly displayed in background
 
-# Where things are
-source              : .
-destination         : ./_site
-collections_dir     : collections
-plugins_dir         : src/_plugins # takes an array of strings and loads plugins in that order
-layouts_dir         : src/_layouts
-data_dir            : src/_data
-includes_dir        : src/_includes
-sass:
-  sass_dir          : src/_sass
-
-# Collections
+# 2. Collections
 collection_order    : 
   [
     "posts",
@@ -65,6 +56,7 @@ collections:
     alias           : "PL Theory"
   posts:
     output          : false
+    permalink       : /:collection/:title/
     alias           : "Posts"
   theorem_proving:
     output          : true
@@ -81,47 +73,62 @@ collections:
   literature:
     output          : true
     permalink       : /:collection/:title/
-    
-# Social Media Accounts
-email               : "akiritsu@outlook.com" 
-github              : "akiritsu" 
-linkedin            :
-gitlab              :
-website             :
-twitter             :
-facebook            :
-instagram           :
-youtube             :
-steam               :
-weibo               :
+  drafts:
+    output          : true
+    permalink       : /:collection/:title/
+  readings:
+    output          : true
+    permalink       : /:collection/:title/
 
-# Global Variables
-statement           : "Designed by DeerRIDER, All Rights Reserved"
-toc_level           : 3
-bgtext              : "αβγδεζηθικλμνξοπρστυφχψω∷∫∮∝∞∧∨∑∏∪∩∈∵∴⊥‖∠⌒⊙≌∽√" # texts randomly displayed in background
-# Disqus settings（disqus.com）
+# 3. Comment settings（disqus.com）
 disqus_username     : akiritsu
 
-# Default page configuration
+# 4. Default page configuration
 defaults:
-  -
-    scope:
-      path: "_posts" # an empty string here means all files in the project
-    values:
-      layout: "post"
   -    
     scope:
-      path: ""
-      type: notes # file under notes
+      path          : ""  # an empty string here means all files in the project
     values:
-      layout: "post"
+      layout              : "post"      # which layout to use by default
+      publish             : true        # whether to show by default      
+      btn_text            : true        # whether show button text by default
+      collection_list     : true        # whether show archive button by default
+      home_btn            : true        # whether show home by default
+      maximize            : true        # whether show maximize button by default
+      encrypted_text      : false       # whether use encrytion function by default
+      toc                 : true        # whether show table of content by default
+      toc_level           : 3           # the toc depth by default
+      author              :             # author name by default
+      show_date           : false       # whether show date message by default
+      category            :             # category by default
+      post_list           : false       # whether show list of post by default      
+      comment             : false
+      footer              : false       # whether show footer by default
 
-# Plugins
+
+# 5. Social Media Accounts
+email               : "akiritsu@outlook.com" 
+github              : "akiritsu" 
+
+# 6. Where things are
+source              : .
+destination         : ./_site
+collections_dir     : collections
+plugins_dir         : src/_plugins # takes an array of strings and loads plugins in that order
+layouts_dir         : src/_layouts
+data_dir            : src/_data
+includes_dir        : src/_includes
+sass:
+  sass_dir          : src/_sass
+
+
+# 7. Plugins
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-  
+
+# 8. Others
 # Cross-Origin Resource Sharing header
 webrick:
   headers:
