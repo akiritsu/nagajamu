@@ -23,9 +23,9 @@ permalink: /
 
 [数学分析 复旦 陈纪修](https://www.bilibili.com/video/BV12s411h7)
 
-[逻辑谬误和认知偏差集合]({{site.url}}/cognitive-bias-and-logical-fallacy/)
+[逻辑谬误和认知偏差集合]({{site.url}}/posts/cognitive-bias-and-logical-fallacy/)
 
-[阅读资料及草稿]({{site.url}}/rnd/)
+[阅读资料及草稿]({{site.url}}/pages/readings_and_drafts/)
 
 <br>
 ----

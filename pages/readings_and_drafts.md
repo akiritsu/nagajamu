@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Readings and Drafts
-permalink: /rnd
 ---
 
 ## 免责声明
