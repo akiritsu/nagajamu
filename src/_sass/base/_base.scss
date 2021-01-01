@@ -70,7 +70,7 @@ button {
 // links
 a {
   color: $color-primary;
-  text-decoration: underline;
+  text-decoration: underline dashed rgba($color-primary, 0.5);
 }
 a:hover {
   color: $color-secondary;
@@ -89,7 +89,7 @@ ul {
   padding: 0 0 0 1.6em;
 }
 blockquote {
-  margin: 1.2em 4em 0.8em 4em;
+  margin: 1.2em 2em 1.1em 2em;
   font-size: 90%;
   font-style: italic;
   line-height: 124%;
