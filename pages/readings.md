@@ -1,5 +1,5 @@
 ---
-title: Readings and Drafts
+title: 阅读资料
 ---
 
 ## 免责声明
