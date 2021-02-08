@@ -1,8 +1,8 @@
 # 1. Site Settings
 title               : Nagajamu
 owner               : "DeerRIDER"
-#url                 : "http://127.0.0.1:4000"
-url                : "https://nagajamu.com"
+url                 : "http://127.0.0.1:4000"
+#url                : "https://nagajamu.com"
 ## baseurl            : ""
 permalink           : /:title/
 description         : "Personal notes of DeerRIDER"
@@ -16,6 +16,7 @@ collection_order    :
     "posts",
     "cheatsheet",
     "mathematics",
+    "philosophy",
     "literature",
     "theoretical_cs",
     "pl_theory",
@@ -31,10 +32,16 @@ collections:
     output          : true
     permalink       : /:collection/:title/
     sort_by         : name
+  drafts:
+    output          : true
+    permalink       : /:collection/:title/
   formal_method:
     output          : true
     permalink       : /:collection/:title/
     alias           : "Formal Method"
+  literature:
+    output          : true
+    permalink       : /:collection/:title/
   mathematics:
     output          : true
     permalink       : /:collection/:title/
@@ -47,6 +54,9 @@ collections:
     output          : true
     permalink       : /:collection/:title/
     alias           : "Operating System"
+  philosophy:
+    output          : true
+    permalink       : /:collection/:title/
   pl_practice:
     output          : true
     permalink       : /:collection/:title/
@@ -59,6 +69,9 @@ collections:
     output          : false
     permalink       : /:collection/:title/
     alias           : "Posts"
+  readings:
+    output          : true
+    permalink       : /:collection/:title/
   theorem_proving:
     output          : true
     permalink       : /:collection/:title/
@@ -71,15 +84,7 @@ collections:
     output          : true
     permalink       : /:collection/:title/
     alias           : "Type Theory"
-  literature:
-    output          : true
-    permalink       : /:collection/:title/
-  drafts:
-    output          : true
-    permalink       : /:collection/:title/
-  readings:
-    output          : true
-    permalink       : /:collection/:title/
+
 
 # 3. Comment settings（disqus.com）
 disqus_username     : akiritsu
