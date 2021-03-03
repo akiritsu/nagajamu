@@ -9,23 +9,22 @@ footer: true
 permalink: /
 ---
 
-# Nagajamu.com - Personal Notes of DeerRIDER
+# Nagajamu.com - 骑鹿人的个人笔记
 
-## TODOs
+## 正在进行
 
-1. First 4 chapters of *The Princeton Companion of Mathematics*
-2. *Mathematics: the Loss of Certainty*
-3. Analysis
+1. 数学分析
+2. 高等代数
+3. 世界史
+4. 西方哲学史
 
-## Quick Access
+## 快速访问
 
-[关于文学理论的学习笔记]({{site.url}}/literature/literary-theory-notes/)
-
-[Analysis]({{site.url}}/mathematics/2-analysis/)
-
-[数学分析 复旦 陈纪修](https://www.bilibili.com/video/BV12s411h7)
+[数学分析笔记]({{site.url}}/mathematics/2-数学分析/)
 
 [逻辑谬误和认知偏差集合]({{site.url}}/posts/cognitive-bias-and-logical-fallacy/)
+
+[关于文学理论的学习笔记]({{site.url}}/literature/literary-theory-notes/)
 
 [阅读资料]({{site.url}}/pages/readings/)
 
