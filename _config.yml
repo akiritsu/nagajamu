@@ -32,58 +32,64 @@ collections:
     output          : true
     permalink       : /:collection/:title/
     sort_by         : name
+    alias           : "速查手册"
   drafts:
     output          : true
     permalink       : /:collection/:title/
+    alias           : "草稿箱"
   formal_method:
     output          : true
     permalink       : /:collection/:title/
-    alias           : "Formal Method"
+    alias           : "形式化方法"
   literature:
     output          : true
     permalink       : /:collection/:title/
+    alias           : "文学理论"
   mathematics:
     output          : true
     permalink       : /:collection/:title/
     sort_by         : name
+    alias           : "数学"
   modern_ai:
     output          : true
     permalink       : /:collection/:title/
-    alias           : "Modern AI"
+    alias           : "人工智能"
   operating_system:
     output          : true
     permalink       : /:collection/:title/
-    alias           : "Operating System"
+    alias           : "操作系统"
   philosophy:
     output          : true
     permalink       : /:collection/:title/
+    alias           : "哲学历史"
   pl_practice:
     output          : true
     permalink       : /:collection/:title/
-    alias           : "PL Practics"
+    alias           : "编程练习"
   pl_theory:
     output          : true
     permalink       : /:collection/:title/
-    alias           : "PL Theory"
+    alias           : "计算理论"
   posts:
     output          : false
     permalink       : /:collection/:title/
-    alias           : "Posts"
+    alias           : "随笔散文"
   readings:
     output          : true
     permalink       : /:collection/:title/
+    alias           : "阅读资料"
   theorem_proving:
     output          : true
     permalink       : /:collection/:title/
-    alias           : "Theorem Proving"
+    alias           : "自动化证明"
   theoretical_cs:
     output          : true
     permalink       : /:collection/:title/
-    alias           : "Theoretical CS"
+    alias           : "计算机科学"
   type_theory:
     output          : true
     permalink       : /:collection/:title/
-    alias           : "Type Theory"
+    alias           : "类型论"
 
 
 # 3. Comment settings（disqus.com）
