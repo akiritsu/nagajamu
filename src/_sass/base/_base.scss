@@ -1,6 +1,6 @@
 // global base reset
 body {
-  line-height: 1.42;
+  line-height: 1.52;
   font-size: $font-size-primary;
   color: $color-primary;
   font-family: $font-serif;
@@ -20,7 +20,7 @@ h2 {
 h3 {
   font-size: $font-size-h3;
   font-weight: lighter;
-  margin: 1.8em 0 0.7em 0;
+  margin: 1.9em 0 0.7em 0;
 }
 h4 {
   font-size: $font-size-h4;
@@ -38,7 +38,7 @@ h6 {
   margin: 2.4em 0 0.6em 0;
 }
 p {
-  margin: 6.5px 0px;
+  margin: 5px 0px;
   display: block;
 }
 hr {
@@ -83,15 +83,16 @@ img {
   display: block; // image center align
 }
 ol {
-  padding: 0 0 0 1.6em;
+  padding: 0 0 0 1.3em;
 }
 ul {
-  padding: 0 0 0 1.6em;
+  padding: 0 0 0 1.2em;
+  margin: 2px 12px 3px 0px;
 }
 blockquote {
-  margin: 0.3em 0em 0.4em 0em;
+  margin: 0.3em 0em 0.55em 0em;
   font-size: 90%;
-  font-style: italic;
+  font-style: none;
   line-height: 124%;
   color: $color-secondary;
   border-left: none;

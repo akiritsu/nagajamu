@@ -1,8 +1,8 @@
 # 1. Site Settings
 title               : Nagajamu
 owner               : "DeerRIDER"
-#url                 : "http://127.0.0.1:4000"
-url                : "https://nagajamu.com"
+url                 : "http://127.0.0.1:4000"
+#url                : "https://nagajamu.com"
 ## baseurl            : ""
 permalink           : /:title/
 description         : "Personal notes of DeerRIDER"
@@ -144,4 +144,4 @@ plugins:
 # Cross-Origin Resource Sharing header
 webrick:
   headers:
-    Access-Control-Allow-Origin: "*"
+   Access-Control-Allow-Origin: "*"
