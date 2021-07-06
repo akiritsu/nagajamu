@@ -1,109 +1,125 @@
 ---
-title: "Setup A Productive Working Environment in Manjaro"
+title: Manjaro系统安装及软件设置
 ---
 
+## 下载 Manjaro 并烧录至 U 盘
 
+1. 下载 Manjaro：[官方镜像](https://manjaro.org/downloads/official/xfce/)
+2. 下载 Rufus：[官方下载](https://rufus.ie/en_US/)
+3. 插入 u 盘，打开 Rufus。
+4. Device 选项选择待烧录的设备。
+5. Boot Device 选项选择下载的镜像。
+6. Partition Scheme 默认为 MBR。
+
+## 安装 Manjaro
+
+1. 插入 u 盘，启动电脑，在系统引导前呼出 Bios。
+2. 将 Boot 选项卡中的 OS Type 改为 Legacy OS。
+3. 打开 Hard Drive BBS Priorities，将烧录好的 U 盘设置为第一项。
+4. 保存修改并重启电脑，选择 Boot With Open Source Drivers，进入 Manjaro Live CD 界面。
+5. 选择 Launch Installer 打开安装程序。
+6. 位置选择当前位置。
+7. 键盘布局选择 English US - Default。
+8. 分区选择手动分区。
+   1. 创建新的 MBR 分区表。
+   2. 创建挂载点为/boot 的分区存放系统启动文件，文件系统为 ext4。
+   3. 创建挂载点为/的根分区，文件系统为 ext4。
+   4. 选择创建/home 分区，文件系统为 ext4。
+   5. 若内存小于 8G，选择创建 swap 缓存，文件系统为 linuxswap。
+9. 选择安装 Boot loader 位置为硬盘的主引导记录。
+10. 设置用户名及密码。
+11. 确认安装信息，开始安装 Manjaro 系统。
+12. 安装完毕后，重启系统，拔出 u 盘。
+
+## 设置镜像
+
+1. 自动设置最近的镜像。
 
 ```bash
-##--------------------------------------------------------
-## 1. Bash Settings
-##--------------------------------------------------------
-
-nano ~/.bashrc
-
-# In .bash_profile
-# [Appended] History configurations
-# Ingore repeated commands
-export HISTCONTROL=ignoredups
-# Ingore command in the string devided by colon
-export HISTIGNORE="ls:cd:exit"
-export HISTFILESIZE=10000000
-export HISTSIZE=100000
-# Make commands appended
-shopt -s histappend
-# Append commands real time
-PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
-
-##--------------------------------------------------------
-## 2. Setup Mirrors 
-##--------------------------------------------------------
-
 sudo pacman-mirrors -i -c China -m rank
-sudo vi /etc/pacman.conf
-## In pacman.conf
+```
+
+2. 在/etc/acman.conf 文件添加以下内容，添加 Archlinuxcn 镜像。
+
+```bash
 [archlinuxcn]
 SigLevel = Never
-Server=https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+```
 
-##--------------------------------------------------------
-## 3. Update package signing keys
-##--------------------------------------------------------
+3. 更新包的签名密钥，并更新系统。
 
+```bash
 sudo pacman -Syy && sudo pacman -S archlinuxcn-keyring manjaro-keyring
-sudo pacman-key --populate archinlinuxcn manjaro
+sudo pacman-key --populate archlinuxcn manjaro
 sudo pacman-key --refresh-keys
-sudo pacman -Syyu 
+sudo pacman -Syyu
+```
 
-##--------------------------------------------------------
-## 4. Install graphic card drivers  and bumblebee (optional)
-##--------------------------------------------------------
+## 安装显卡驱动（可选）
 
+```bash
 sudo pacman -S virtualgl lib32-virtualgl lib32-primus primus
 sudo mhwd -f -i pci video-hybrid-intel-nvidia-bumblebee
 sudo systemctl enable bumblebeed
 sudo gpasswd -a $USER bumblebee
 reboot
+```
 
-##--------------------------------------------------------
-## 5. Install development tools
-##--------------------------------------------------------
+## 安装常用软件
 
-sudo pacman -S \
-pacaur \ # AUR helper
-google-chrome \ # Web browser
-cloc \ # Code statistics
-nmon \ # Cli performance monitor
-tldr \ # Quick examples for linux tools
-i3-wm \ # Tiled multi-workspace windows manager
-ibus ibus-libpinyin \ # Chinese input method
-emacs \ # Text editor
-lyx \ # LaTeX editor
-texmacs \ # LaTeX editor
-coq \ # Thereom proof assistance
-sbcl \ # Common Lisp compiler
-ghc \ # Haskell support
-stack \ # Haskell syntax checker
-idris \ # IDRIS support
-agda \ # Agda support
-arander \ # Visual front end for XRandR
-yaourt \ # Frontend to pacman with AUR/ABS support
-shadowsock-qt5 \ # Socks5 proxy
-proxychains \ #  Use socks5 server with CLI tools, conf file: /etc/proxychains.conf
-\
- 
-##--------------------------------------------------------
-## 6. Configure i3wm and install themes
-##--------------------------------------------------------
+```bash
+sudo pacman -S pacaur google-chrome cloc nmon tldr  emacs lyx texmacs coq sbcl ghc stack idris agda arander yaourt
+```
 
-cd ~/.config/ && mkdir i3 && cd i3
-git clone git clone https://github.com/unix121/i3wm-themer && cd i3wm-themer
-sudo pip install -r requirements.txt
-# For Arch, ArchLabs or Manjaro Linux
-# (Should work for other Arch-based distros as well)
-./install_requirements_arch.sh
-# or: $ ./install_arch.sh
-# For Debian: $ ./install_debian.sh
+## 配置中文输入法
 
-# For Ubuntu: $ ./install_ubuntu.sh
+1. 安装 ibus ibus-pinyin。
+
+```bash
+sudo pacman -S ibus ibus-libpinyin
+```
+
+2. 将 ibus-daemon 加入开机启动，并设置。
+
+## 配置 i3-wm 窗口管理器
+
+1. 安装 i3-wm。
+
+```bash
+sudo pacman -S i3-wm
+```
+
+2. 下载 i3wm-themer 主题。
+
+```bash
+cd ~/.config/ && mkdir i3 && cd
+git clone https://github.com/unix121/i3wm-themer && cd i3wm-themer
+```
+
+3. 安装依赖。
+
+```bash
+cd i3wm-themer && sudo pip install -r requirements.txt
+./install_arch.sh
+```
+
+4. 复制 polybar 脚本。
+
+```bash
 cp -r scripts/* /home/$USER/.config/polybar/
-cd src/
-python i3wm-themer.py --config config.yaml --install defaults/
-python i3wm-themer.py --config config.yaml --load themes/002.json # alternatives can be 000.json - 012.json
+```
 
-# Customize i3-wm
-vi /home/$USER/.config/i3/config
+5. 安装主题，并切换至指定主题。
 
-# In config:
+```bash
+python3 i3wm-themer.py --config config.yaml --install defaults/
+python3 i3wm-themer.py --config config.yaml --load themes/002.json # alternatives can be 000.json - 012.json
+```
+
+6. 编辑/home/$USER/.config/i3/config 文件，自定义 i3-wm。
+
+```bash
 # [Modified] keybinding of fuction key
 set $mod Mod4
 # [Modified] Window kill command
@@ -142,99 +158,60 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-# [Disabled] 
+# [Disabled]
 ## for_window [class="(?i)virtualbox"] floating enable border normal
 # [Appended] Ibus daemon.
 exec --no-startup-id export GTK_IM_MODULE=ibus
 exec --no-startup-id export XMODIFIERS=@im=ibus
 exec --no-startup-id export QT_IM_MODULE=ibus
 exec --no-startup-id ibus-daemon --xim -d -r
+```
 
+7. 在~/.Xresources 文件中添加以下内容，修改 i3-wm 的 dpi。
 
-##--------------------------------------------------------
-## 7. Multi-monitors and Resolution
-##--------------------------------------------------------
+```bash
+Xft.dpi: 183
+```
 
-xrandr_usage="""xrandr --output <output>
-        --auto
-        --mode <mode>
-        --preferred
-        --pos <x>x<y>
-        --rate <rate> or --refresh <rate>
-        --reflect normal,x,y,xy
-        --rotate normal,inverted,left,right
-        --left-of <output>
-        --right-of <output>
-        --above <output>
-        --below <output>
-        --same-as <output>
-        --set <property> <value>
-        --scale <x>x<y>
-        --scale-from <w>x<h>
-        --transform <a>,<b>,<c>,<d>,<e>,<f>,<g>,<h>,<i>
-        --off
-        --crtc <crtc>
-        --panning <w>x<h>[+<x>+<y>[/<track:w>x<h>+<x>+<y>[/<border:l>/<t>/<r>/<b>]]]
-        --gamma <r>:<g>:<b>
-        --brightness <value>
-        --primary
-"""
-# Laptop1:
-xrandr --output eDP-1 --below HDMI-1 && i3 restart
-# Desktop1:
-xrandr --output HDMI-3 --primary --left-of VGA-1 && i3 restart
+## 配置魔法渡河
 
+1. 安装 trojan 和 proxychains。
 
-##--------------------------------------------------------
-## 8. Visual Studio Code
-##--------------------------------------------------------
+```bash
+sudo pacman -S trojan proxychains
+```
 
-sudo pacman -S code
+2. 修改/etc/trojan/config.json 文件，配置 trojan。配置文本由魔法提供商提供。
+3. 修改/etc/proxychains.json 文件，配置 proxychains。将最后一行更改为：
 
-## Synchronize settings with Sync extesion and gist.github.com
-## run Extensions: Install Extension
-## Install Setting Sync
-## Press: Shift + Alt + D
-## Input gist token and id
+```bash
+sock5 127.0.0.1 1080
+```
 
-vscode-exts="""
-Dark+ Masterial
-Dash
-Emacs Friendly Keymap
-Git History
-GitLens
-LaTeX Compile
-LaTeX Language support
-LaTeX Preview
-LaTeX Workshop
-Markdown All in one
-Markdown PDF
-Markdown TOC
-md2pdf
-Material Icon Theme
-Prettier
-Python
-Settings Sync
-Todo Tree
-Todo Highlight
-shell-format
-vscode-pdf
-vscode-scheme
-"""
+4. 在 Chrome 中安装 SwitcyhOmega 插件，运行：
 
+```bash
+google-chrome-stable --proxy-server=socks5://127.0.0.1:1080
+```
 
+5. 访问 Chrome 插件商店，搜索并安装 SwitchyOmega。
+6. 打开 SwitchyOmega 设置界面，导入配置文件。
 
-##--------------------------------------------------------
-## 9. Bundler, jekyll and gems
-##--------------------------------------------------------
+## 配置Git
+1. 配置git代理。
+2. 记忆账号密码。
 
+## 安装 bundler 和 jekyll
+
+1. 安装 Ruby。
+```bash
 sudo pacman -S ruby ruby-rails jekyll
 gem install jekyll bundler jekyll-sitemap jekyll-mermaid
+```
 
-##--------------------------------------------------------
-## 10. Crack Matlab
-##--------------------------------------------------------
+## 安装 matlab
 
+```bash
 # Download Matlab2018R by BaiduNetDisk
 sudo mkdir /mnt/matlab
 sudo mount -o loop R2018b_glnxa64_dvd1.iso
@@ -252,10 +229,11 @@ sh /usr/local/MATLAB/R2018a/bin/matlab
 nano ~/.bash_profile
 # [Appended] MATLAB shortcut
 alias matlab="sh /usr/local/MATLAB/R2018a/bin/matlab"
+```
 
-##--------------------------------------------------------
-## 11. Mozart Oz
-##--------------------------------------------------------
+## 安装 Mozart Oz
+
+```bash
 # Mozart 1.4
 # Resolve dependencies
 sudo apt-get install flex bison tcl8.5 tcl8.5-developing lzip libx11-6:i386 libgmp10:i386 lib32stdc++6
@@ -278,58 +256,29 @@ sudo debian/rules binary
 sudo dpkg -i mozart-1.4.0.20080704-16189.i386.deb
 # Append codes below to Emacs config
 ```
-```elisp
+
+```lisp
 (or (getenv "OZHOME")
-    (setenv "OZHOME" 
+    (setenv "OZHOME"
             "/usr/local/oz"))   ; or wherever Mozart is installed
 (setenv "PATH" (concat (getenv "OZHOME") "/bin:" (getenv "PATH")))
- 
+
 (setq load-path (cons (concat (getenv "OZHOME") "/share/elisp")
                       load-path))
- 
-(setq auto-mode-alist 
+
+(setq auto-mode-alist
       (append '(("\\.oz\\'" . oz-mode)
                 ("\\.ozg\\'" . oz-gump-mode))
               auto-mode-alist))
- 
+
 (autoload 'run-oz "oz" "" t)
 (autoload 'oz-mode "oz" "" t)
 (autoload 'oz-gump-mode "oz" "" t)
 (autoload 'oz-new-buffer "oz" "" t)
 ```
+
+## 配置 Samba 文件共享
+
 ```bash
-##--------------------------------------------------------
-## 12.Samba
-##--------------------------------------------------------
 sudo nano /usr/local/samba/lib/smb.conf
-
-##--------------------------------------------------------
-## 13. Disable or Unable Input Devices
-##--------------------------------------------------------
-
-sudo pacman -S xorg-xinput
-# Browse input devices
-xinput list
-# Disable or enable devices
-xinput set-int-prop <dev-str> "Device Enalbed" 
-
-##--------------------------------------------------------
-## 14. Configure Emacs
-##--------------------------------------------------------
-
-git clone https://github.com/purcell/emacs.d ~/.emacs.d && emacs
-# An alternative can be: https://github.com/akiritsu/emacs-config
-
-##--------------------------------------------------------
-## 15. Coq, Agda and Proof General
-##--------------------------------------------------------
-TODO:
-
-##--------------------------------------------------------
-## 16. Install mathpix-snipping-tool, LaTeX converter
-##--------------------------------------------------------
-
-# mathpix doesn't work with i3-wm
-# AUR page: https://aur.archlinux.org/packages/mathpix-snipping-tool 
-yaourt -S mathpix-snipping-tool
 ```
