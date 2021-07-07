@@ -31,7 +31,7 @@ title: Manjaro系统安装及软件设置
 11. 确认安装信息，开始安装 Manjaro 系统。
 12. 安装完毕后，重启系统，拔出 u 盘。
 
-## 设置镜像
+## 设置 Manjaro 镜像
 
 1. 自动设置最近的镜像。
 
@@ -56,31 +56,11 @@ sudo pacman-key --refresh-keys
 sudo pacman -Syyu
 ```
 
-## 安装显卡驱动（可选）
-
-```bash
-sudo pacman -S virtualgl lib32-virtualgl lib32-primus primus
-sudo mhwd -f -i pci video-hybrid-intel-nvidia-bumblebee
-sudo systemctl enable bumblebeed
-sudo gpasswd -a $USER bumblebee
-reboot
-```
-
 ## 安装常用软件
 
 ```bash
-sudo pacman -S pacaur google-chrome cloc nmon tldr  emacs lyx texmacs coq sbcl ghc stack idris agda arander yaourt
+sudo pacman -S pacaur google-chrome cloc nmon tldr  emacs lyx texmacs coq sbcl ghc stack idris agda arander yaourt dolphin
 ```
-
-## 配置中文输入法
-
-1. 安装 ibus ibus-pinyin。
-
-```bash
-sudo pacman -S ibus ibus-libpinyin
-```
-
-2. 将 ibus-daemon 加入开机启动，并设置。
 
 ## 配置 i3-wm 窗口管理器
 
@@ -126,40 +106,7 @@ set $mod Mod4
 bindsym $mod+Escape kill
 # [Modified] start program launcher
 bindsym $mod+d exec rofi -show run -lines 10 -eh 1 -width 40 - padding 50  -bw 0 -font "Monospace Regulars 18"
-# [Modified] motion "jkl;" to "ijkl"
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+i focus up
-bindsym $mod+l focus right
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+i move up
-bindsym $mod+Shift+l move right
-# [Modified] Resize window (you can also use the mouse for that)
-bindsym $mod+r mode "resize"
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 5 px or 5 ppt
-        bindsym k resize grow height 5 px or 5 ppt
-        bindsym i resize shrink height 5 px or 5 ppt
-        bindsym l resize grow width 5 px or 5 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # exit resize mode: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-# [Disabled]
-## for_window [class="(?i)virtualbox"] floating enable border normal
 # [Appended] Ibus daemon.
 exec --no-startup-id export GTK_IM_MODULE=ibus
 exec --no-startup-id export XMODIFIERS=@im=ibus
@@ -171,6 +118,23 @@ exec --no-startup-id ibus-daemon --xim -d -r
 
 ```bash
 Xft.dpi: 183
+```
+
+## 配置中文输入法
+
+1. 安装 ibus ibus-pinyin。
+
+```bash
+sudo pacman -S ibus ibus-libpinyin
+```
+
+2. 将 ibus-daemon 加入开机启动，并设置参数。在~/.config/i3/config 文件末尾添加：
+
+```bash
+exec --no-startup-id export GTK_IM_MODULE=ibus
+exec --no-startup-id export XMODIFIERS=@im=ibus
+exec --no-startup-id export QT_IM_MODULE=ibus
+exec --no-startup-id ibus-daemon --xim -d -r
 ```
 
 ## 配置魔法渡河
@@ -196,20 +160,115 @@ google-chrome-stable --proxy-server=socks5://127.0.0.1:1080
 
 5. 访问 Chrome 插件商店，搜索并安装 SwitchyOmega。
 6. 打开 SwitchyOmega 设置界面，导入配置文件。
+7. 开机自动启动 trojan。在~/.config/i3/config 文件末尾添加：
 
-## 配置Git
-1. 配置git代理。
-2. 记忆账号密码。
-
-## 安装 bundler 和 jekyll
-
-1. 安装 Ruby。
 ```bash
-sudo pacman -S ruby ruby-rails jekyll
-gem install jekyll bundler jekyll-sitemap jekyll-mermaid
+exec --no-startup-id trojan
 ```
 
-## 安装 matlab
+## 配置 Git
+
+1. 配置 git 代理。
+
+```bash
+git config --global http.proxy socks5://127.0.0.1:1080
+git config --global https.proxy socks5://127.0.0.1:1080
+```
+
+2. 设置账号。
+
+```bash
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+```
+
+3. 记忆账号密码。
+
+```bash
+git config --global credential.helper store
+```
+
+## 配置 Visual Studio Code
+
+1. 安装插件：Awesome Emacs Keymap,Markdown All in One, Prettier。
+2. 安装思源字体、文泉驿字体。
+
+```bash
+sudo pacman -S noto-fonts-cjk adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts wqy-bitmapfont wqy-microhei wqy-microhei-lite wqy-zenhei
+```
+
+3. 安装 Fira Code 字体。
+
+```bash
+sudo pacman -S otf-fira-mono otf-fira-sans ttf-fira-code
+```
+
+4. 在 Preference 的 Editor:Font Family 选项中添加两种字体。
+5. 启用 Fira Code 的连体字符，将 settings.json 中的 editor.fontLigatures 的值设置为 true。
+
+## 配置 Alacritty
+
+1. 安装 Alacritty。
+
+```bash
+sudo pacman -S alacritty
+```
+
+2. 新建~/.config/Alacritty/alacritty.yml，添加以下内容。
+
+```bash
+# XTerm's default colors
+colors:
+  # Default colors
+  primary:
+    background: '0x000000'
+    foreground: '0xffffff'
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0xcd0000'
+    green:   '0x00cd00'
+    yellow:  '0xcdcd00'
+    blue:    '0x0000ee'
+    magenta: '0xcd00cd'
+    cyan:    '0x00cdcd'
+    white:   '0xe5e5e5'
+
+  # Bright colors
+  bright:
+    black:   '0x7f7f7f'
+    red:     '0xff0000'
+    green:   '0x00ff00'
+    yellow:  '0xffff00'
+    blue:    '0x5c5cff'
+    magenta: '0xff00ff'
+    cyan:    '0x00ffff'
+    white:   '0xffffff'
+```
+
+## 安装 Bundler 和 Jekyll
+
+1. 安装 Ruby。
+
+```bash
+sudo pacman -S ruby
+```
+
+2. 将 gem 添加至 PATH，在~/.bashrc 中添加：
+
+```bash
+PATH=$PATH:/home/$USER/.local/share/gem/ruby/3.0.0/bin
+```
+
+3. 安装 jekyll bundler 以及 jekyll 插件。
+
+```bash
+gem install bundler jekyll jekyll-sitemap jekyll-feed jekyll-seo-tag
+```
+
+## 安装 Matlab
+
+1. 下载安装并魔法 Matlab 2018。
 
 ```bash
 # Download Matlab2018R by BaiduNetDisk
@@ -232,6 +291,8 @@ alias matlab="sh /usr/local/MATLAB/R2018a/bin/matlab"
 ```
 
 ## 安装 Mozart Oz
+
+1. 安装 Oz。
 
 ```bash
 # Mozart 1.4
@@ -257,6 +318,8 @@ sudo dpkg -i mozart-1.4.0.20080704-16189.i386.deb
 # Append codes below to Emacs config
 ```
 
+2. 配置 Emacs。
+
 ```lisp
 (or (getenv "OZHOME")
     (setenv "OZHOME"
@@ -281,4 +344,14 @@ sudo dpkg -i mozart-1.4.0.20080704-16189.i386.deb
 
 ```bash
 sudo nano /usr/local/samba/lib/smb.conf
+```
+
+## 安装显卡驱动（可选）
+
+```bash
+sudo pacman -S virtualgl lib32-virtualgl lib32-primus primus
+sudo mhwd -f -i pci video-hybrid-intel-nvidia-bumblebee
+sudo systemctl enable bumblebeed
+sudo gpasswd -a $USER bumblebee
+reboot
 ```
