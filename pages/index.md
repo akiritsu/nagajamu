@@ -9,22 +9,19 @@ footer: true
 permalink: /
 ---
 
-# 魔怔人的个人笔记
+# 非公开的个人笔记
 
 ## 正在进行
 
-1. 数学分析
-2. 高等代数
-3. 阅读拉康、齐泽克著作
-4. 西方哲学史
+[数学分析]({{site.url}}/MATH/2-数学分析/)
+
+[日本历史]({{site.url}}/HIST/2-日本历史大事年表/)
+
+[西方哲学史]({{site.url}}/PHIL/3-西方哲学笔记)
 
 ## 快速访问
 
-[数学分析笔记]({{site.url}}/mathematics/2-数学分析/)
-
-[逻辑谬误和认知偏差集合]({{site.url}}/posts/cognitive-bias-and-logical-fallacy/)
-
-[关于文学理论的学习笔记]({{site.url}}/literature/literary-theory-notes/)
+[逻辑谬误和认知偏差]({{site.url}}/writings/逻辑谬误和认知偏差/)
 
 [阅读资料]({{site.url}}/pages/readings/)
 

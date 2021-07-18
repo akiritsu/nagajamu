@@ -1,7 +1,7 @@
 # 1. Site Settings
 title               : Nagajamu
 owner               : "DeerRIDER"
-# url                 : "http://127.0.0.1:4000"
+#url                 : "http://127.0.0.1:4000"
 url                : "https://nagajamu.com"
 ## baseurl            : ""
 permalink           : /:title/
@@ -13,84 +13,58 @@ bgtext              : "αβγδεζηθικλμνξοπρστυφχψω∷∫∮
 # 2. Collections
 collection_order    : 
   [
-    "posts",
+    "MATH",
+    "PHIL",
+    "HIST",
+    "LIT",
+    "CS",
+    "PROG",
     "cheatsheet",
-    "mathematics",
-    "philosophy",
-    "literature",
-    "theoretical_cs",
-    "pl_theory",
-    "pl_practice",
-    "formal_method",
-    "modern_ai",
-    "operating_system",
-    "theorem_proving",
-    "type_theory",
+    "writings",
   ]
 collections:
-  cheatsheet:
+  readings:
+    output          : false
+    permalink       : /:collection/:title/
+    sort_by         : name
+    alias           : "阅读材料"
+  drafts:
+    output          : false
+    permalink       : /:collection/:title/
+    alias           : "草稿箱"
+  MATH:
+    output          : true
+    permalink       : /:collection/:title/
+    alias           : "基础数学"
+  PHIL:
+    output          : true
+    permalink       : /:collection/:title/
+    alias           : "西方哲学"
+  HIST:
     output          : true
     permalink       : /:collection/:title/
     sort_by         : name
-    alias           : "速查手册"
-  drafts:
-    output          : true
-    permalink       : /:collection/:title/
-    alias           : "草稿箱"
-  formal_method:
-    output          : true
-    permalink       : /:collection/:title/
-    alias           : "形式化方法"
-  literature:
+    alias           : "世界历史"
+  LIT:
     output          : true
     permalink       : /:collection/:title/
     alias           : "文学理论"
-  mathematics:
+  cheatsheet:
     output          : true
     permalink       : /:collection/:title/
-    sort_by         : name
-    alias           : "数学"
-  modern_ai:
+    alias           : "速查图表"
+  CS:
     output          : true
     permalink       : /:collection/:title/
-    alias           : "人工智能"
-  operating_system:
-    output          : true
-    permalink       : /:collection/:title/
-    alias           : "操作系统"
-  philosophy:
-    output          : true
-    permalink       : /:collection/:title/
-    alias           : "哲学历史"
-  pl_practice:
+    alias           : "计科理论"
+  PROG:
     output          : true
     permalink       : /:collection/:title/
     alias           : "编程练习"
-  pl_theory:
+  writings:
     output          : true
     permalink       : /:collection/:title/
-    alias           : "计算理论"
-  posts:
-    output          : false
-    permalink       : /:collection/:title/
-    alias           : "随笔散文"
-  readings:
-    output          : true
-    permalink       : /:collection/:title/
-    alias           : "阅读资料"
-  theorem_proving:
-    output          : true
-    permalink       : /:collection/:title/
-    alias           : "自动化证明"
-  theoretical_cs:
-    output          : true
-    permalink       : /:collection/:title/
-    alias           : "计算机科学"
-  type_theory:
-    output          : true
-    permalink       : /:collection/:title/
-    alias           : "类型论"
-
+    alias           : "文章随笔"
 
 # 3. Comment settings（disqus.com）
 disqus_username     : akiritsu
