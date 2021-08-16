@@ -24,7 +24,7 @@ collection_order    :
   ]
 collections:
   readings:
-    output          : false
+    output          : true
     permalink       : /:collection/:title/
     sort_by         : name
     alias           : "阅读材料"

@@ -42,12 +42,18 @@
     color: rgba($color-warning, 0.9);
     word-break: break-all;
   }
+  .no-border {
+    td {
+      border: 1px solid rgba($color-postbg, 0);
+    }
+  }
 }
 // used to toggle absence of elements
 .show {
   visibility: visible !important;
   @include fade_in;
 }
+
 // screen auto-adjustment
 @media screen and (max-width: 800px) {
   .page .container {
