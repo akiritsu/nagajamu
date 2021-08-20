@@ -2,7 +2,7 @@
 title               : Nagajamu
 owner               : "DeerRIDER"
 #url                 : "http://127.0.0.1:4000"
-curl                : "https://nagajamu.com"
+url                : "https://nagajamu.com"
 ## baseurl            : ""
 permalink           : /:title/
 description         : "Personal notes of DeerRIDER"
