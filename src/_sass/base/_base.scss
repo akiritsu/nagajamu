@@ -42,8 +42,8 @@ p {
   display: block;
 }
 strong {
-  font-weight: 700;
-  text-shadow: 0.5px 0.5px 0 rgb(92, 94, 79);
+  color: mix($color-primary, rgba(#fff, 1));
+  text-shadow: 0.65px 0.65px 0 $color-primary;
 }
 hr {
   border: 0;

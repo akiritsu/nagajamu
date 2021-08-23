@@ -13,19 +13,23 @@ permalink: /
 
 ## 正在进行
 
-[数学分析]({{site.url}}/MATH/2-数学分析/)
+[西方哲学史]({{site.url}}/PHIL/3-西方哲学史笔记)
 
 [日本历史]({{site.url}}/HIST/2-日本历史年表/)
 
-[西方哲学史]({{site.url}}/PHIL/3-西方哲学笔记)
+[数学分析]({{site.url}}/MATH/2-数学分析/)
 
 ## 快速访问
 
 [逻辑谬误和认知偏差]({{site.url}}/writings/逻辑谬误和认知偏差/)
 
+[高效笔记：Typora + Markdown]({{site.url}}/writings/高效笔记-Typora+Markdown/)
+
+[工作环境：Manjaro + i3 WM]({{site.url}}/CS/4-manjaro-setup/)
+
 [阅读资料]({{site.url}}/pages/readings/)
 
-[草稿]({{site.url}}/pages/drafts/)
+[草稿预览]({{site.url}}/pages/drafts/)
 
 <br>
 
