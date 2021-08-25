@@ -1,8 +1,5 @@
 ---
-title: "Programming Philosophy and Tricks"
-categories: PL
-tags: Tricks Programming
-date: 2014-1-12
+title: 编程技巧的学习记录
 ---
 
 

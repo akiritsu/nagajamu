@@ -1,5 +1,6 @@
 ---
 title: 草稿箱
+permalink: /DRAFT/
 ---
 
 ## 免责声明
@@ -11,7 +12,7 @@ title: 草稿箱
 本网站所有资源来源于网络，并且无法鉴别所上传图片或文字的知识版权，如果侵犯，请及时通知我们，本网站将在第一时间及时删除。
 
 ## Drafts
-{% for post in site.drafts %}
+{% for post in site.DRAFT %}
 <p>
     <a class="a_title" style="text-decoration: none" href="{{site.url}}{{site.baseurl}}{{post.url}}">{{post.title}}</a>
 </p>

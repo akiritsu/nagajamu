@@ -1,10 +1,6 @@
 ---
-title: "VSCode Tutorial, Quick Reference and Extensions"
-categories: OTH
-tags: VSCode Tricks
+title: "极速 Visual Studio Code 教程"
 ---
-
-
 
 ## 使用技巧
 

@@ -19,16 +19,15 @@ collection_order    :
     "LIT",
     "CS",
     "PROG",
-    "cheatsheet",
-    "writings",
+    "WRTG",
   ]
 collections:
-  readings:
+  RDGS:
     output          : true
     permalink       : /:collection/:title/
     sort_by         : name
     alias           : "阅读材料"
-  drafts:
+  DRAFT:
     output          : false
     permalink       : /:collection/:title/
     alias           : "草稿箱"
@@ -49,7 +48,7 @@ collections:
     output          : true
     permalink       : /:collection/:title/
     alias           : "文学理论"
-  cheatsheet:
+  CHEAT:
     output          : true
     permalink       : /:collection/:title/
     alias           : "速查图表"
@@ -61,7 +60,7 @@ collections:
     output          : true
     permalink       : /:collection/:title/
     alias           : "编程练习"
-  writings:
+  WRTG:
     output          : true
     permalink       : /:collection/:title/
     alias           : "文章随笔"

@@ -1,5 +1,5 @@
 ---
-title: "Emacs Tricks and Reference Card"
+title: Emacs 技巧和速查图表
 categories: OTH
 tags: Emacs
 date: 2015-3-15

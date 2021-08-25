@@ -1,8 +1,5 @@
 ---
 title: Basics of Computer Networking
-category: OTH
-tags: Networking
-date: 2012-2-6
 ---
 
 

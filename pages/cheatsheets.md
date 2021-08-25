@@ -1,7 +1,13 @@
 ---
-title: 阅读资料
-permalink: /RDGS/
+title: 备忘卡片
+permalink: CHEAT
 ---
+
+{% for post in site.CHEAT %}
+<p>
+    <a class="a_title" style="text-decoration: none" href="{{site.url}}{{site.baseurl}}{{post.url}}">{{post.title}}</a>
+</p>
+{% endfor %}
 
 ## 免责声明
 
@@ -10,11 +16,3 @@ permalink: /RDGS/
 因任何形式通过本网站对原作者进行侵权的行为，所有责任由传播者承担，本网站及其持有者不承担任何责任。
 <br>
 本网站所有资源来源于网络，并且无法鉴别所上传图片或文字的知识版权，如果侵犯，请及时通知我们，本网站将在第一时间及时删除。
-
-## Readings
-
-{% for post in site.RDGS %}
-<p>
-    <a class="a_title" style="text-decoration: none" href="{{site.url}}{{site.baseurl}}{{post.url}}">{{post.title}} - {{post.author}}</a>
-</p>
-{% endfor %}

@@ -1,25 +1,22 @@
 ---
-title: Former Learning Notes of Java
-date: 2014-6-14
-category: PL
-tags: Java
+title: 早期Java笔记
 ---
 
+<!-- TOC -->
 
+- [Other Notes](#other-notes)
+  - [@Override](#override)
+  - [Interface](#interface)
+  - [java 泛型详解](#java-泛型详解)
+  - [迭代器（Iterator）](#迭代器iterator)
+  - [Class对象的获取](#class对象的获取)
+  - [GetInstance()](#getinstance)
+  - [Reflection](#reflection)
+  - [enum](#enum)
+  - [transient and serialization](#transient-and-serialization)
+  - [Making .jar files](#making-jar-files)
 
-## Topics
-
-14.3.30-JVM的体系结构
-
-14.5.3-java集合類
-
-14.5.4-JAVA 线程笔记
-
-14.5.14-Java的注解（如@target）
-
-14.6.14-JavaDoc注释风格、doxygen注释风格
-
-14.6.14-Java style of Google
+<!-- /TOC -->
 
 ## Other Notes
 

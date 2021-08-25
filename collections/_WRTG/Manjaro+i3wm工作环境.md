@@ -1,5 +1,5 @@
 ---
-title: Manjaro系统安装及软件设置
+title: 使用Manjaro系统和i3窗口管理器
 ---
 
 ## 下载 Manjaro 并烧录至 U 盘

@@ -169,6 +169,15 @@ _斜体字_ **粗体字** <u>下划线</u> `关键字`
 
 > **本地图片**最好使用**相对地址**，方便图片随 Markdown 文档转移位置。
 
+如果需要控制图片的大小和位置，则需要借助HTML。div标签的aling属性可以控制位置，img标签的width和height控制大小。
+
+例如：
+```html
+<!-- 插入居中，且长宽均为128的图片 -->
+<div align="center"><img width="128" height="128" src="URL-TO-PIC"/></div>
+```
+
+
 #### 4.5 插入分隔线
 
 单独出现为一行的三个星号“\*\*\*”，即是横线。
@@ -282,9 +291,10 @@ def quickSort(arr,low,high):
 
 除了上述基础功能，Markdown 还支持：
 
-1. 生成清晰的表格
-2. 自动生成目录
-3. 嵌入 HTML5 标记语言
+1. Markdown语法允许生成清晰的表格，详见：[菜鸟教程](https://www.runoob.com/markdown/md-table.html)。
+2. VS Code、Typora等支持生成**自动更新的目录**。
+3. 嵌入 HTML5 标记语言。
+4. 使用Emoji :smile:，详见：[webfx.com](https://www.webfx.com/tools/emoji-cheat-sheet/)
 
 ## Markdown 笔记的哲学
 
