@@ -14,6 +14,6 @@ permalink: /DRAFT/
 ## Drafts
 {% for post in site.DRAFT %}
 <p>
-    <a class="a_title" style="text-decoration: none" href="{{site.url}}{{site.baseurl}}{{post.url}}">{{post.title}}</a>
+    <a class="a_title" style="text-decoration: none" href="{{site.url}}{{post.url}}">{{post.title}}</a>
 </p>
 {% endfor %} 

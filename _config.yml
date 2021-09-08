@@ -28,7 +28,7 @@ collections:
     sort_by         : name
     alias           : "阅读材料"
   DRAFT:
-    output          : false
+    output          : true
     permalink       : /:collection/:title/
     alias           : "草稿箱"
   MATH:
