@@ -89,10 +89,13 @@ img {
 ol {
   padding: 0 0 0 1.3em;
   margin: 6px 12px 6px 0px;
+  display: block;
+  list-style-type: decimal;
 }
 ul {
   padding: 0 0 0 1.2em;
   margin: 6px 12px 6px 0px;
+  list-style: circle;
 }
 blockquote {
   margin: 0.55em 2em 0.8em 0em;
@@ -112,6 +115,7 @@ pre {
   border: $thin-border;
   margin: 0.6em 0.1em;
 }
+
 // table style
 table {
   width: 100%;
