@@ -346,6 +346,50 @@ sudo dpkg -i mozart-1.4.0.20080704-16189.i386.deb
 sudo nano /usr/local/samba/lib/smb.conf
 ```
 
+## 为 ibus-libpinyin 增加希腊字母输入功能
+
+1. 打开 ibus-setup，在 Input Method 中选择 Intelligent Pinyin 的 Preferences。
+2. 在弹出的窗口中，选择 User Data 选项卡，编辑 User Lua Script。在打开的文件中添加以下内容：
+
+```lua
+_MAPPING_TABLE = [[
+a A,α,Alpha
+b B,β,Beta
+g Γ,γ,Gamma
+d Δ,δ,Delta
+e Ε,ε,Epsilon,Η,η,Eta
+z Ζ,ζ,Zeta
+t Θ,θ,Theta,Τ,τ,Tau
+i Ι,ι,Iota
+k Κ,κ,Kappa
+l Λ,λ,Lambda
+m Μ,μ,Mu
+n Ν,ν,Nu
+x Ξ,ξ,Xi
+o Ο,ο,Omicron,Ω,ω,Omega
+p Π,π,Pi,Φ,φ,Phi,Ψ,ψ,Psi
+r Ρ,ρ,Rho
+s Σ,σ,Sigma
+u Υ,υ,Upsilon
+c Χ,χ,Chi
+]]
+
+_MAPPING = ime.parse_mapping(_MAPPING_TABLE, "\n", " ", ",")
+
+function GreekAlphabet(input)
+if _MAPPING[input] then
+return _MAPPING[input]
+else
+error("Invalid argument")
+end
+end
+
+ime.register_command("ga", "GreekAlphabet", "希腊字母")
+```
+
+3. 输入 ibus restart 重启 ibus。
+4. 使用ibus时，依次按，“i”，“ ”，“g”，“a”开启希腊字母输入模式，并根据上表选择输入的希腊字母。
+
 ## 安装显卡驱动（可选）
 
 ```bash

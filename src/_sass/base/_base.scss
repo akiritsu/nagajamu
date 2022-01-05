@@ -82,9 +82,10 @@ a:hover {
   cursor: pointer;
 }
 img {
-  max-width: 100%;
+  max-width: 95%;
   margin: 0 auto; // image center align
   display: block; // image center align
+  background-color: whitesmoke;
 }
 ol {
   padding: 0 0 0 1.3em;
