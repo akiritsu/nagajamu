@@ -5,10 +5,26 @@ title: eopl
 <!-- TOC -->
 
 - [Chapter 1 Inductive Sets of Data](#chapter-1-inductive-sets-of-data)
+- [Chapter 2 Data Abstraction](#chapter-2-data-abstraction)
+- [Chapter 3 Expressions](#chapter-3-expressions)
+- [Chapter 4 State](#chapter-4-state)
+- [Chapter 5 Continuation-Passing Interpreters](#chapter-5-continuation-passing-interpreters)
+- [Chapter 6 Continuation-Passing Style](#chapter-6-continuation-passing-style)
+- [Chapter 7 Types](#chapter-7-types)
+- [Chapter 8 Modules](#chapter-8-modules)
+- [Chapter 9 Objects and Classes](#chapter-9-objects-and-classes)
+- [A For Futher Reading](#a-for-futher-reading)
+- [The SLLGEN Parsing System](#the-sllgen-parsing-system)
 
 <!-- /TOC -->
 
 ## Chapter 1 Inductive Sets of Data
+
+Main content:
+1. Definition and rules.
+2. Recur on data sets.
+3. Auxiliary procedures and Context argument.
+4. BNF.
 
 ### 1.1 Recursively Specified Data
 
@@ -173,7 +189,75 @@ Determines whether or not *var* occurs free in *exp*.
       (subst new old sexp))))
 ```
 
+**7. Follow the Grammar!**
+
+When defining a procedure that operates on inductively defined data, the structure of the program should be patterned after the structure of the data.
+
 ### 1.3 Auxiliary Procedures and Context Arguments
+
+**1. GENERALIZE and number-element**
+
+```scheme
+;; number-elements-from : Listof(SchemeVal) × Int → Listof(List(Int, SchemeVal))
+;; usage: (number-elements-from ’(v0 v1 v2 ...) n)
+;; = ((n v0 ) (n + 1 v1 ) (n + 2 v2 ) ...)
+(define number-elements-from
+  (lambda (lst n)
+    (if (null? lst) ’()
+      (cons
+        (list n (car lst))
+        (number-elements-from (cdr lst) (+ n 1))))))
+
+;; number-elements : List → Listof(List(Int, SchemeVal))
+(define number-elements
+  (lambda (lst)
+    (number-elements-from lst 0)))
+```
+
+**Context argument** (or **inherited attribute**): the second argument "n" of the procedure "number-element-from".
+
+**2. No Mysterious Auxiliaries!**
+
+When defining an auxiliary procedure, always specify what it does on **all** arguments, not just the initial values.
+
+**3. list-sum**
+
+Does not work on vectors.
+
+```scheme
+list-sum : Listof(Int) → Int
+(define list-sum
+  (lambda (loi)
+    (if (null? loi)
+      0
+      (+ (car loi)
+         (list-sum (cdr loi))))))
+```
+
+**4. vector-sum**
+
+```scheme
+;; partial-vector-sum : Vectorof(Int) × Int → Int
+;; usage: if 0 ≤ n < length(v), then
+;; (partial-vector-sum v n) = ∑ v_i (i: from 0 to n)
+(define partial-vector-sum
+  (lambda (v n)
+    (if (zero? n)
+      (vector-ref v 0)
+      (+ (vector-ref v n)
+         (partial-vector-sum v (- n 1))))))
+
+;; vector-sum : Vectorof(Int) → Int
+;; usage: (vector-sum v) = ∑ vi (i: from 0 to length(v)−1)
+(define vector-sum
+  (lambda (v)
+    (let ((n (vector-length v)))
+      (if (zero? n)
+        0
+        (partial-vector-sum v (- n 1))))))
+```
+
+> Vectors are heterogenous [ˌhetə'rɒdʒənəs] structures whose elements are indexed by exact non-negative integers. A vector typically occupies *less space* than a list of the same length, and the average time required to *access a randomly chosen element* is typically *less* for the vector than for the list.  
 
 **Appendix 1**: eq?, eqv?, equal? and = in scheme
 
@@ -193,6 +277,8 @@ Determines whether or not *var* occurs free in *exp*.
 
 **Exercise 1.9** [**] Define *remove*, which is like *remove-first*, except that it removes all occurrences of a given symbol from a list of symbols, not just the first.
 
+Answer:
+
 ```scheme
 ;; remove : Sym × Listof(Sym) → Listof(Sym)
 (define remove
@@ -204,11 +290,13 @@ Determines whether or not *var* occurs free in *exp*.
             (cons (car los) (remove s (cdr los)))))))
 ```
 
-**Exercise 1.12** Eliminate the one call to subst-in-s-exp in subst by replacing it
-;; by its definition and simplifying the resulting procedure. The result will be a version
-;; of subst that does not need subst-in-s-exp. This technique is called inlining, and
-;; is used by optimizing compilers.
-;; You can't use this function like: (subst 1 3 (1 2 3)) or (subst '1 '3 (1 2 3))
+**Exercise 1.12** Eliminate the one call to subst-in-s-exp in subst by replacing it by its definition and simplifying the resulting procedure. The result will be a version of subst that does not need subst-in-s-exp. This technique is called **inlining**, and is used by optimizing compilers.
+
+You can't use this function like: (subst 1 3 (1 2 3)) or (subst '1 '3 (1 2 3)).
+
+Answer:
+
+```scheme
 (define subst
   (lambda (new old slist)
     (if (null? slist)
@@ -240,25 +328,37 @@ Determines whether or not *var* occurs free in *exp*.
     (if (symbol? sexp)
         (if (eqv? sexp old) new sexp)
         (subst-decomp new old sexp))))
-;; Exercise 1.15 (duple n x) returns a list containing n copies of x.
-;; > (duple 2 3)
-;; (3 3)
-;; > (duple 4 '(ha ha))
-;; ((ha ha) (ha ha) (ha ha) (ha ha))
-;; > (duple 0 ’(blah))
-;; ()
-;;
+
+```
+
+
+**Exercise 1.15** (duple n x) returns a list containing n copies of x.
+
+Examples:
+```scheme
+> (duple 2 3)
+(3 3)
+> (duple 4 '(ha ha))
+((ha ha) (ha ha) (ha ha) (ha ha))
+> (duple 0 ’(blah))
+()
+```
+
+Answer:
+```
 (define duple
   (lambda (times object)
     (if (> times 0)
         '()
         (cons object
               (duple (- times 1) object)))))
+```
 
-;; Exercise 1.16 (invert lst), where lst is a list of 2-lists (lists of length two),
+```
+Exercise 1.16 (invert lst), where lst is a list of 2-lists (lists of length two),
 ;; returns a list with each 2-list reversed.
-;; > (invert ’((a 1) (a 2) (1 b) (2 b)))
-;; ((1 a) (2 a) (b 1) (b 2))
+> (invert ’((a 1) (a 2) (1 b) (2 b)))
+((1 a) (2 a) (b 1) (b 2))
 ;;
 (define invert
   (lambda (lst)
@@ -270,14 +370,14 @@ Determines whether or not *var* occurs free in *exp*.
             '())
         '())))
 
-;; Exercise 1.17 (down lst) wraps parentheses around each top-level element of
-;; lst.
-;; > (down ’(1 2 3))
-;; ((1) (2) (3))
-;; > (down ’((a) (fine) (idea)))
-;; (((a)) ((fine)) ((idea)))
-;; > (down ’(a (more (complicated)) object))
-;; ((a) ((more (complicated))) (object))
+Exercise 1.17 (down lst) wraps parentheses around each top-level element of
+lst.
+> (down ’(1 2 3))
+((1) (2) (3))
+> (down ’((a) (fine) (idea)))
+(((a)) ((fine)) ((idea)))
+> (down ’(a (more (complicated)) object))
+((a) ((more (complicated))) (object))
 ;;
 (define down
   (lambda (lst)
@@ -286,14 +386,14 @@ Determines whether or not *var* occurs free in *exp*.
               (down (cdr lst)))
         '())))
 
-;; Exercise 1.18 (swapper s1 s2 slist) returns a list the same as slist, but
-;; with all occurrences of s1 replaced by s2 and all occurrences of s2 replaced by s1.
-;; > (swapper ’a ’d ’(a b c d))
-;; (d b c a)
-;; > (swapper ’a ’d ’(a d () c d))
-;; (d a () c a)
-;; > (swapper ’x ’y ’((x) y (z (x))))
-;; ((y) x (z (y)))
+Exercise 1.18 (swapper s1 s2 slist) returns a list the same as slist, but
+with all occurrences of s1 replaced by s2 and all occurrences of s2 replaced by s1.
+> (swapper ’a ’d ’(a b c d))
+(d b c a)
+> (swapper ’a ’d ’(a d () c d))
+(d a () c a)
+> (swapper ’x ’y ’((x) y (z (x))))
+((y) x (z (y)))
 ;;
 (define (swapper old new lst)
   (if (null? lst)
@@ -304,12 +404,12 @@ Determines whether or not *var* occurs free in *exp*.
               old)
           (cons (swapper old new (car list))
                 (swapper old new (cdr list))))))
-;; Exercise 1.19 (list-set lst n x) returns a list like lst, except that the n-th
-;; element, using zero-based indexing, is x.
-;; > (list-set ’(a b c d) 2 ’(1 2))
-;; (a b (1 2) d)
-;; > (list-ref (list-set ’(a b c d) 3 ’(1 5 10)) 3)
-;; (1 5 10)
+Exercise 1.19 (list-set lst n x) returns a list like lst, except that the n-th
+element, using zero-based indexing, is x.
+> (list-set ’(a b c d) 2 ’(1 2))
+(a b (1 2) d)
+> (list-ref (list-set ’(a b c d) 3 ’(1 5 10)) 3)
+(1 5 10)
 ;;
 (define list-set
   (lambda (lst num object)
@@ -319,166 +419,170 @@ Determines whether or not *var* occurs free in *exp*.
             (cons object (cdr lst))
             (cons (car lst)
                   (list-set (cdr lst) (- num 1) object))))))
-;; Exercise 1.20 (count-occurrences s slist) returns the number of occur-
-;; rences of s in slist.
-;; > (count-occurrences ’x ’((f x) y (((x z) x))))
-;; 3
-;; > (count-occurrences ’x ’((f x) y (((x z) () x))))
-;; 3
-;; > (count-occurrences ’w ’((f x) y (((x z) x))))
-;; 0
+Exercise 1.20 (count-occurrences s slist) returns the number of occur-
+rences of s in slist.
+> (count-occurrences ’x ’((f x) y (((x z) x))))
+3
+> (count-occurrences ’x ’((f x) y (((x z) () x))))
+3
+> (count-occurrences ’w ’((f x) y (((x z) x))))
+0
 ;;
-;; Exercise 1.21 (product sos1 sos2), where sos1 and sos2 are each a list
-;; of symbols without repetitions, returns a list of 2-lists that represents the Cartesian
-;; product of sos1 and sos2. The 2-lists may appear in any order.
-;; > (product ’(a b c) ’(x y))
-;; ((a x) (a y) (b x) (b y) (c x) (c y))
+Exercise 1.21 (product sos1 sos2), where sos1 and sos2 are each a list
+of symbols without repetitions, returns a list of 2-lists that represents the Cartesian
+product of sos1 and sos2. The 2-lists may appear in any order.
+> (product ’(a b c) ’(x y))
+((a x) (a y) (b x) (b y) (c x) (c y))
 ;;
-;; Exercise 1.22 (filter-in pred lst) returns the list of those elements in
-;; lst that satisfy the predicate pred.
-;; > (filter-in number? ’(a 2 (1 3) b 7))
-;; (2 7)
-;; > (filter-in symbol? ’(a (b c) 17 foo))
-;; (a foo)
+Exercise 1.22 (filter-in pred lst) returns the list of those elements in
+lst that satisfy the predicate pred.
+> (filter-in number? ’(a 2 (1 3) b 7))
+(2 7)
+> (filter-in symbol? ’(a (b c) 17 foo))
+(a foo)
 ;;
-;; Exercise 1.23 (list-index pred lst) returns the 0-based position of the
-;; first element of lst that satisfies the predicate pred. If no element of lst satisfies
-;; the predicate, then list-index returns #f.
-;; > (list-index number? ’(a 2 (1 3) b 7))
-;; 1
-;; > (list-index symbol? ’(a (b c) 17 foo))
-;; 0
-;; > (list-index symbol? ’(1 2 (a b) 3))
-;; #f
+Exercise 1.23 (list-index pred lst) returns the 0-based position of the
+first element of lst that satisfies the predicate pred. If no element of lst satisfies
+the predicate, then list-index returns #f.
+> (list-index number? ’(a 2 (1 3) b 7))
+1
+> (list-index symbol? ’(a (b c) 17 foo))
+0
+> (list-index symbol? ’(1 2 (a b) 3))
+#f
 ;;
-;; Exercise 1.24 (every? pred lst) returns #f if any element of lst fails to
-;; satisfy pred, and returns #t otherwise.
-;; > (every? number? ’(a b c 3 e))
-;; #f
-;; > (every? number? ’(1 2 3 5 4))
-;; #t
+Exercise 1.24 (every? pred lst) returns #f if any element of lst fails to
+satisfy pred, and returns #t otherwise.
+> (every? number? ’(a b c 3 e))
+#f
+> (every? number? ’(1 2 3 5 4))
+#t
 ;;
-;; Exercise 1.25 (exists? pred lst) returns #t if any element of lst satisfies
-;; pred, and returns #f otherwise.
-;; > (exists? number? ’(a b c 3 e))
-;; #t
-;; > (exists? number? ’(a b c d e))
-;; #f
+Exercise 1.25 (exists? pred lst) returns #t if any element of lst satisfies
+pred, and returns #f otherwise.
+> (exists? number? ’(a b c 3 e))
+#t
+> (exists? number? ’(a b c d e))
+#f
 ;;
-;; Exercise 1.26 (up lst) removes a pair of parentheses from each top-level ele-
-;; ment of lst. If a top-level element is not a list, it is included in the result, as is.
-;; The value of (up (down lst)) is equivalent to lst, but (down (up lst)) is
-;; not necessarily lst. (See exercise 1.17.)
-;; > (up ’((1 2) (3 4)))
-;; (1 2 3 4)
-;; > (up ’((x (y)) z))
-;; (x (y) z)
+Exercise 1.26 (up lst) removes a pair of parentheses from each top-level ele-
+ment of lst. If a top-level element is not a list, it is included in the result, as is.
+The value of (up (down lst)) is equivalent to lst, but (down (up lst)) is
+not necessarily lst. (See exercise 1.17.)
+> (up ’((1 2) (3 4)))
+(1 2 3 4)
+> (up ’((x (y)) z))
+(x (y) z)
 ;;
-;; Exercise 1.27 (flatten slist) returns a list of the symbols contained in
-;; slist in the order in which they occur when slist is printed. Intuitively, flatten
-;; removes all the inner parentheses from its argument.
-;; > (flatten ’(a b c))
-;; (a b c)
-;; > (flatten ’((a) () (b ()) () (c)))
-;; (a b c)
-;; > (flatten ’((a b) c (((d)) e)))
-;; (a b c d e)
-;; > (flatten ’(a b (() (c))))
-;; (a b c)
+Exercise 1.27 (flatten slist) returns a list of the symbols contained in
+slist in the order in which they occur when slist is printed. Intuitively, flatten
+removes all the inner parentheses from its argument.
+> (flatten ’(a b c))
+(a b c)
+> (flatten ’((a) () (b ()) () (c)))
+(a b c)
+> (flatten ’((a b) c (((d)) e)))
+(a b c d e)
+> (flatten ’(a b (() (c))))
+(a b c)
 ;;
-;; Exercise 1.28 (merge loi1 loi2), where loi1 and loi2 are lists of integers
-;; that are sorted in ascending order, returns a sorted list of all the integers in loi1 and
-;; loi2.
-;; > (merge
-;; (1 1 2 4
-;; > (merge
-;; (3 35 62
-;; ’(1 4) ’(1 2 8))
-;; 8)
-;; ’(35 62 81 90 91) ’(3 83 85 90))
-;; 81 83 85 90 90 91)
+Exercise 1.28 (merge loi1 loi2), where loi1 and loi2 are lists of integers
+that are sorted in ascending order, returns a sorted list of all the integers in loi1 and
+loi2.
+> (merge
+(1 1 2 4
+> (merge
+(3 35 62
+’(1 4) ’(1 2 8))
+8)
+’(35 62 81 90 91) ’(3 83 85 90))
+81 83 85 90 90 91)
 ;;
-;; Exercise 1.29 (sort loi) returns a list of the elements of loi in ascending
-;; > (sort ’(8 2 5 2 3))
-;; (2 2 3 5 8)
-;; Exercise 1.30 (sort/predicate pred loi) returns a list of elements sorted
-;; by the predicate.
-;; > (sort/predicate < ’(8 2 5 2 3))
-;; (2 2 3 5 8)
-;; > (sort/predicate > ’(8 2 5 2 3))
-;; (8 5 3 2 2)
+Exercise 1.29 (sort loi) returns a list of the elements of loi in ascending
+> (sort ’(8 2 5 2 3))
+(2 2 3 5 8)
+Exercise 1.30 (sort/predicate pred loi) returns a list of elements sorted
+by the predicate.
+> (sort/predicate < ’(8 2 5 2 3))
+(2 2 3 5 8)
+> (sort/predicate > ’(8 2 5 2 3))
+(8 5 3 2 2)
 ;;
-;; Exercise 1.31 Write the following procedures for calculating on a bintree (defi-
-;; nition 1.1.7): leaf and interior-node, which build bintrees, leaf?, which tests
-;; whether a bintree is a leaf, and lson, rson, and contents-of, which extract the
-;; components of a node. contents-of should work on both leaves and interior
-;; nodes.
+Exercise 1.31 Write the following procedures for calculating on a bintree (defi-
+nition 1.1.7): leaf and interior-node, which build bintrees, leaf?, which tests
+whether a bintree is a leaf, and lson, rson, and contents-of, which extract the
+components of a node. contents-of should work on both leaves and interior
+nodes.
 ;;
-;; Exercise 1.32 Write a procedure double-tree that takes a bintree, as represented
-;; in definition 1.1.7, and produces another bintree like the original, but with all the
-;; integers in the leaves doubled.
+Exercise 1.32 Write a procedure double-tree that takes a bintree, as represented
+in definition 1.1.7, and produces another bintree like the original, but with all the
+integers in the leaves doubled.
 ;;
-;; Exercise 1.33 Write a procedure mark-leaves-with-red-depth that takes a
-;; bintree (definition 1.1.7), and produces a bintree of the same shape as the original,
-;; except that in the new tree, each leaf contains the integer of nodes between it and the
-;; root that contain the symbol red. For example, the expression
-;; (mark-leaves-with-red-depth
-;; (interior-node ’red
-;; (interior-node ’bar
-;; (leaf 26)
-;; (leaf 12))
-;; (interior-node ’red
-;; (leaf 11)
-;; (interior-node ’quux
-;; (leaf 117)
-;; (leaf 14))
-;; which is written using the procedures defined in exercise 1.31, should return the bin-
-;; tree
-;; (red
-;; (bar 1 1)
-;; (red 2 (quux 2 2)))
+Exercise 1.33 Write a procedure mark-leaves-with-red-depth that takes a
+bintree (definition 1.1.7), and produces a bintree of the same shape as the original,
+except that in the new tree, each leaf contains the integer of nodes between it and the
+root that contain the symbol red. For example, the expression
+(mark-leaves-with-red-depth
+(interior-node ’red
+(interior-node ’bar
+(leaf 26)
+(leaf 12))
+(interior-node ’red
+(leaf 11)
+(interior-node ’quux
+(leaf 117)
+(leaf 14))
+which is written using the procedures defined in exercise 1.31, should return the bin-
+tree
+(red
+(bar 1 1)
+(red 2 (quux 2 2)))
 ;;
-;; Exercise 1.34  Write a procedure path that takes an integer n and a binary
-;; search tree bst (page 10) that contains the integer n, and returns a list of lefts and
-;; rights showing how to find the node containing n. If n is found at the root, it returns
-;; the empty list.
-;; > (path 17 ’(14 (7 () (12 () ()))
-;; (26 (20 (17 () ())
-;; ())
-;; (31 () ()))))
-;; (right left left)
+Exercise 1.34  Write a procedure path that takes an integer n and a binary
+search tree bst (page 10) that contains the integer n, and returns a list of lefts and
+rights showing how to find the node containing n. If n is found at the root, it returns
+the empty list.
+> (path 17 ’(14 (7 () (12 () ()))
+(26 (20 (17 () ())
+())
+(31 () ()))))
+(right left left)
 ;;
-;; Exercise 1.35  Write a procedure number-leaves that takes a bintree, and
-;; produces a bintree like the original, except the contents of the leaves are numbered
-;; starting from 0. For example,
-;; (number-leaves
-;; (interior-node ’foo
-;; (interior-node ’bar
-;; (leaf 26)
-;; (leaf 12))
-;; (interior-node ’baz
-;; (leaf 11)
-;; (interior-node ’quux
-;; (leaf 117)
-;; (leaf 14))
-;; should return
-;; (foo
-;; (bar 0 1)
-;; (baz
-;; 2
-;; (quux 3 4)))
+Exercise 1.35  Write a procedure number-leaves that takes a bintree, and
+produces a bintree like the original, except the contents of the leaves are numbered
+starting from 0. For example,
+(number-leaves
+(interior-node ’foo
+(interior-node ’bar
+(leaf 26)
+(leaf 12))
+(interior-node ’baz
+(leaf 11)
+(interior-node ’quux
+(leaf 117)
+(leaf 14))
+should return
+(foo
+(bar 0 1)
+(baz
+2
+(quux 3 4)))
 ;;
-;; Exercise 1.36  Write a procedure g such that number-elements from page 23
-;; could be defined as
-;; (define number-elements
-;; (lambda (lst)
-;; (if (null? lst) ’()
-;; (g (list 0 (car lst)) (number-elements (cdr lst))))))
+Exercise 1.36  Write a procedure g such that number-elements from page 23
+could be defined as
+(define number-elements
+(lambda (lst)
+(if (null? lst) ’()
+(g (list 0 (car lst)) (number-elements (cdr lst))))))
 ```
 
-## Chapter 2
 
-1. Data abstraction -> interface, implementation
+## Chapter 2 Data Abstraction
+
+
+### 2.1 Specifiying Data via Interfaces
+
+Data abstraction -> interface, implementation
 2. Representation-independent
 3. Example: nonnegative integers.
    <br>Interface:
@@ -539,18 +643,18 @@ Designing an interface for a recursive data type
 1. Abstract Syntax Tree
 2. Parse and un-parse
 
-### c2.1
 
-;; empty-env : () → Env
+
+empty-env : () → Env
 (define empty-env
 (lambda () (list 'empty-env)))
 
-;; extend-env : Var × SchemeVal × Env → Env
+extend-env : Var × SchemeVal × Env → Env
 (define extend-env
 (lambda (var val env)
 (list 'extend-env var val env)))
 
-;; apply-env : Env × Var → SchemeVal
+apply-env : Env × Var → SchemeVal
 (define apply-env
 (lambda (env search-var)
 (cond
@@ -574,15 +678,15 @@ saved-val
 (lambda (env)
 (error 'apply-env "Bad environment: ~s" env)))
 
-;; E 2.8
-;; empty-env? : env -> bool
+E 2.8
+empty-env? : env -> bool
 (define (emtpy-env? env)
 (if (eqv? (car env) 'empty-env)
 #t
 #f))
 
-;; E 2.9
-;; has-binding? : var env -> bool
+E 2.9
+has-binding? : var env -> bool
 (define (has-binding? var env)
 (if (eqv? (car env) 'empty-env)
 #f
@@ -592,14 +696,14 @@ saved-val
 (has-binding? var (cadddr env)))
 (report-invalid-env))))
 
-;; E 2.10
-;; extend-env\* : var-list val-list env -> env
+E 2.10
+extend-env\* : var-list val-list env -> env
 
-### c2.2
+### 2.2 Representation Strategies for Data Types
 
-;; Represent ENV as a procedure: takes the search-var and returns the value.
+Represent ENV as a procedure: takes the search-var and returns the value.
 
-;; empty-env : () → Env
+empty-env : () → Env
 (define (empty-env)
 (list
 (lambda (search-var)
@@ -609,7 +713,7 @@ saved-val
 (lambda (search-var)
 (report-no-binding-found search-var))))
 
-;; extend-env : Var × SchemeVal × Env → Env
+extend-env : Var × SchemeVal × Env → Env
 (define (extend-env saved-var saved-val saved-env)
 (list
 (lambda (search-var)
@@ -623,7 +727,7 @@ saved-val
 #t
 (has-binding? env search-var)))))
 
-;; apply-env : Env × Var → SchemeVal
+apply-env : Env × Var → SchemeVal
 (define apply-env
 (lambda (env search-var)
 ((car env) search-var)))
@@ -632,12 +736,105 @@ saved-val
 (lambda (search-var)
 (error ’apply-env "No binding for ~s" search-var)))
 
-;; E 2.13
+E 2.13
 (define (empty-env? env)
 (cadr env))
 
-;; E 2.14
+E 2.14
 (define (has-binding? env)
 (caddr env))
 
-### Exercise
+
+### 2.3 Interfaces for Recursive Data Types
+
+### 2.4 A Tool for Defining Recursive Data Types
+
+### 2.5 Abstract Syntax and Its Representation
+
+### Exercises
+
+## Chapter 3 Expressions
+
+### 3.1 Specification and Implementation Strategy
+
+### 3.2 LET: A Simple Language
+
+### 3.3 PROC: A Language with Procedures
+
+### 3.4 LETREC: A Language with Recursive Procedures
+
+### 3.5 Scoping and Binding of Variables
+
+### 3.6 Eliminating Variable Names
+
+### 3.7 Implementing Lexical Addressing
+
+## Chapter 4 State
+
+### 4.1 Computational Effects
+
+### 4.2 EXPLICIT-REFS: A Language with Explicit References
+
+### 4.3 IMPLICIT-REFS: A Language with Implicit References
+
+### 4.4 MUTABLE-PAIRS: A Language with Mutable Pairs
+
+### 4.5 Parameter-Passing Variations
+
+## Chapter 5 Continuation-Passing Interpreters
+
+### 5.1 A Continuation-Passing Interpreter
+
+### 5.2 A Trampolined Interpreter
+
+### 5.3 An Imperative Interpreter
+
+### 5.4 Exceptions
+
+### 5.5 Threads
+
+## Chapter 6 Continuation-Passing Style
+
+### 6.1 Writing Programs in Continuation-Passing Style
+
+### 6.2 Tail Form
+
+### 6.3 Converting to Continuation-Passing Style
+
+### 6.4 Modeling Computational Effects
+
+## Chapter 7 Types
+
+### 7.1 Values and Their Types
+
+### 7.2 Assigning a Type to an Expression
+
+### 7.3 CHECKED: A Type-Checked Language
+
+### 7.4 INFERRED: A Language with Type Inference
+
+## Chapter 8 Modules
+
+### 8.1 The Simple Module System
+
+### 8.2 Modules That Declare Types
+
+### 8.3 Module Procedures
+
+## Chapter 9 Objects and Classes
+
+### 9.1 Object-Oriented Programming
+
+### 9.2 Inheritance
+
+### 9.3 The Language
+
+### 9.4 The Interpreter
+
+### 9.5 A Typed Language
+
+### 9.6 The Type Checker
+
+## A For Futher Reading
+
+## The SLLGEN Parsing System
