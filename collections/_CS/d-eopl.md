@@ -40,7 +40,7 @@ There are three ways to define:
 **2. Rule of inference**:
 
 _hypothesis_ or _antecedent_<br>
-—————————————————————————————<br>
+————————————————<br>
 _conclusion_ or _consequent_
 
 - If two or more hypotheses [haɪˈpɑθəsɪs] are listed, they are connected by an implicit [ɪmˈplɪsɪt] "and".
