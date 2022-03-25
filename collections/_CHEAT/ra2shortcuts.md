@@ -3,12 +3,10 @@ title: 红色警戒2实战快捷键
 ---
 
 <table>
-<thead>
+<tbody>
   <tr>
     <th colspan="4">红色警戒2实战快捷键（红警HBK08教学）</th>
   </tr>
-</thead>
-<tbody>
   <tr>
     <td>选择生产栏位</td>
     <td colspan="3">Q（生产建筑） W（防御建筑） E（肉人） R（装甲车）</td>
@@ -52,10 +50,6 @@ title: 红色警戒2实战快捷键
     <td colspan="3">S（例：双狗跑图遭遇，按S使其停下咬狗）</td>
   </tr>
   <tr>
-    <td>选择战斗单位</td>
-    <td colspan="3">P（较少用到，一般用于地图边缘框不到的基弱夫）</td>
-  </tr>
-  <tr>
     <td>移动攻击</td>
     <td colspan="3">CTRL+SHIFT（装逼车、光棱、幻影等；灰熊、犀牛自带移动攻击）</td>
   </tr>
@@ -69,11 +63,15 @@ title: 红色警戒2实战快捷键
   </tr>
   <tr>
     <td>编队</td>
-    <td colspan="3">编队：CRTL + [1-9]； 选中：[1-9]</td>
+    <td>CRTL + [1-9]</td>
+    <td>选中编队</td>
+    <td>[1-9]</td>
   </tr>
   <tr>
     <td>信标</td>
-    <td colspan="3">B（联机模式）；DEL（取消信镖）</td>
+    <td>B（联机模式）</td>
+    <td>取消信标</td>
+    <td>DEL</td>
   </tr>
   <tr>
     <td>查看对战信息</td>
@@ -89,7 +87,7 @@ title: 红色警戒2实战快捷键
     <td colspan="3">N（上一个部队） + D（部署）</td>
   </tr>
   <tr>
-    <td>路径偷（三堡难守</td>
+    <td>路径偷（三堡无守）</td>
     <td colspan="3">先命令工程师进入载具，走路途中按Z偷建筑。载具Z设路径到建筑附近D</td>
   </tr>
   <tr>
@@ -98,15 +96,15 @@ title: 红色警戒2实战快捷键
   </tr>
   <tr>
     <td>堵矿场</td>
-    <td colspan="3">走到矿场门口后，按S</td>
+    <td colspan="3">从矿场一侧走向另一侧，当走到矿场门口时，按S</td>
   </tr>
   <tr>
     <td>巨炮对炮</td>
-    <td colspan="3">快速K修一下能多挨一炮</td>
+    <td colspan="3">法国对炮时，快速按K维修能多挨一炮</td>
   </tr>
   <tr>
     <td>卡攻速</td>
-    <td colspan="3">攻击时，{S+左键}*（常用于装逼车、天启等）</td>
+    <td colspan="3">攻击时，{S、左键}*（常用于装逼车、天启等）</td>
   </tr>
   <tr>
     <td>受不了了广快投翔</td>
@@ -132,6 +130,12 @@ title: 红色警戒2实战快捷键
     <td>U</td>
     <td>区域标记</td>
     <td>F1 F2 F3 F4</td>
+  </tr>
+  <tr>
+    <td>选择战斗单位</td>
+    <td>P（地图边缘框不到的基弱夫）</td>
+    <td>嘲讽</td>
+    <td>F9 F10 F11 F12</td>
   </tr>
 </tbody>
 </table>
