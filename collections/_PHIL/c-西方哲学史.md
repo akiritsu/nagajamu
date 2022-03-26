@@ -58,6 +58,7 @@ layout: compact
   - [后现代主义 Postmodernism](#%E5%90%8E%E7%8E%B0%E4%BB%A3%E4%B8%BB%E4%B9%89-postmodernism)
   - [当代欧陆哲学 Contemporary Continental Philosophy](#%E5%BD%93%E4%BB%A3%E6%AC%A7%E9%99%86%E5%93%B2%E5%AD%A6-contemporary-continental-philosophy)
   - [当代分析哲学 Comtemporary Analytic Philosophy](#%E5%BD%93%E4%BB%A3%E5%88%86%E6%9E%90%E5%93%B2%E5%AD%A6-comtemporary-analytic-philosophy)
+  - [附录 Appendix](#%E9%99%84%E5%BD%95-appendix)
   - [引用 Reference](#%E5%BC%95%E7%94%A8-reference)
 
 <!-- /TOC -->
@@ -1776,5 +1777,20 @@ layout: compact
 ## 当代分析哲学 Comtemporary Analytic Philosophy
 
 
+
+## 附录 Appendix
+
+### 学习哲学史的方法
+
+始于哲学史，终于哲学史：在入门时学习哲学史获取基本知识。当可以梳理出一部私人哲学史时，就完成自己的哲学（如：黑格尔）。
+1. 黑格尔式：当对某概念感兴趣时，调查各个哲学家对待此概念的看法并梳理，形成私人哲学史、体系。
+   * “哲学史和精神连接起来才有意义。”
+   * “为了使哲学史成为自为的，必须将我们自身与哲学史联系。”
+   * “哲学的意见是不存在的。”（必须看清意见背后的概念、结构）
+2. 马克思式：从意见相似的哲学家中寻找其二者理论的本质不同。用显微镜调查被哲学史隐匿的差异，并从中找出真正的哲学。
+   * “哲学史本身是一种偏见。”
+3. 德勒兹式：拒绝哲学史的线性思维，将不同的哲学史放在同一个平面上思考。（内在平面的并列法）
+   * “哲学史是压抑的。”（存在偏见）
+4. 齐泽克式：将不同的哲学家拉入现代社会，考察其会发展出什么哲学；或者让其评价其他人的哲学。（反向思考法）
 
 ## 引用 Reference
