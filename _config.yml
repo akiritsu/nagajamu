@@ -1,8 +1,8 @@
 # 1. Site Settings
 title               : Nagajamu
 owner               : "DeerRIDER"
-#url                 : "http://127.0.0.1:4000"
-url                : "https://nagajamu.com"
+url                 : "http://127.0.0.1:4000"
+#url                : "https://nagajamu.com"
 ## baseurl            : ""
 permalink           : /:title/
 description         : "Personal notes of DeerRIDER"
@@ -22,15 +22,6 @@ collection_order    :
     "WRTG",
   ]
 collections:
-  RDGS:
-    output          : true
-    permalink       : /:collection/:title/
-    sort_by         : name
-    alias           : "阅读材料"
-  DRAFT:
-    output          : true
-    permalink       : /:collection/:title/
-    alias           : "草稿箱"
   MATH:
     output          : true
     permalink       : /:collection/:title/
@@ -48,10 +39,6 @@ collections:
     output          : true
     permalink       : /:collection/:title/
     alias           : "文学理论"
-  CHEAT:
-    output          : true
-    permalink       : /:collection/:title/
-    alias           : "速查图表"
   CS:
     output          : true
     permalink       : /:collection/:title/
@@ -64,6 +51,14 @@ collections:
     output          : true
     permalink       : /:collection/:title/
     alias           : "文章随笔"
+  ZRAFT:
+    output          : true
+    permalink       : /:collection/:title/
+    alias           : "草稿箱"
+  ZHEAT:
+    output          : true
+    permalink       : /:collection/:title/
+    alias           : "速查图表"
 
 # 3. Comment settings（disqus.com）
 disqus_username     : akiritsu

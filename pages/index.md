@@ -14,28 +14,28 @@ permalink: /
 ## 学习笔记
 
 **哲学**：
-[哲学导论](/PHIL/b-哲学导论)
-[西方哲学史](/PHIL/c-西方哲学史)
-[德国古典哲学](/PHIL/e-德国古典哲学)
-[现象学](/PHIL/f-现象学)
-[符号学](/PHIL/g-符号学)
-[精神分析](/PHIL/h-精神分析)
-[当代哲学](/PHIL/j-当代哲学)
+[哲学导论](/PHIL/b.introduction)
+[西方哲学史](/PHIL/c.hisotry.of.philosophy)
+[德国古典哲学](/PHIL/e.german.idealism)
+[现象学](/PHIL/f.phenomenology)
+[符号学](/PHIL/g.semiotics)
+[精神分析](/PHIL/h.psychoanalysis)
+[当代哲学](/PHIL/j.comtemporary.philosophy)
 
 **分析**：
-[数学分析](/MATH/c1-数学分析)
-[复变函数](/MATH/c2-复变函数)
-[实变函数](/MATH/c3-实变函数)
-[泛函分析](/MATH/c4-泛函分析)
-[常微分方程](/MATH/c5-常微分方程)
-[偏微分方程](/MATH/c6-偏微分方程)
+[数学分析](/MATH/ca.analysis)
+[复变函数]()
+[实变函数]()
+[泛函分析]()
+[常微分方程]()
+[偏微分方程]()
 
 **代数**：
-[高等代数](/MATH/d1-高等代数)
-[抽象代数](/MATH/d2-抽象代数)
-[交换代数](/MATH/d3-交换代数)
-[同调代数](/MATH/d4-同调代数)
-[李群李代数](/MATH/d5-李群李代数)
+[高等代数](/MATH/da.algebra)
+[抽象代数]()
+[交换代数]()
+[同调代数]()
+[李群李代数]()
 
 **数理逻辑**：
 [数理逻辑]()
@@ -48,19 +48,19 @@ permalink: /
 [范畴论]()
 
 **历史**：
-[西方史学史](/HIST/a-西方史学史)
-[日本历史年表](/HIST/d1-日本历史年表)
-[日本历史常识](/HIST/d2-日本历史常识)
+[西方史学史](/HIST/a.historiography)
+[日本历史年表](/HIST/d.japan)
+[日本历史常识](/HIST/da.japan.topics)
 
 **文学**：
-[文学批评史](/LIT/a-文学批评史)
-[西方文学理论史](LIT/b-西方文学理论史)
-[近代文学理论](LIT/c-近代文学理论)
+[文学批评史](/LIT/a.literary.criticism)
+[西方文学理论史](LIT/b.history.of.western.literary)
+[近代文学理论](LIT/c.comtemporary.literary.theory)
 
 ## 快速访问
 
-[备忘卡片](/CHEAT)
-[草稿预览](/DRAFT)
+[备忘卡片](/ZHEAT)
+[草稿预览](/ZRAFT)
 [逻辑谬误和认知偏差](/WRTG/逻辑谬误和认知偏差)
 
 [高效笔记：Typora + Markdown](/WRTG/Typora+Markdown笔记系统)

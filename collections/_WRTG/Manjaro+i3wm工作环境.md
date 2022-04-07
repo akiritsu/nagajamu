@@ -343,8 +343,42 @@ sudo dpkg -i mozart-1.4.0.20080704-16189.i386.deb
 ## 配置 Samba 文件共享
 
 ```bash
-sudo nano /usr/local/samba/lib/smb.conf
+sudo nano /etc/samba/smb.conf
 ```
+
+配置samba：
+
+```bash
+[global]
+workgroup = ArbitraryGroup
+server string = Samba Server Version %v
+log file = /var/log/samba/log.%m
+max log size = 50
+security = USER
+passdb backend = tdbsam
+
+[database]
+comment = passwd
+path = /home/share
+public = no
+writable = yes 
+```
+
+创建用于登陆的账户：
+
+```bash
+sudo useradd samba
+sudo passwd samba
+id samba
+pdbedit -a -u samba
+```
+创建共享的文件夹，并重启samba服务：
+
+```bash
+mkdir /home/databases
+sudo systemctl restart smb
+```
+
 
 ## 为 ibus-libpinyin 增加希腊字母输入功能
 
