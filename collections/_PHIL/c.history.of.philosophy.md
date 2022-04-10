@@ -11,7 +11,6 @@ layout: compact
 <!-- TOC -->
 
 - [古典哲学 Ancient philosophy](#%E5%8F%A4%E5%85%B8%E5%93%B2%E5%AD%A6-ancient-philosophy)
-  - [米利都学派 Ionian school](#%E7%B1%B3%E5%88%A9%E9%83%BD%E5%AD%A6%E6%B4%BE-ionian-school)
   - [毕达哥拉斯学派 Pythagoreanism](#%E6%AF%95%E8%BE%BE%E5%93%A5%E6%8B%89%E6%96%AF%E5%AD%A6%E6%B4%BE-pythagoreanism)
   - [爱菲斯学派 Ephsian school](#%E7%88%B1%E8%8F%B2%E6%96%AF%E5%AD%A6%E6%B4%BE-ephsian-school)
   - [爱利亚学派 Eleatic School](#%E7%88%B1%E5%88%A9%E4%BA%9A%E5%AD%A6%E6%B4%BE-eleatic-school)
@@ -78,7 +77,7 @@ layout: compact
 - 自然、本原、基质（始基）、存在（是者）、理性（逻各斯）、灵魂（心灵）、原子、宇宙、神
 - 具有由外在的自然向内在的人类本身转移的特点。
 
-## 米利都学派 Ionian school
+-## 米利都学派 Ionian school
 
 > 也称伊奥尼亚学派、爱奥尼亚学派。
 
