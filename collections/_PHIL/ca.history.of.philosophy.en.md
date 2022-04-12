@@ -89,6 +89,11 @@ Anaxagoras, [ˌænækˈsæɡərəs], c. 500 - c. 428 BC.
   2. even if there were something, we could not know it;
   3. and even if it existed and we could know it, we could not communicate this knowledge to others.
 
+**Thrasymachus**, [θræˈsɪməkəs], c. 459 - c. 400 BC.
+* Justice is the interest of the stronger.
+* "Might is right": laws are made by the ruling party for its own interest.
+
+**Socrates**, [ˈsɒkrətiːz], c. 470 - 399 BC.
 
 
 ### Plato and Aristotle
