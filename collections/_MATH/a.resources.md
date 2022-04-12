@@ -21,70 +21,91 @@ Analysis - 数学分析：
 Complex Analysis - 复变函数
 * Stein - Complex Analysis - 经典
 * Alhfors - Complex Analysis - 适合入门
+
 Real Analysis - 实分析/实变函数
 * Stein - Real Analysis, Measure Theory, Integration, And Hilbert Spaces - 经典
 * G. B. Folland - Real Analysis: Modern Techniques and Their Applications - 全面
+
 Functional Analysis - 泛函分析
 * Peter Lax - Functional Analysis
 * Rudin - Functional Analysis - 或许过时
+
 Ordinary Differential Equation - 常微分方程
 * Arnold - Ordinary Differential Equations - 入门
 * Po-Fang Hsieh, Yasutaka Sibuya - Basic Theory of Ordinary Differential Equations - 深入
+
 Partial Differential Equation - 偏微分方程
 * Evans - Partial Differential Equation - 经典必读
 * John K. Hunter - Notes on Partial Differential Equations - 讲解细致、适合参考
+
 Fourier Analysis - 调和分析
 * Loukas Grafakos - GTM 249 Classical Fourier Analysis - 详细、经典、错误较多
 * Loukas Grafakos - GTM 250 Modern Fourier Analysis - 详细、经典、错误较多
 * Dorina Mitrea - Distributions, Partial Differential Equations, and Harmonic Analysis - 调和分析、泛函分析、偏微分方程的基础
 
-
 ### 代数学
+
 Algebras - 高等代数
 * Sheldon Axler - Linear Algebra Done Right - 适合初学、篇幅短
 * Steven Roman - GTM135 Advanced Linear Algebra - 高级
 * Artin - Algebra - 适合初学
+
 Abstract Algebras - 抽象代数
 * Rotman - First Course in Abstract Algebra with Applications - 适合初学
+
 Commutative Algebra - 交换代数
 * Atiyah - Introduction To Commutative Algebra
 * J. Elias etc. - Six Lectures on Commutative Algebra
+
 Homological Algebra - 同调代数
 * Peter J. Hilton, Urs Stammbach - GTM4 A Course in Homological Algebra
+
 Lie Groups & Lie Algebras - 李群李代数
 * Brian Hall - GTM222 Lie Groups, Lie Algebras, and Representations
 * Kirillov - An Introduction To Lie Groups And Lie Algebras 
+
 Representation Theory - 群表示论
 * Pavel Etingof, etc. - Introduction to Representation Theory 
+
 Algebraic Number Theory - 代数数论
 * 加藤和也 - 数论I，II
 
 ### 几何学
+
 Space Analytic Geometry - 空间解析几何
+
 Classical Differential Geometry - 古典微分几何
+
 Manifolds - 流形
 * R. Bishop, S. Goldberg - Tensor Analysis on Manifolds - 应用
+
 Reimannian Geometry - 黎曼几何
 * Do Carmo - 黎曼几何
+
 Point Set Topology - 点集拓扑
 * M. A. Armstrong - Basic Topology - 适合初学
 * Munkres - 代数拓扑基础》
+
 Differential Topology - 微分拓扑
 * Milnor - 从微分观点看拓扑
+
 Algebrac Topology - 代数拓扑
 * A. Hatcher - ALgebraic Topology
 
-
 ### 应用
+
 Probability - 概率论
 * Kallenberg - Foundations of Modern Probability
+
 Mathematical Computing - 数学计算
 * Borwein, Skerritt -  An Introduction to Modern Mathematical Computing: with Maple
+
 Quantum Mechanics - 量子力学
 * David Griffiths - Introduction to Quantum Mechanics - 适合初学、高质量习题
 * Cohen - Quantum Mechanics Vol I/II - 适合初学、补充材料丰富
 * Feynman - Feynman Lectures on Physics: Volume III - 物理思想
 * Weinberg - Lectures on Quantum Mechanics - 高级教材
+
 String Theory - 弦论
 * Polchinski - String Theory I/II - 适合初学
 
