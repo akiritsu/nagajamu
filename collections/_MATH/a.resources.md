@@ -12,85 +12,109 @@ title: Resources
 ### Analysis - 分析
 
 Analysis - 数学分析：
-* T. M. Apostol - Mathematical Analysis - 适合初学
-* Terrence Tao - Analysis I/II - 高观点、清晰易读
-* Vladimir A. Zorich - Mathematical Analysis I/II - 全面、现代、多视角
-* Rudin - Principles of Mathematical Analysis - 高观点、简略、抽象、高质量习题
+* T. M. Apostol - *Mathematical Analysis* - 适合初学
+* Terrence Tao - *Analysis I/II* - 高观点、清晰易读
+* Vladimir A. Zorich - *Mathematical Analysis I/II* - 全面、现代、多视角
+* Rudin - *Principles of Mathematical Analysis* - 高观点、简略、抽象、高质量习题
 
 
 Complex Analysis - 复变函数
-* Stein - Complex Analysis - 经典
-* Alhfors - Complex Analysis - 适合入门
+* Stein - *Complex Analysis* - 经典
+* Alhfors - *Complex Analysis* - 适合入门
 
 Real Analysis - 实分析/实变函数
-* Stein - Real Analysis, Measure Theory, Integration, And Hilbert Spaces - 经典
-* G. B. Folland - Real Analysis: Modern Techniques and Their Applications - 全面
+* Stein - *Real Analysis, Measure Theory, Integration, And Hilbert Spaces* - 经典
+* G. B. Folland - *Real Analysis: Modern Techniques and Their Applications* - 全面
 
 Functional Analysis - 泛函分析
-* Peter Lax - Functional Analysis
-* Rudin - Functional Analysis - 或许过时
+* Peter Lax - *Functional Analysis*
+* Rudin - *Functional Analysis* - 或许过时
 
 Ordinary Differential Equation - 常微分方程
-* Arnold - Ordinary Differential Equations - 入门
-* Po-Fang Hsieh, Yasutaka Sibuya - Basic Theory of Ordinary Differential Equations - 深入
+* Arnold - *Ordinary Differential Equations* - 入门
+* Po-Fang Hsieh, Yasutaka Sibuya - *Basic Theory of Ordinary Differential Equations* - 深入
 
 Partial Differential Equation - 偏微分方程
-* Evans - Partial Differential Equation - 经典必读
-* John K. Hunter - Notes on Partial Differential Equations - 讲解细致、适合参考
+* Evans - *Partial Differential Equation* - 经典必读
+* John K. Hunter - *Notes on Partial Differential Equations* - 讲解细致、适合参考
 
 Fourier Analysis - 调和分析
-* Loukas Grafakos - GTM 249 Classical Fourier Analysis - 详细、经典、错误较多
-* Loukas Grafakos - GTM 250 Modern Fourier Analysis - 详细、经典、错误较多
-* Dorina Mitrea - Distributions, Partial Differential Equations, and Harmonic Analysis - 调和分析、泛函分析、偏微分方程的基础
+* Loukas Grafakos - *GTM 249 Classical Fourier Analysis* - 详细、经典、错误较多
+* Loukas Grafakos - *GTM 250 Modern Fourier Analysis* - 详细、经典、错误较多
+* Dorina Mitrea - *Distributions, Partial Differential Equations, and Harmonic Analysis* - 调和分析、泛函分析、偏微分方程的基础
 
-### 代数学
+### Algebra - 代数学
 
-Algebras - 高等代数
-* Sheldon Axler - Linear Algebra Done Right - 适合初学、篇幅短
-* Steven Roman - GTM135 Advanced Linear Algebra - 高级
-* Artin - Algebra - 适合初学
+Algebras - 代数学/高等代数
+* Sheldon Axler - *Linear Algebra Done Right* - 适合初学、篇幅短
+* Steven Roman - *GTM135 Advanced Linear Algebra* - 高级
+* Artin - *Algebra* - 适合初学
 
 Abstract Algebras - 抽象代数
-* Rotman - First Course in Abstract Algebra with Applications - 适合初学
+* Rotman - *First Course in Abstract Algebra with Applications* - 适合初学
 
 Commutative Algebra - 交换代数
-* Atiyah - Introduction To Commutative Algebra
-* J. Elias etc. - Six Lectures on Commutative Algebra
+* Atiyah - *Introduction To Commutative Algebra*
+* J. Elias etc. - *Six Lectures on Commutative Algebra*
 
 Homological Algebra - 同调代数
-* Peter J. Hilton, Urs Stammbach - GTM4 A Course in Homological Algebra
+* Peter J. Hilton, Urs Stammbach - *GTM4 A Course in Homological Algebra*
 
 Lie Groups & Lie Algebras - 李群李代数
-* Brian Hall - GTM222 Lie Groups, Lie Algebras, and Representations
-* Kirillov - An Introduction To Lie Groups And Lie Algebras 
+* Brian Hall - *GTM222 Lie Groups, Lie Algebras, and Representations*
+* Kirillov - *An Introduction To Lie Groups And Lie Algebras*
 
 Representation Theory - 群表示论
-* Pavel Etingof, etc. - Introduction to Representation Theory 
+* Pavel Etingof, etc. - *Introduction to Representation Theory*
 
 Algebraic Number Theory - 代数数论
-* 加藤和也 - 数论I，II
+* 加藤和也 - *数论I，II*
 
-### 几何学
+### Geometry - 几何学
 
 Space Analytic Geometry - 空间解析几何
 
 Classical Differential Geometry - 古典微分几何
 
 Manifolds - 流形
-* R. Bishop, S. Goldberg - Tensor Analysis on Manifolds - 应用
+* R. Bishop, S. Goldberg - *Tensor Analysis on Manifolds* - 应用
 
 Reimannian Geometry - 黎曼几何
 * Do Carmo - 黎曼几何
 
 Point Set Topology - 点集拓扑
-* M. A. Armstrong - Basic Topology - 适合初学
-* Munkres - 代数拓扑基础》
+* M. A. Armstrong - *Basic Topology* - 适合初学
+* Munkres - *代数拓扑基础*
 
 Differential Topology - 微分拓扑
-* Milnor - 从微分观点看拓扑
+* Milnor - *从微分观点看拓扑*
 
 Algebrac Topology - 代数拓扑
-* A. Hatcher - ALgebraic Topology
+* A. Hatcher - *Algebraic Topology*
+
+### Mathematical Logic - 数理逻辑
+
+Mathematical Logic - 数理逻辑
+- Anil Nerode, Richard A. Shore - *Logic for applications* - 适合初学、计算机向
+- Michael Huth, Mark Ryan - *Logic in Computer Science - Modeling and Reasoning about Systems* - 适合初学、计算机向
+
+Axiom Set Theory - 公理化集合论
+- Thomas Jech - *Set Theory: an Introduction to Independence Proofs* - 适合初学
+- Keneth Kunen - *Set Theory* - 难度高
+
+Recursive Theory - 递归论
+- Nigel Cutlan - *Computability: an Introduction to Recursive Function Theory* - 适合初学
+- Robert I. Soare - *Recursively Enumerable Sets and Degrees :a Study of Computable Functions and Computably Generated Sets*
+
+Model Theory - 模型论
+- Chen Chung Chang，H.J.Keisler - *Model Theory* - 高质量
+- David Marker - *Model Theory: an Introduction*
+
+Proof Theory - 证明论
+- Takeuti - *Proof Theory*
+
+Category Theory - 范畴论
+- Saunders Mac Lane - *GTM5 Categories for Working Mathematician* - 高质量
 
 ### 应用
 

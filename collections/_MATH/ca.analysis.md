@@ -1,5 +1,5 @@
 ---
-title: Analysis
+title: Mathematical Analysis
 toc_level: 4
 ---
 
@@ -129,7 +129,7 @@ toc_level: 4
 ### 常用定理
 
 1. 三角不等式：
-   $$||a| - |b|| <= |a + b| <= |a| + |b|$$
+   $$ ||a| - |b|| <= |a + b| <= |a| + |b| $$
 2. 平均值不等式 算术平均值 >= 几何平均值 >= 调和平均值
 3. 夹逼性定理常用于难于直接解出极限的数列
 
@@ -170,26 +170,26 @@ toc_level: 4
 4. 定义 不属于（∉）
 5. 常用集合：正整数（N+），自然数集合（N），整数集合（Z），有理数集合（Q），实数集合（ℝ）
 6. 集合的表示
-   1. 枚举法
-   2. 描述法
+   1. 枚举法 Enumeration method
+   2. 描述法 Desciptive method
       > 注意：1. 集合中的元素之间没有次序关系。2. 集合的元素的重复是没有意义的。
 7. 定义 空集（Ø）：无元素的集合。
-8. 定义 子集、真子集
-9. 包含于（⊂），包含（⊃），真包含于（⊆），真包含（⊇）
+8. 定义 子集 subset、真子集 proper subset
+9. 真包含于（⊂），真包含（⊃），包含于（⊆），包含（⊇）
    > n 个元素的集合，有 2^n 个子集。
 10. S 与 T 的所有元素相同，则 S 与 T 相同，记为 S = T
     > S = T ⇔ S ⊂ T 且 T ⊂ S （可用于证明两集合相等）
-11. 定义：区间 开区间 闭区间
+11. 定义 区间 开区间 闭区间 interval, open interval, closed interval
     > 在数学分析课程中，最常遇到的实数集的子集是区间
 
 #### 集合的运算
 
 1. 定义 并（∪），交（∩）
-   1. 交换律
-   2. 结合律
-   3. 分配率
-2. 定义 差（\或-），S-T 是属于 S 但是不属于 T 的集合
-3. 定义 补（Complement） S^c_X = X\S
+   1. 交换律 Commutative
+   2. 结合律 Associative
+   3. 分配率 Distributive
+2. 定义 差（\或-） relative complement，S-T 是属于 S 但是不属于 T 的集合
+3. 定义 补 Complement，S^c_X = X\S
    1. 对偶律（de Morgan 对偶原理）：
       $$
       (A∪B)^c = A^c ∩ B^c
@@ -205,12 +205,13 @@ toc_level: 4
    > 无限集不一定是可列集
    > ℝ 是无限集，但不是可列集
    > Z 是可列集
-4. 定理 1.1.1 可列个可列集之并，也是可列集
+   > 任意有限个可列集的并都是可列集 Any finite union of countable sets is countable.
+4. 定理 1.1.1 可列个可列集之并，也是可列集 The union of countably many countable sets is countable.(Assuming *the axiom of countable choice*)
    > 对角法排列，用于表示可列个可列集之并。
 5. 定理 1.1.2 有理数集合 Q 是可列集
-6. 定义 有序对
-7. Descartes 乘积集合
-   > ℝ _ ℝ Descartes 平面直角坐标系
+6. 定义 有序对 ordered pair
+7. Descartes 乘积集合 Cartesian product [kɑrˈtiʒən]
+   > ℝ _ ℝ Descartes 平面直角坐标系 Rectangular coordinate system.
    > ℝ _ ℝ \* ℝ Descartes 空间直角坐标系
 
 ### 1.2 映射与函数
@@ -225,11 +226,11 @@ toc_level: 4
    > Y 限制了值域的范围<br>
    > f 像是唯一的<br>
    > 逆像不一定是唯一的
-2. 定义 单射（injection） $ x_1 ≠ x_2 ⇒ y_1 ≠ y_2 $
-3. 定义 满射（surjection）
-4. 定义 双射（bijection，又称一一对应）
-5. 定义 逆映射 $ g: R_f -> X , g -> x(f(x) = y)，则 g 是 f 的逆映射，记为 f^-1 $
-6. 定义 复合映射（⚬）
+2. 定义 单射 injection， $$ x_1 ≠ x_2 ⇒ y_1 ≠ y_2 $$
+3. 定义 满射 surjection，
+4. 定义 双射 bijection，又称一一对应
+5. 定义 逆映射 inverse mapping $ g: R_f -> X , g -> x(f(x) = y)，则 g 是 f 的逆映射，记为 f^-1 $
+6. 定义 复合映射 composite mapping，⚬
    > 映射 f: X -> Y，有逆映射 f^-1: R_f -> X，
    > 则 f^-1 ⚬ f(x) = x, x ∈ X
    > f ⚬ f^-1(y) = y, y ∈ R_f

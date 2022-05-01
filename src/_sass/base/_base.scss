@@ -42,8 +42,8 @@ p {
   display: block;
 }
 strong {
-  color: mix($color-primary, rgba(#fff, 1));
-  text-shadow: 0.65px 0.65px 0 $color-primary;
+  color: mix($color-primary, rgba(#eee, 1));
+  text-shadow: 0.35px 0.35px 0 $color-primary;
 }
 hr {
   border: 0;
