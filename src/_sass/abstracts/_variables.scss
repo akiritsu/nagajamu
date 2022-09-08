@@ -1,6 +1,7 @@
 // global variables
 $color-primary: rgb(94, 223, 43);
 $color-secondary: rgb(247, 193, 17);
+$color-blockquote: #e8b64c;
 $color-warning: rgb(238, 63, 40);
 $color-bg: rgb(24, 17, 17);
 $color-postbg: rgb(0, 0, 0);
@@ -27,6 +28,7 @@ $toc-position: $header-height + 1px;
 $footer-icon-size: 14px;
 $footer-text-size: $footer-icon-size * 0.9;
 $collection-list-header-size: 30px;
+$global-section-margin: 4px;
 
 // standard border
 $thick-border: 2.1px solid $color-primary;

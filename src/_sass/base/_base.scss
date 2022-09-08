@@ -1,6 +1,6 @@
 // global base reset
 body {
-  line-height: 1.7;
+  line-height: 1.75;
   font-size: $font-size-primary;
   color: $color-primary;
   font-family: $font-serif;
@@ -38,11 +38,11 @@ h6 {
   margin: 2.4em 0 0.6em 0;
 }
 p {
-  margin: 5px 0px;
+  margin: $global-section-margin 0px;
   display: block;
 }
 strong {
-  color: mix($color-primary, rgba(#eee, 1));
+  color: mix($color-primary, rgba(#ddd, 1));
   text-shadow: 0.35px 0.35px 0 $color-primary;
 }
 hr {
@@ -88,22 +88,22 @@ img {
   background-color: whitesmoke;
 }
 ol {
-  padding: 0 0 0 1.3em;
-  margin: 6px 12px 6px 0px;
+  padding: 0 0 0 1.42em;
+  margin: $global-section-margin 12px 12px 0px;
   display: block;
   list-style-type: decimal;
 }
 ul {
   padding: 0 0 0 1.2em;
-  margin: 6px 12px 6px 0px;
+  margin: $global-section-margin 12px 12px 0px;
   list-style: disc;
 }
 blockquote {
-  margin: 0.55em 2em 0.8em 0em;
+  margin: $global-section-margin 0em 0.55em 0em;
   font-size: $font-smaller;
   font-style: none;
   line-height: 1.5;
-  color: mix($color-secondary,rgb(177, 157, 157));
+  color: $color-blockquote;
 }
 // footnote mark
 sup a{

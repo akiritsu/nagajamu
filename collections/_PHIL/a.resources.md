@@ -79,30 +79,6 @@ title: 哲学资料索引
 1. 找指南类书籍，关键词：Companion、Handbook、Routledge Handbook、Blackwell Guide
 2. 文集类书籍，关键字：A Reader、An Anthology、Texts、Readings
 
-## 特定研究方向
-
-1. 希腊哲学
-2. 怀疑主义-理性主义
-3. 康德-黑格尔
-- [康德和他的哲学-牛津大学](https://www.bilibili.com/video/BV1w7411P7Dr)
-- [黑格尔与精神现象学-慕尼黑大学](https://open.163.com/newview/movie/courseintro?newurl=%2Fspecial%2Fopencourse%2Fhegel.html)
-4. 克尔凯郭尔-叔本华-尼采
-- [尼采的心灵与自然-牛津大学](https://www.bilibili.com/video/BV12u411o71H)
-5. 海德格尔
-6. 维特根斯坦
-7. 存在主义-萨特-加缪
-8. 现象学-胡塞尔
-9. 分析哲学-罗素
-10. 精神分析-弗洛伊德-拉康-齐泽克
-- [精神分析入门](https://www.bilibili.com/video/BV1JE411d7Xw)
-11. 德勒兹
-12. 巴迪欧
-13. 鲍德里亚
-14. 阿甘本
-15. 罗兰·巴特
-16. 阿尔都塞
-17. 齐泽克
-
 
 
 ## 英文入门书籍书单
