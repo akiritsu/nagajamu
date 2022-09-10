@@ -24,8 +24,9 @@ layout: compact
   - [斯多葛学派 The Stoics](#%E6%96%AF%E5%A4%9A%E8%91%9B%E5%AD%A6%E6%B4%BE-the-stoics)
   - [怀疑主义 Scepticism](#%E6%80%80%E7%96%91%E4%B8%BB%E4%B9%89-scepticism)
   - [新柏拉图主义 Neo-Platonism](#%E6%96%B0%E6%9F%8F%E6%8B%89%E5%9B%BE%E4%B8%BB%E4%B9%89-neo-platonism)
-  - [教父哲学 Patristic Philosophy](#%E6%95%99%E7%88%B6%E5%93%B2%E5%AD%A6-patristic-philosophy)
 - [中世纪哲学 Medieval Philosophy](#%E4%B8%AD%E4%B8%96%E7%BA%AA%E5%93%B2%E5%AD%A6-medieval-philosophy)
+  - [基督教精神：](#%E5%9F%BA%E7%9D%A3%E6%95%99%E7%B2%BE%E7%A5%9E)
+  - [教父哲学 Patristic Philosophy](#%E6%95%99%E7%88%B6%E5%93%B2%E5%AD%A6-patristic-philosophy)
   - [经院哲学 Scholasticism](#%E7%BB%8F%E9%99%A2%E5%93%B2%E5%AD%A6-scholasticism)
 - [文艺复兴时期哲学 Renaissance philosophy](#%E6%96%87%E8%89%BA%E5%A4%8D%E5%85%B4%E6%97%B6%E6%9C%9F%E5%93%B2%E5%AD%A6-renaissance-philosophy)
   - [人文主义与文艺复兴](#%E4%BA%BA%E6%96%87%E4%B8%BB%E4%B9%89%E4%B8%8E%E6%96%87%E8%89%BA%E5%A4%8D%E5%85%B4)
@@ -595,6 +596,16 @@ layout: compact
 
 > 古罗马唯心主义哲学家，新柏拉图主义者。叙利亚人，原名马尔库斯，最初在雅典跟随朗吉努斯学习，后到罗马随普罗提诺学习了 5 年。普罗提诺死后，波菲利将普罗提诺的 54 篇著作编纂成 6 卷，题名为《九章集》，并附有普罗提诺传记。波菲利还著有《与阿奈玻论魔鬼书》、《普罗提诺传》、《毕达哥拉传》、《反基督教徒》、以及《亚里士多德导论》等。他的活动使这一学派的学说在罗马帝国得到广泛传播，他本人也成为新柏拉图主义的奠基人之一。
 
+
+# 中世纪哲学 Medieval Philosophy
+
+**特征**：
+- 主线为**理性和宗教的关系**。
+
+基督教精神：
+- 
+
+
 ## 教父哲学 Patristic Philosophy
 
 处于圣经神学与经院神学之间的基督教神学思想。教父们为了使基督教更具吸引力和知识更充实，教父开始将《圣经》教训与古希腊哲学、古罗马哲学融合。而在早期基督教时期（公元 2-5 世纪）的教父思想，由于是根据《圣经》和利用新柏拉图主义建立的，一般称为“教父哲学”。
@@ -609,7 +620,6 @@ layout: compact
 
 - 借用了新柏拉图主义思想，以对基督教进行哲学论证。
 
-# 中世纪哲学 Medieval Philosophy
 
 ## 经院哲学 Scholasticism
 
