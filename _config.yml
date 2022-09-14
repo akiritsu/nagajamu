@@ -1,11 +1,11 @@
 # 1. Site Settings
-title               : Nagajamu
+title               : 无知者的巴别塔
 owner               : "DeerRIDER"
 #url                 : "http://127.0.0.1:4000"
 url                : "https://nagajamu.com"
 ## baseurl            : ""
 permalink           : /:title/
-description         : "Personal notes of DeerRIDER"
+description         : "Personal site of DeerRIDER"
 markdown            : kramdown
 statement           : "Designed by DeerRIDER, All Rights Reserved"
 bgtext              : "αβγδεζηθικλμνξοπρστυφχψω∷∫∮∝∞∧∨∑∏∪∩∈∵∴⊥‖∠⌒⊙≌∽√" # texts randomly displayed in background
@@ -13,49 +13,49 @@ bgtext              : "αβγδεζηθικλμνξοπρστυφχψω∷∫∮
 # 2. Collections
 collection_order    : 
   [
-    "MATH",
-    "PHIL",
-    "HIST",
-    "LIT",
-    "CS",
-    "PROG",
-    "WRTG",
+    "lit",
+    "hist",
+    "phil",
+    "math",
+    "cs",
+    "prog",
+    "wrtg",
   ]
 collections:
-  MATH:
+  math:
     output          : true
     permalink       : /:collection/:title/
     alias           : "基础数学"
-  PHIL:
+  phil:
     output          : true
     permalink       : /:collection/:title/
     alias           : "西方哲学"
-  HIST:
+  hist:
     output          : true
     permalink       : /:collection/:title/
     sort_by         : name
     alias           : "世界历史"
-  LIT:
+  lit:
     output          : true
     permalink       : /:collection/:title/
     alias           : "文学理论"
-  CS:
+  cs:
     output          : true
     permalink       : /:collection/:title/
     alias           : "计科理论"
-  PROG:
+  prog:
     output          : true
     permalink       : /:collection/:title/
     alias           : "编程练习"
-  WRTG:
+  wrtg:
     output          : true
     permalink       : /:collection/:title/
     alias           : "文章随笔"
-  ZRAFT:
+  zraft:
     output          : true
     permalink       : /:collection/:title/
     alias           : "草稿箱"
-  ZHEAT:
+  zheat:
     output          : true
     permalink       : /:collection/:title/
     alias           : "速查图表"
@@ -100,7 +100,6 @@ data_dir            : src/_data
 includes_dir        : src/_includes
 sass:
   sass_dir          : src/_sass
-
 
 # 7. Plugins
 plugins:

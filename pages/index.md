@@ -9,63 +9,33 @@ footer: true
 permalink: /
 ---
 
-# 对无知仍然无知
+# {{site.title}}
 
-## 学习笔记
+## 一点笔记
 
-**哲学**：
-[哲学导论](/PHIL/b.introduction)
-[西方哲学史](/PHIL/c.hisotry.of.philosophy)
-[德国古典哲学](/PHIL/e.german.idealism)
-[现象学](/PHIL/f.phenomenology)
-[符号学](/PHIL/g.semiotics)
-[精神分析](/PHIL/h.psychoanalysis)
-[当代哲学](/PHIL/j.comtemporary.philosophy)
+[哲学基础常识](/phil/b.introduction)
+[西方哲学史](/phil/c.history)
 
-**分析**：
-[数学分析](/MATH/ca.analysis)
-[复变函数]()
-[实变函数]()
-[泛函分析]()
-[常微分方程]()
-[偏微分方程]()
+[文学历史年表](/lit/a.timelines)
+[世界文学史](lit/history)
 
-**代数**：
-[高等代数](/MATH/da.algebra)
-[抽象代数]()
-[交换代数]()
-[同调代数]()
-[李群李代数]()
+[日本史](/hist/)
 
-**数理逻辑**：
-[数理逻辑]()
-[集合论]()
-[模型论]()
-[证明论]()
-[递归论]()
-[自动定理证明]()
-[类型论]()
-[范畴论]()
+[数学史](/math/a.history)
+[数学分析](/math/ca.analysis)
+[高等代数](/math/da.algebra)
 
-**历史**：
-[西方史学史](/HIST/a.historiography)
-[日本历史年表](/HIST/d.japan)
-[日本历史常识](/HIST/da.japan.topics)
-
-**文学**：
-[文学批评史](/LIT/a.literary.criticism)
-[西方文学理论史](LIT/b.history.of.western.literary)
-[近代文学理论](LIT/c.comtemporary.literary.theory)
 
 ## 快速访问
 
 [备忘卡片](/ZHEAT)
 [草稿预览](/ZRAFT)
-[逻辑谬误和认知偏差](/WRTG/逻辑谬误和认知偏差)
 
-[高效笔记：Typora + Markdown](/WRTG/Typora+Markdown笔记系统)
+[逻辑谬误和认知偏差](/wrtg/逻辑谬误和认知偏差)
 
-[工作环境：Manjaro + i3 WM](/WRTG/Manjaro+i3wm工作环境)
+[高效笔记：Typora + Markdown](/wrtg/Typora+Markdown)
+
+[工作环境：Manjaro + i3 WM](/wrtg/Manjaro+i3wm)
 
 <br>
 
