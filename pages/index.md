@@ -9,7 +9,7 @@ footer: true
 permalink: /
 ---
 
-# {{site.title}}
+# 无知者的巴别塔
 
 ## 一点笔记
 
