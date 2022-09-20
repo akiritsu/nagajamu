@@ -17,11 +17,11 @@ permalink: /
 [西方哲学史](/phil/c.history)
 
 [文学历史年表](/lit/a.timelines)
-[世界文学史](lit/history)
+[世界文学史](lit/b.history)
 
-[日本史](/hist/)
+[日本史](/hist/f.japan.timelines)
 
-[数学史](/math/a.history)
+[数学史](/math/b.history)
 [数学分析](/math/ca.analysis)
 [高等代数](/math/da.algebra)
 
