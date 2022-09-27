@@ -379,7 +379,6 @@ mkdir /home/databases
 sudo systemctl restart smb
 ```
 
-
 ## 为 ibus-libpinyin 增加希腊字母输入功能
 
 1. 打开 ibus-setup，在 Input Method 中选择 Intelligent Pinyin 的 Preferences。
