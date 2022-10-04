@@ -3,7 +3,7 @@ title: Cheatsheets
 permalink: /ZHEAT/
 ---
 
-{% for post in site.ZHEAT %}
+{% for post in site.zheat %}
 <p>
     <a class="a_title" style="text-decoration: none" href="{{site.url}}{{post.url}}">{{post.title}}</a>
 </p>
