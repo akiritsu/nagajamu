@@ -423,6 +423,27 @@ ime.register_command("ga", "GreekAlphabet", "希腊字母")
 3. 输入 ibus restart 重启 ibus。
 4. 使用ibus时，依次按，“i”，“ ”，“g”，“a”开启希腊字母输入模式，并根据上表选择输入的希腊字母。
 
+## 护眼软件 redshift
+
+安装redshift：
+
+```bash
+sudo pacman -S redshift
+```
+
+启动redshift（或加入 i3wm 的配置文件：
+
+```bash
+redshift -O 5000
+```
+其中后面数字控制色温，数值越大屏幕越黄。
+
+移除redshift：
+
+```bash
+redshift -x
+```
+
 ## 安装显卡驱动（可选）
 
 ```bash
