@@ -444,6 +444,18 @@ redshift -O 5000
 redshift -x
 ```
 
+## 在 Emacs 中使用 iBus 输入法
+
+在~/.xprofile 中添加如下内容：
+
+```bash
+export LC_CTYPE=zh_CN.UTF-8
+export XMODIFIERS=@im=ibus
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+ibus-daemon -d -x
+```
+
 ## 安装显卡驱动（可选）
 
 ```bash
