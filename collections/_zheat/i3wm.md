@@ -17,24 +17,23 @@ $mod is Alt in default, and Super is a better alternatives.
 **Windows Management**
 
 Direction Keys := {\<up\>, \<left\>, \<down\>, \<right\>, i, j, k, l}. IJKL works just like WASD.
-
 * $mod+w: tabbed layout
 * $mod+e: vertical and horizontal layout (switches to and between them)
 * $mod+s: stacked layout
 * $mod+f: fullscreen
-* $mod+r: resize mode ( or to leave resize mode)
-* $mod+<Direction Keys>: Move to the window in <Direction Keys>.
+* $mod+\<Direction Keys\>: Move to the window in \<Direction Keys\>.
 * $mod+shift+\<Direction Keys\>: Move window to the direction.
 * $mod+v: split a window vertically
 * $mod+h: split a window horizontally
 
-**In resize mode:**
+**Resize mode:**
+* $mod+r: resize mode ( or to leave resize mode)
 * \<Direction Keys\>: widen or raise current window.
 
 **Workspaces**
 
-* $mod+<num>: switch to workspace <num>.
-* $mod+shift+\<num\>: move window to workspace <num>.
+* $mod+\<num\>: switch to workspace \<num\>.
+* $mod+shift+\<num\>: move window to workspace \<num\>.
 
 **Floating**
 

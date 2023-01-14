@@ -184,7 +184,7 @@ sudo mkdir /mnt/[MOUNT_DIR_NAME]
 5. 将远程目录挂载在刚建好的本地目录上
 
 ```bash
-sudo mount -t cifs //[HOSTHAME_OR_IP]/[SHARE_NAME] /mnt/[MOUNT_DIR_NAME] -o username=[USERNAME],password=[PASSWORD],iocharset=utf8
+sudo mount -t cifs //[HOSTHAME_OR_IP]/[SHARE_NAME] /mnt/[MOUNT_DIR_NAME] -o username=[USERNAME],password=[PASSWORD],iocharset=utf8,dir_mode=0777,file_mode=0777
 ```
 > 使用 df-h 查看挂载情况；使用 ll /mnt/[MOUNT_DIR_NAME] 查看文件
 
@@ -199,7 +199,7 @@ umount /mnt/smbmount
 在 /etc/fstab 文件中加入以下内容：
 
 ```bash
-//[HOSTNAME_OR_IP]]/[SHARE_NAME] /mnt/[MOUNT_DIR]  cifs  username=[USERNAME],password=[PASSWORD],soft,rw  0 0
+//[HOSTNAME_OR_IP]/[SHARE_NAME] /mnt/[MOUNT_DIR]  cifs  username=[USERNAME],password=[PASSWORD],soft,rw  0 0
 
 ```
 
