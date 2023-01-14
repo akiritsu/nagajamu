@@ -8,7 +8,7 @@ CPU：Intel Xeon E5-1235L v5 25wTDP
 
 主板：MSI C236A Workstation
 
-内存：SK Hynix DDR4 2133mHz 8G*2 ECC
+内存：SK Hynix DDR4 2133mHz ECC  8G*2
 
 SSD：Samsung PM961 512G
 
@@ -20,7 +20,7 @@ HHD：希捷 Exos ST1800NM000J 氦气企业级硬盘 18TB * 6
 
 散热器：利民 Phantom Assassin 120 SE
 
-UPS：APC 施耐德 BK650M2-CH
+UPS：APC 施耐德 BK650M2-CH 650VA
 
 
 
@@ -54,7 +54,7 @@ UPS：APC 施耐德 BK650M2-CH
 
 `Network - Interfaces - Global Configuration - SETTINGS - 输入 hostname - 输入 DNS 地址`
 
-### 5. 创建 pool 和 dataset
+### 5.创建 pool 和 dataset
 
 创建 pool：
 
@@ -178,12 +178,12 @@ smbclient //[HOSTHAME_OR_IP]/[SHARE_NAME] -U [USERNAME]
 
 4. 将 datasets 挂载到本地：安装 cifs-utils，并创建挂载点
 
-```
+```bash
 sudo mkdir /mnt/[MOUNT_DIR_NAME]
 ```
 5. 将远程目录挂载在刚建好的本地目录上
 
-```
+```bash
 sudo mount -t cifs //[HOSTHAME_OR_IP]/[SHARE_NAME] /mnt/[MOUNT_DIR_NAME] -o username=[USERNAME],password=[PASSWORD],iocharset=utf8
 ```
 > 使用 df-h 查看挂载情况；使用 ll /mnt/[MOUNT_DIR_NAME] 查看文件
@@ -198,7 +198,7 @@ umount /mnt/smbmount
 
 在 /etc/fstab 文件中加入以下内容：
 
-```
+```bash
 //[HOSTNAME_OR_IP]]/[SHARE_NAME] /mnt/[MOUNT_DIR]  cifs  username=[USERNAME],password=[PASSWORD],soft,rw  0 0
 
 ```

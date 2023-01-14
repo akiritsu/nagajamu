@@ -465,3 +465,15 @@ sudo systemctl enable bumblebeed
 sudo gpasswd -a $USER bumblebee
 reboot
 ```
+
+## 安装 Cheat 命令提示工具
+
+```
+sudo pacman -S python3 python-pip
+
+sudo pip install cheat
+
+## 验证安装
+
+cheat -v
+```
