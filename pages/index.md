@@ -28,14 +28,15 @@ permalink: /
 
 ## 快速访问
 
-[备忘卡片](/ZHEAT)
-[草稿预览](/ZRAFT)
+[快查卡片](/ZHEAT)
 
 [逻辑谬误和认知偏差](/wrtg/逻辑谬误和认知偏差)
 
 [高效笔记：Typora + Markdown](/wrtg/Typora+Markdown)
 
 [工作环境：Manjaro + i3 WM](/wrtg/Manjaro+i3wm)
+
+[手搓NAS：TrueNAS + DIY 硬件](/wrtg/TrueNAS+DIY)
 
 <br>
 

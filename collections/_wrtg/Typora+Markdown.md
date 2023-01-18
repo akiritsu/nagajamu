@@ -1,5 +1,5 @@
 ---
-title: 高效笔记：使用Typora+Markdown制作并管理电子笔记
+title: 高效笔记：Typora + Markdown 无纸化笔记
 ---
 
 关键字：`Markdown 语法`，`Typora的安装及使用`

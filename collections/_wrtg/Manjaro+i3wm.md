@@ -1,6 +1,8 @@
 ---
-title: 使用Manjaro系统和i3窗口管理器
+title: 工作环境：Manjaro + i3 Windows Manager 高效窗口切换系统
 ---
+
+注：现在 Manjaro 官方已有 i3wm 版本的官方镜像。
 
 ## 下载 Manjaro 并烧录至 U 盘
 
