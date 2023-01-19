@@ -1,5 +1,5 @@
 ---
-title: 写作思路
+title: ybntd
 ---
 
 ## 练笔小品

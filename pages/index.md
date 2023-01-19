@@ -19,7 +19,7 @@ permalink: /
 [文学历史年表](/lit/a.timelines)
 [世界文学史](lit/b.history)
 
-[世界史](/hist/b.world)
+<!-- [世界史](/hist/b.world) -->
 [日本史](/hist/f.japan.timelines)
 
 [数学史](/math/b.history)
