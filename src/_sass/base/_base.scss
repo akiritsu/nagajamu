@@ -43,7 +43,8 @@ p {
 }
 strong {
   color: mix($color-primary, rgba(#ddd, 1));
-  text-shadow: 0.35px 0.35px 0 $color-primary;
+  -webkit-text-stroke: 0.5px $color-primary;
+  // text-shadow: 0.35px 0.35px 0 $color-primary;
 }
 hr {
   border: 0;
@@ -152,9 +153,11 @@ article {
 // markdown style reset: keyword
 article .language-plaintext {
   font-size: 98%;
+  font-weight: bold;
   color: $color-secondary;
-  text-shadow: -0.4px -0.4px 0 rgb(233, 255, 135), 0.4px 0.4px 0 rgb(48, 253, 59),
-    0.4px 0.4px 0 rgb(95, 99, 65);
+  -webkit-text-stroke: 0.5px $color-primary; // stroke text
+  // text-shadow: -0.4px -0.4px 0 rgb(233, 255, 135), 0.4px 0.4px 0 rgb(48, 253, 59),
+    // 0.4px 0.4px 0 rgb(95, 99, 65);
 }
 // markdown style reset: checkbox
 input[type="checkbox"] {
