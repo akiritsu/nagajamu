@@ -1,6 +1,6 @@
 ---
 title: 草稿箱
-permalink: /ZRAFT/
+permalink: /draft/
 ---
 
 ## 免责声明

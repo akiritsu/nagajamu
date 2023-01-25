@@ -1,6 +1,6 @@
 ---
 title: Cheatsheets
-permalink: /ZHEAT/
+permalink: /cheat/
 ---
 
 {% for post in site.zheat %}
