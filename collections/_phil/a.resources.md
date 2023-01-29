@@ -56,7 +56,7 @@ title: 哲学资料索引
 
 
 欧陆哲学前沿：
-2. 《欧陆哲学新趋势》文集：Emerging Trends in Continental Philosophy
+1. 《欧陆哲学新趋势》文集：Emerging Trends in Continental Philosophy
 3. 期刊：
    - Continental Philosophy Review
    - Cosmos and History
