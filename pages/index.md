@@ -20,7 +20,8 @@ permalink: /
 [世界文学史](lit/b.history)
 
 [世界史](/hist/a.timelines)
-[日本史](/hist/f.japan.timelines)
+[欧洲史](/hist/d.europe)
+[日本史](/hist/f.japan)
 
 [数学史](/math/b.history)
 [数学分析](/math/ca.analysis)
