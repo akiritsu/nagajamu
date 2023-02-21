@@ -19,9 +19,12 @@ permalink: /
 [文学历史年表](/lit/a.timelines)
 [世界文学史](lit/b.history)
 
-[世界史](/hist/a.timelines)
-[欧洲史](/hist/d.europe)
-[日本史](/hist/f.japan)
+[世界史](/hist/b.timelines)
+[埃及史](/hist/c.egypt)
+[中亚史](/hist/d.middle.asia)
+[东亚史](/hist/e.eastern.asia)
+[欧洲史](/hist/f.europe)
+[日本史](/hist/g.japan)
 
 [数学史](/math/b.history)
 [数学分析](/math/ca.analysis)
