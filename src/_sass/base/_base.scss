@@ -130,12 +130,13 @@ table {
     border-bottom: $thin-border;
     th {
       padding: 10px 10px;
-      font-size: $font-bigger;
+      font-size: $font-size-primary;
     }
   }
   tbody {
     td {  
       padding: 8px 10px;
+      font-size: $font-smaller;
     }
     border-bottom: $thin-border;
   }
