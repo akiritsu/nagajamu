@@ -41,7 +41,7 @@ title: 工作环境：Manjaro + i3 Windows Manager 高效窗口切换系统
 sudo pacman-mirrors -i -c China -m rank
 ```
 
-2. 在/etc/acman.conf 文件添加以下内容，添加 Archlinuxcn 镜像。
+2. 在/etc/pacman.conf 文件添加以下内容，添加 Archlinuxcn 镜像。
 
 ```bash
 [archlinuxcn]
@@ -60,46 +60,59 @@ sudo pacman -Syyu
 
 ## 安装常用软件
 
+
 ```bash
-sudo pacman -S pacaur google-chrome cloc nmon tldr  emacs lyx texmacs coq sbcl ghc stack idris agda arander yaourt dolphin
+# 常用软件
+sudo pacman -S python3 python-pip ruby cloc coq sbcl ghc stack idris agda / # Programming
+i3-wm ibus ibus-libpinyin redshift nmon tldr arandr trojan proxychains net-tools / # Utilities
+nautilus  alacritty  fragments dolphin emacstexmacs code obs / # Productivity
+# 字体
+sudo pacman -S otf-fira-mono otf-fira-sans ttf-fira-code noto-fonts-cjk adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts wqy-bitmapfont wqy-microhei wqy-microhei-lite wqy-zenhei
+# AUR中的软件
+yay -S google-chrome lyx
+# 使用 pip 安装软件
+pip install cheat
+# 使用 gem 安装软件
+gem install bundler jekyll jekyll-sitemap jekyll-feed jekyll-seo-tag
 ```
 
+说明：
+- net-tools 包含了 netstat。
+- fragments 是一个 bt 下载工具。
+- arandr 用于在 i3-wm 下的显示器、分辨率修改软件，xrandr 的 GUI 版。
+- cloc 代码行数统计。
+- tldr、cheat 都是命令行提示工具
+ 
 ## 配置 i3-wm 窗口管理器
 
-1. 安装 i3-wm。
-
-```bash
-sudo pacman -S i3-wm
-```
-
-2. 下载 i3wm-themer 主题。
+1. 下载 i3wm-themer 主题。
 
 ```bash
 cd ~/.config/ && mkdir i3 && cd
 git clone https://github.com/unix121/i3wm-themer && cd i3wm-themer
 ```
 
-3. 安装依赖。
+2. 安装依赖。
 
 ```bash
-cd i3wm-themer && sudo pip install -r requirements.txt
+cd i3wm-themer && pip install -r requirements.txt
 ./install_arch.sh
 ```
 
-4. 复制 polybar 脚本。
+3. 复制 polybar 脚本。
 
 ```bash
 cp -r scripts/* /home/$USER/.config/polybar/
 ```
 
-5. 安装主题，并切换至指定主题。
+4. 安装主题，并切换至指定主题。
 
 ```bash
 python3 i3wm-themer.py --config config.yaml --install defaults/
 python3 i3wm-themer.py --config config.yaml --load themes/002.json # alternatives can be 000.json - 012.json
 ```
 
-6. 编辑/home/$USER/.config/i3/config 文件，自定义 i3-wm。
+5. 编辑/home/$USER/.config/i3/config 文件，自定义 i3-wm。
 
 ```bash
 # [Modified] keybinding of fuction key
@@ -109,27 +122,44 @@ bindsym $mod+Escape kill
 # [Modified] start program launcher
 bindsym $mod+d exec rofi -show run -lines 10 -eh 1 -width 40 - padding 50  -bw 0 -font "Monospace Regulars 18"
 
+# [Modified] change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+i focus up
+bindsym $mod+l focus right
+
+# [Modified] move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+i move up
+bindsym $mod+Shift+l move right
+
 # [Appended] Ibus daemon.
 exec --no-startup-id export GTK_IM_MODULE=ibus
 exec --no-startup-id export XMODIFIERS=@im=ibus
 exec --no-startup-id export QT_IM_MODULE=ibus
 exec --no-startup-id ibus-daemon --xim -d -r
+exec --no-startup-id trojan
+exec --no-startup-id redshift -O 5000
+
+# [Modified] Gaps
+gaps inner 0
+gaps outer 0
+
+smart_gaps on
 ```
 
-7. 在~/.Xresources 文件中添加以下内容，修改 i3-wm 的 dpi。
+6. 在~/.Xresources 文件中添加以下内容，修改 i3-wm 的 dpi。
 
 ```bash
 Xft.dpi: 183
 ```
 
+7. 使用快捷键 Mod + D 运行 rofi-theme-selector 选择 rofi 的主题。按 Alt + A 应用。
+
 ## 配置中文输入法
 
-1. 安装 ibus ibus-pinyin。
-
-```bash
-sudo pacman -S ibus ibus-libpinyin
-```
-
+1. 安装 ibus、ibus-libpinyin 后，启动 ibus-setup 添加中文输入法：Input Method - Add - Chinese - Intelligent Pinyin。
 2. 将 ibus-daemon 加入开机启动，并设置参数。在~/.config/i3/config 文件末尾添加：
 
 ```bash
@@ -139,30 +169,83 @@ exec --no-startup-id export QT_IM_MODULE=ibus
 exec --no-startup-id ibus-daemon --xim -d -r
 ```
 
-## 配置魔法渡河
+### 在 Emacs 中使用 iBus 输入法
 
-1. 安装 trojan 和 proxychains。
+在~/.xprofile 中添加如下内容：
 
 ```bash
-sudo pacman -S trojan proxychains
+export LC_CTYPE=zh_CN.UTF-8
+export XMODIFIERS=@im=ibus
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+ibus-daemon -d -x
 ```
 
-2. 修改/etc/trojan/config.json 文件，配置 trojan。配置文本由魔法提供商提供。
-3. 修改/etc/proxychains.json 文件，配置 proxychains。将最后一行更改为：
+### 为 ibus-libpinyin 增加希腊字母输入功能
+
+【方案一】使用希腊字母输入模式
+1. 打开 ibus-setup，在 Input Method 中选择 Intelligent Pinyin 的 Preferences。
+2. 在弹出的窗口中，选择 User Data 选项卡，编辑 User Lua Script。在打开的文件中添加以下内容：
+
+```lua
+_MAPPING_TABLE = [[
+a A,α,Alpha
+b B,β,Beta
+g Γ,γ,Gamma
+d Δ,δ,Delta
+e Ε,ε,Epsilon,Η,η,Eta
+z Ζ,ζ,Zeta
+t Θ,θ,Theta,Τ,τ,Tau
+i Ι,ι,Iota
+k Κ,κ,Kappa
+l Λ,λ,Lambda
+m Μ,μ,Mu
+n Ν,ν,Nu
+x Ξ,ξ,Xi
+o Ο,ο,Omicron,Ω,ω,Omega
+p Π,π,Pi,Φ,φ,Phi,Ψ,ψ,Psi
+r Ρ,ρ,Rho
+s Σ,σ,Sigma
+u Υ,υ,Upsilon
+c Χ,χ,Chi
+]]
+
+_MAPPING = ime.parse_mapping(_MAPPING_TABLE, "\n", " ", ",")
+
+function GreekAlphabet(input)
+if _MAPPING[input] then
+return _MAPPING[input]
+else
+error("Invalid argument")
+end
+end
+
+ime.register_command("ga", "GreekAlphabet", "希腊字母")
+```
+
+3. 输入 ibus restart 重启 ibus。
+4. 使用ibus时，依次按，“i”，“ ”，“g”，“a”开启希腊字母输入模式，并根据上表选择输入的希腊字母。
+
+【方案二】将希腊字母等符号加入候选词
+
+## 配置魔法渡河
+
+1. 修改/etc/trojan/config.json 文件，配置 trojan。配置文本由魔法提供商提供。
+2. 修改/etc/proxychains.conf 文件，配置 proxychains。将最后一行更改为：
 
 ```bash
 sock5 127.0.0.1 1080
 ```
 
-4. 在 Chrome 中安装 SwitcyhOmega 插件，运行：
+3. 在 Chrome 中安装 SwitcyhOmega 插件，运行：
 
 ```bash
 google-chrome-stable --proxy-server=socks5://127.0.0.1:1080
 ```
 
-5. 访问 Chrome 插件商店，搜索并安装 SwitchyOmega。
-6. 打开 SwitchyOmega 设置界面，导入配置文件。
-7. 开机自动启动 trojan。在~/.config/i3/config 文件末尾添加：
+4. 访问 Chrome 插件商店，搜索并安装 SwitchyOmega。
+5. 打开 SwitchyOmega 设置界面，导入配置文件。
+6. 开机自动启动 trojan。在~/.config/i3/config 文件末尾添加：
 
 ```bash
 exec --no-startup-id trojan
@@ -192,34 +275,40 @@ git config --global credential.helper store
 
 ## 配置 Visual Studio Code
 
-1. 安装插件：Awesome Emacs Keymap,Markdown All in One, Prettier。
-2. 安装思源字体、文泉驿字体。
+1. 安装插件：Awesome Emacs Keymap，Markdown All in One, Prettier，Org Mode。
 
-```bash
-sudo pacman -S noto-fonts-cjk adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts wqy-bitmapfont wqy-microhei wqy-microhei-lite wqy-zenhei
-```
+2. 在 Preference 的 Editor:Font Family 选项中添加两种字体。
 
-3. 安装 Fira Code 字体。
-
-```bash
-sudo pacman -S otf-fira-mono otf-fira-sans ttf-fira-code
-```
-
-4. 在 Preference 的 Editor:Font Family 选项中添加两种字体。
-5. 启用 Fira Code 的连体字符，将 settings.json 中的 editor.fontLigatures 的值设置为 true。
+3. 启用 Fira Code 的连体字符，将 settings.json 中的 editor.fontLigatures 的值设置为 true。
 
 ## 配置 Alacritty
 
-1. 安装 Alacritty。
-
-```bash
-sudo pacman -S alacritty
-```
-
-2. 新建~/.config/Alacritty/alacritty.yml，添加以下内容。
+1. 新建 ~/.config/Alacritty/alacritty.yml，添加以下内容。
 
 ```bash
 # XTerm's default colors
+font:
+  normal:
+    family: monospace
+    style: Regular
+
+  bold:
+    family: monospace
+    style: Bold
+
+  italic:
+    family: monospace
+    style: Italic
+
+  bold_italic:
+    family: monospace
+    style: Bold Italic
+
+  size: 18
+
+env:
+  WINIT_X11_SCALE_FACTOR: "1.0"
+
 colors:
   # Default colors
   primary:
@@ -248,27 +337,83 @@ colors:
     white:   '0xffffff'
 ```
 
-## 安装 Bundler 和 Jekyll
+## 文件共享 Samba
 
-1. 安装 Ruby。
-
-```bash
-sudo pacman -S ruby
-```
-
-2. 将 gem 添加至 PATH，在~/.bashrc 中添加：
+1. 修改文件 /etc/samba/smb.conf 配置 samba：
 
 ```bash
-PATH=$PATH:/home/$USER/.local/share/gem/ruby/3.0.0/bin
+[global]
+workgroup = ArbitraryGroup
+server string = Samba Server Version %v
+log file = /var/log/samba/log.%m
+max log size = 50
+security = USER
+passdb backend = tdbsam
+
+[database]
+comment = passwd
+path = /home/share
+public = no
+writable = yes 
 ```
 
-3. 安装 jekyll bundler 以及 jekyll 插件。
+创建用于登陆的账户：
 
 ```bash
-gem install bundler jekyll jekyll-sitemap jekyll-feed jekyll-seo-tag
+sudo useradd samba
+sudo passwd samba
+id samba
+pdbedit -a -u samba
+```
+创建共享的文件夹，并重启samba服务：
+
+```bash
+mkdir /home/databases
+sudo systemctl restart smb
 ```
 
-## 安装 Matlab
+## 护眼软件 redshift
+
+启动redshift（或加入 i3wm 的配置文件：
+
+```bash
+redshift -O 5000
+```
+其中后面数字控制色温，数值越大屏幕越黄。
+
+移除redshift：
+
+```bash
+redshift -x
+```
+
+## Nvidia 显卡驱动（可选）
+
+```bash
+# 查看已经安装的驱动
+inxi -G
+# 自动安装Nvidia官方驱动
+sudo mhwd -a pci nonfree 0300
+# 安装完成后，重启电脑
+
+# 查看已经安装的驱动
+mhwd -li
+# 更改分辨率、刷新率
+sudo nvidia-settings
+# 在 X Server Display Configuration 页面中更改，并将其保存至 /etc/X11/mhwd.d/nvidia.conf
+
+# 应用更改
+sudo mhwd-gpu --setmod nvidia --setxorg /etc/X11/mhwd.d/nvidia.conf
+```
+
+如果存在双显卡，安装的hybrid驱动无法支持独显输出。手动安装单Nvidia驱动：
+
+```bash
+sudo mhwd -i pci video-nvidia
+```
+重启以应用更改。
+
+## 数学计算 Matlab
 
 1. 下载安装并魔法 Matlab 2018。
 
@@ -292,7 +437,7 @@ nano ~/.bash_profile
 alias matlab="sh /usr/local/MATLAB/R2018a/bin/matlab"
 ```
 
-## 安装 Mozart Oz
+## 配置 Mozart Oz 环境
 
 1. 安装 Oz。
 
@@ -342,140 +487,76 @@ sudo dpkg -i mozart-1.4.0.20080704-16189.i386.deb
 (autoload 'oz-new-buffer "oz" "" t)
 ```
 
-## 配置 Samba 文件共享
+## 解决 Obs 无法启动、VLC 播放器解码错误的问题
+
+Obs 错误代码：
 
 ```bash
-sudo nano /etc/samba/smb.conf
+debug: Found portal inhibitor
+debug: Attempted path: share/obs/obs-studio/locale/en-US.ini
+debug: Attempted path: /usr/share/obs/obs-studio/locale/en-US.ini
+debug: Attempted path: share/obs/obs-studio/locale.ini
+debug: Attempted path: /usr/share/obs/obs-studio/locale.ini
+debug: Attempted path: share/obs/obs-studio/themes/Yami.qss
+debug: Attempted path: /usr/share/obs/obs-studio/themes/Yami.qss
+info: Using EGL/X11
+info: CPU Name: AMD Ryzen 9 7950X 16-Core Processor
+info: CPU Speed: 3455.782MHz
+info: Physical Cores: 16, Logical Cores: 32
+info: Physical Memory: 63426MB Total, 53403MB Free
+info: Kernel Version: Linux 6.1.31-2-MANJARO
+info: Distribution: "Manjaro Linux" Unknown
+info: Session Type: x11
+info: Window System: X11.0, Vendor: The X.Org Foundation, Version: 1.21.1
+info: Qt Version: 6.5.0 (runtime), 6.5.0 (compiled)
+info: Portable mode: false
+qt.core.qmetaobject.connectslotsbyname: QMetaObject::connectSlotsByName: No matching signal for on_tbar_position_valueChanged(int)
+info: OBS 29.0.2-5 (linux)
+info: ---------------------------------
+info: ---------------------------------
+info: audio settings reset:
+	samples per sec: 48000
+	speakers:        2
+	max buffering:   960 milliseconds
+	buffering type:  dynamically increasing
+info: ---------------------------------
+info: Initializing OpenGL...
+info: Loading up OpenGL on adapter NVIDIA Corporation NVIDIA GeForce RTX 4090/PCIe/SSE2
+info: OpenGL loaded successfully, version 3.3.0 NVIDIA 530.41.03, shading language 3.30 NVIDIA via Cg compiler
+info: ---------------------------------
+info: video settings reset:
+	base resolution:   1920x1080
+	output resolution: 1280x720
+	downscale filter:  Bicubic
+	fps:               30/1
+	format:            NV12
+	YUV mode:          Rec. 709/Partial
+info: NV12 texture support not available
+info: P010 texture support not available
+info: Audio monitoring device:
+	name: Default
+	id: default
+info: ---------------------------------
+warning: Failed to load 'en-US' text for module: 'decklink-captions.so'
+warning: Failed to load 'en-US' text for module: 'decklink-output-ui.so'
+libDeckLinkAPI.so: cannot open shared object file: No such file or directory
+warning: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+warning: Failed to initialize module 'decklink.so'
+info: [pipewire] No captures available
+warning: v4l2loopback not installed, virtual camera disabled
+info: NVENC supported
+info: VAAPI: API version 1.18
+Segmentation fault (core dumped)
 ```
+这可能是因为 obs 已经不支持 libva-vdpau-driver。
 
-配置samba：
+解决方法为使用 nvidia-vaapi-driver 替换 libva-vdpau-driver。
 
 ```bash
-[global]
-workgroup = ArbitraryGroup
-server string = Samba Server Version %v
-log file = /var/log/samba/log.%m
-max log size = 50
-security = USER
-passdb backend = tdbsam
-
-[database]
-comment = passwd
-path = /home/share
-public = no
-writable = yes 
+sudo pacman -R libva-vdpau-driver
+sudo pacman -S nvidia-vaapi-driver
 ```
 
-创建用于登陆的账户：
+## 性能监控 Prometheus + Grafana
 
-```bash
-sudo useradd samba
-sudo passwd samba
-id samba
-pdbedit -a -u samba
-```
-创建共享的文件夹，并重启samba服务：
-
-```bash
-mkdir /home/databases
-sudo systemctl restart smb
-```
-
-## 为 ibus-libpinyin 增加希腊字母输入功能
-
-1. 打开 ibus-setup，在 Input Method 中选择 Intelligent Pinyin 的 Preferences。
-2. 在弹出的窗口中，选择 User Data 选项卡，编辑 User Lua Script。在打开的文件中添加以下内容：
-
-```lua
-_MAPPING_TABLE = [[
-a A,α,Alpha
-b B,β,Beta
-g Γ,γ,Gamma
-d Δ,δ,Delta
-e Ε,ε,Epsilon,Η,η,Eta
-z Ζ,ζ,Zeta
-t Θ,θ,Theta,Τ,τ,Tau
-i Ι,ι,Iota
-k Κ,κ,Kappa
-l Λ,λ,Lambda
-m Μ,μ,Mu
-n Ν,ν,Nu
-x Ξ,ξ,Xi
-o Ο,ο,Omicron,Ω,ω,Omega
-p Π,π,Pi,Φ,φ,Phi,Ψ,ψ,Psi
-r Ρ,ρ,Rho
-s Σ,σ,Sigma
-u Υ,υ,Upsilon
-c Χ,χ,Chi
-]]
-
-_MAPPING = ime.parse_mapping(_MAPPING_TABLE, "\n", " ", ",")
-
-function GreekAlphabet(input)
-if _MAPPING[input] then
-return _MAPPING[input]
-else
-error("Invalid argument")
-end
-end
-
-ime.register_command("ga", "GreekAlphabet", "希腊字母")
-```
-
-3. 输入 ibus restart 重启 ibus。
-4. 使用ibus时，依次按，“i”，“ ”，“g”，“a”开启希腊字母输入模式，并根据上表选择输入的希腊字母。
-
-## 护眼软件 redshift
-
-安装redshift：
-
-```bash
-sudo pacman -S redshift
-```
-
-启动redshift（或加入 i3wm 的配置文件：
-
-```bash
-redshift -O 5000
-```
-其中后面数字控制色温，数值越大屏幕越黄。
-
-移除redshift：
-
-```bash
-redshift -x
-```
-
-## 在 Emacs 中使用 iBus 输入法
-
-在~/.xprofile 中添加如下内容：
-
-```bash
-export LC_CTYPE=zh_CN.UTF-8
-export XMODIFIERS=@im=ibus
-export GTK_IM_MODULE=ibus
-export QT_IM_MODULE=ibus
-ibus-daemon -d -x
-```
-
-## 安装显卡驱动（可选）
-
-```bash
-sudo pacman -S virtualgl lib32-virtualgl lib32-primus primus
-sudo mhwd -f -i pci video-hybrid-intel-nvidia-bumblebee
-sudo systemctl enable bumblebeed
-sudo gpasswd -a $USER bumblebee
-reboot
-```
-
-## 安装 Cheat 命令提示工具
-
-```
-sudo pacman -S python3 python-pip
-
-sudo pip install cheat
-
-## 验证安装
-
-cheat -v
-```
+暂无。

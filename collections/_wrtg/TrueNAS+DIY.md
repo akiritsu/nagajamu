@@ -60,7 +60,7 @@ UPS：APC 施耐德 BK650M2-CH 650VA
 
 > 阵列模式中：Stripe 为 Raid 0，Mirror 为 Raid 1，此外还有 Z1、Z2、Z3。
 
-pool的根目录位于：/mnt/[POOLNAME]
+Pool 的根目录位于：/mnt/[POOL_NAME]
 
 创建 dataset：
 
@@ -126,6 +126,8 @@ pool的根目录位于：/mnt/[POOLNAME]
 
 在存储选项页中，`点击欲添加数据集右侧的“⋮”标志 - 键入数据集名称 - 共享方式选择 SMB - APPLY`
 
+> 数据集被挂在在 NAS 主机 /mnt/[POOL_NAME]/[DATASET_NAME]。
+
 ### 6.更改访问权限
 
 只能更改数据集的访问权限，而不能更改池。
@@ -145,7 +147,7 @@ pool的根目录位于：/mnt/[POOLNAME]
 ### 8.在客户机上映射网络服务器or添加网络位置
 
 
-## 使用 NAS 存储服务
+## 客户机访问 NAS 存储服务
 
 ### Windows
 
@@ -197,9 +199,65 @@ umount /mnt/smbmount
 在 /etc/fstab 文件中加入以下内容：
 
 ```bash
-//[HOSTNAME_OR_IP]/[SHARE_NAME] /mnt/[MOUNT_DIR]  cifs  username=[USERNAME],password=[PASSWORD],soft,rw  0 0
-
+//[HOSTNAME_OR_IP]/[SHARE_NAME] /mnt/[MOUNT_DIR_NAME]  cifs  username=[USERNAME],password=[PASSWORD],soft,rw  0 0
 ```
+
+## Storage Dashboard 介绍
+
+该页面列存储池的详细信息：
+- Export/Disconnet：暂时下线、上线某存储池。
+- Topology - Manage Devices：物理磁盘的状态，出错数量，或增加VDEV。
+- Usage - Manage Datasets：管理数据集。
+- ZFS Health - Scrub：手动校验硬盘。默认设定下，每周日 0 点进行一次校验，持续约 12 小时，并不需要手动校验。
+- Disk Health - Manage Disks：管理物理磁盘。
+
+## 进阶使用
+
+### 为已有存储池添加新的物理磁盘
+
+Storage - 在 Unassigned Disks 标签中，点击 Add to Pool - 选择 Existing Pool - 选择要添加的存储池的名称。
+
+注意：
+1. 此时存储池拥有多个 VDevs。这样的多个 VDevs 要保持物理磁盘的数量一致。并且此时多个 VDevs 只能使用相同的 Raid 模式。当然，存储池建立后不建议扩容，如有需要则新建存储池（会造成文件访问地址改变）。
+2. VDevs 一旦添加入存储池，则无法再分离出来，这是因为文件是离散存在于每个 VDevs 中的。
+
+### 为已有存储池更换硬盘
+
+Storage - 在 Topology 标签中点击 Manage Devices - 点击需要替换的硬盘 - 在弹出的对话框中选择替换为的硬盘 - 如果硬盘已分区，需要勾选 Force - Replace Disk。
+
+注意：
+1. 用于替换的硬盘必须容量大于已有的硬盘，无论其被占用了多少容量。
+2. 替换需要一定时间，受其中的数据多少影响。
+
+### 迁移存储池
+
+> 硬盘中记录了其曾经存在的存储池信息，所有物理硬盘存在则可以重建。
+
+将已有的存储池断开连接：
+
+Storage - Export/Disconnet
+
+
+导入存储池：
+
+Storage - Import Pool - 在右侧边栏选择导入的存储池名称。
+
+### 硬盘损坏数据未丢失，恢复安全等级
+
+将新硬盘加入物理主机后，Storage - 在 Topology 标签中点击 Manage Devices - 点击 REMOVED 硬盘 - 在 Disk Info 中点击 Replace - 在弹出的对话框中选择新硬盘 - 等待系统 Resilvering 结束
+
+> 在 Resilvering 过程中，最好不要对 NAS 主机进行其他操作
+
+### 测试硬盘顺序读取速度
+
+System - Shell：
+
+```bash
+cd /mnt/[POOL_NAME]/[DATASET_NAME]
+fio --name=test --size=50g --rw=write --ioengine=posixaio --direct=1 --bs=1m
+```
+
+### 对存储池进行加密
 
 ## 基础知识
 
