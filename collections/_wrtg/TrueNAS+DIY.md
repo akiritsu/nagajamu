@@ -73,6 +73,7 @@ title: 手搓 NAS：TrueNAS Scale + DIY 硬件
   - 显示器：AOC LUVIA LV273HUPX 27英寸 4K60HZ IPS
   - 键盘：KEYCHRON Q10 75% ALICE 配列
   - 鼠标：LOGITECH MX VERTICAL 人体工程学无线蓝牙垂直鼠标
+  - 打印机：BORHTER 2595DW 无线网络激光打印机
   - 麦克风：铁三角 AT2005-USB
   - 监控屏：MICROSOFT SURFACE PRO 5 M3-7Y30 4GB 128GB WITH AIDA64 REMOTE PANEL
   - 开机按钮：大莱科技 无线 重大决策按钮 蘑菇按钮行者版
