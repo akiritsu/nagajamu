@@ -64,12 +64,12 @@ sudo pacman -Syyu
 ```bash
 # 常用软件
 sudo pacman -S python3 python-pip ruby cloc coq sbcl ghc stack idris agda / # Programming
-i3-wm ibus ibus-libpinyin redshift nmon tldr arandr trojan proxychains net-tools / # Utilities
-nautilus  alacritty  fragments dolphin emacstexmacs code obs / # Productivity
+i3-wm ibus ibus-libpinyin redshift nmon tldr arandr trojan proxychains net-tools calibre / # Utilities
+nautilus  alacritty  fragments dolphin emacstexmacs code obs kdenlive blender/ # Productivity
 # 字体
 sudo pacman -S otf-fira-mono otf-fira-sans ttf-fira-code noto-fonts-cjk adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts wqy-bitmapfont wqy-microhei wqy-microhei-lite wqy-zenhei
 # AUR中的软件
-yay -S google-chrome lyx
+yay -S google-chrome lyx ttf-ms-fonts
 # 使用 pip 安装软件
 pip install cheat
 # 使用 gem 安装软件
@@ -82,6 +82,20 @@ gem install bundler jekyll jekyll-sitemap jekyll-feed jekyll-seo-tag
 - arandr 用于在 i3-wm 下的显示器、分辨率修改软件，xrandr 的 GUI 版。
 - cloc 代码行数统计。
 - tldr、cheat 都是命令行提示工具
+
+### troubleshoot 安装时出现依赖冲突：exists in filesystem
+
+
+```bash
+[PACKAGE_NAME]: [FILE_PATH] exists in filesystem
+Errors occurred, no packages were upgraded.
+```
+
+这是由于不同的软件依赖于同一个来自于不同来源的依赖导致的。覆盖文件即可。命令如下：
+
+```bash
+sudo pacman -S [PCKAGE_NAME] --overwrite /PATH/TO/FILE/*
+```
  
 ## 配置 i3-wm 窗口管理器
 
@@ -555,6 +569,40 @@ Segmentation fault (core dumped)
 ```bash
 sudo pacman -R libva-vdpau-driver
 sudo pacman -S nvidia-vaapi-driver
+```
+
+## 虚拟机软件 VirtualBox
+
+查看内核版本：
+
+```bash
+mhwd-kernel -li
+```
+
+根据对应的版本，安装 VirtualBox：
+
+```bash
+# 当内核版本为 linux61 时
+sudo pacman -Syu sudo pacman -Syu virtualbox linux61-virtualbox-host-modules
+sudo vboxreload
+```
+
+验证安装：
+```bash
+vboxmanage --version
+```
+
+若因网络原因无法下载 VBoxGuestAdditions_x.x.x.iso，则可在该处下载对应版本的 iso 镜像文件。
+
+http://download.virtualbox.org/virtualbox/7.0.8/
+
+## SSH
+
+```bash
+sudo pacman -S openssh
+sudo systemctl status sshd.service  # default=disable
+sudo systemctl enable sshd.service
+sudo systemctl start sshd.service
 ```
 
 ## 性能监控 Prometheus + Grafana
