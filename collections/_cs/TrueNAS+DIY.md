@@ -53,7 +53,7 @@ title: 手搓 NAS：TrueNAS Scale + DIY 硬件
   - 硅脂：HONEYWELL PTM7950 相变导热片 + GEEKCOOLING 5
   - SSD 散热：TECHINNO LV800
 
-### 工作用机
+### 工作主机
 
 **主要设备**：
   - CPU：AMD RYZEN R9 7950X 16C32T 5.85GHZ 130WTDP AM5

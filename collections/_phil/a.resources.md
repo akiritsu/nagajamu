@@ -84,6 +84,7 @@ title: 哲学资料索引
 ## 英文入门书籍书单
 
 哲学导论：
+
 - Robert C. Solomon and Kathleen M. Higgins: The Big Questions: A Short Introduction to Philosophy (10th ed.)
 - Duncan Pritchard: What is this thing called Philosophy?
 
@@ -95,20 +96,24 @@ title: 哲学资料索引
 - Jay F. Rosenberg: The Practice of Philosophy: Handbook for Beginners
 - Julian Baggini and Peter S. Fosl: The Philosopher's Toolkit (2nd ed.)
 - Timothy Williamson: Doing Philosophy: From Common Curiosity to Logical Reasoning
+
 西方哲学史：
 
 - Roger Scruton: A Short History of Modern Philosophy: From Descartes to Wittgenstein
 - Samuel E. Stumpf: Socrates to Sartre and Beyond: A History of Philosophy
+
 认识论：
 
 - Noah Lemos: An Introduction to the Theory of Knowledge
 - Duncan Pritchard: What Is This Thing Called Knowledge? (4th ed.)
 - John Turri: Epistemology: A Guide
+
 语言哲学：
 
 - William G. Lycan: Philosophy of Language: A Contemporary Introduction (3rd ed.)
 - Gary Kemp:What Is This Thing Called Philosophy of Language?（2nd ed.）
 - Collin McGinn: Philosophy of Language: The Classics Explained
+
 形而上学：
 
 - Alyssa Ney: Metaphysics: An Introduction
@@ -117,36 +122,46 @@ title: 哲学资料索引
 元形而上学：
 
 - Tuomas E. Tahko: An Introduction to Metametaphysics
+
 心灵哲学：
 
 - Jaegwon Kim：Philosophy of Mind (3rd ed.)
+
 科学哲学：
 
 - Samir Okasha：Philosophy of Science: A Very Short Introduction
+
 行动哲学：
 
 - Lilian O’Brien：Philosophy of Action
+
 伦理学：
 
 - Jonathan Wolff：An Introduction to Moral Philosophy
 - Russ Shafer-Landau：The Fundamentals of Ethics (4th ed.)
+
 元伦理学：
 
 - Matthew Chrisman: What Is This Thing Called Metaethics?
+
 政治哲学：
 
 - Will Kymlicka: Contemporary Political Philosophy
 - Jonathan Wolff: An Introduction to Political Philosophy
+
 知觉哲学：
 
 - William Fish: Philosophy of Perception: A Contemporary Introduction (2nd ed.)
+
 现象学：
 
 - Dan Zahavi: Phenomenology: The Basics
+
 哲学论证：
 
 - Maralee Harrell: What Is the Argument?: An Introduction to Philosophical Argument and Analysis
 - Michael Bruce and Steven Barbone: Just the Arguments: 100 of the Most Important Arguments in Western Philosophy
+
 哲学写作：
 
 - Aloysius P. Martinich: Philosophical Writing: An Introduction（3rd ed.）

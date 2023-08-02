@@ -25,40 +25,40 @@ collections:
   math:
     output          : true
     permalink       : /:collection/:title/
-    alias           : "基础数学"
+    alias           : "Mathematics"
   phil:
     output          : true
     permalink       : /:collection/:title/
-    alias           : "西方哲学"
+    alias           : "Philosophy"
   hist:
     output          : true
     permalink       : /:collection/:title/
     sort_by         : name
-    alias           : "世界历史"
+    alias           : "History"
   lit:
     output          : true
     permalink       : /:collection/:title/
-    alias           : "文学理论"
+    alias           : "Literature"
   cs:
     output          : true
     permalink       : /:collection/:title/
-    alias           : "计科理论"
-  prog:
+    alias           : "Computer Science"
+  lang:
     output          : true
     permalink       : /:collection/:title/
-    alias           : "编程练习"
-  wrtg:
+    alias           : "Language"
+  other:
     output          : true
     permalink       : /:collection/:title/
-    alias           : "文章随笔"
+    alias           : "Others"
   zraft:
     output          : true
     permalink       : /:collection/:title/
-    alias           : "草稿箱"
+    alias           : "Draft Box"
   zheat:
     output          : true
     permalink       : /:collection/:title/
-    alias           : "速查图表"
+    alias           : "Cheatsheet"
 
 # 3. Comment settings（disqus.com）
 disqus_username     : akiritsu
