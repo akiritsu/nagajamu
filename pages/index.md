@@ -48,8 +48,35 @@ permalink: /
 
 ## Quotes of the lifetime
 
-**We should consider every day lost on which we have not danced at least once.**
+**“The unexamined life is not worth living.”**
+  - Socrates
+
+**“I am the wisest man alive, for I know one thing, and that is that I know nothing.”**
+  - Plato, The Republic
+
+**Knowing yourself is the beginning of all wisdom.**
+  - Aristotle
+
+**“The reading of all good books is like conversation with the finest men of past centuries.”**
+  - René Descartes
+
+**“No man ever threw away life while it was worth keeping.”**
+  - David Hume, Essays on Suicide and the Immortality of the Soul
+
+**“We are not rich by what we possess but by what we can do without.”**
+  - Immanuel Kant
+
+**“Nothing great in the world was accomplished without passion.”**
+  - Georg Wilhelm Friedrich Hegel
+
+**“We should consider every day lost on which we have not danced at least once.“**
   - Friedrich Wilhelm Nietzsche
 
-**Philosophy is the study of free people.**
-  - Aristotle
+**“Anyone can achieve their fullest potential, who we are might be predetermined, but the path we follow is always of our own choosing. We should never allow our fears or the expectations of others to set the frontiers of our destiny. Your destiny can't be changed but, it can be challenged. Every man is born as many men and dies as a single one.”**
+  - Martin Heidegger
+
+**“Do not fear to be eccentric in opinion, for every opinion now accepted was once eccentric.”**
+  - Bertrand Russell
+
+**“Q- What makes you depressed?<br>A- Seeing stupid people happy.”**
+  - Slavoj Žižek
