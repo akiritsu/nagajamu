@@ -17,48 +17,48 @@ collection_order    :
     "hist",
     "phil",
     "math",
-    "cs",
+    "cst",
     "prog",
-    "wrtg",
+    "rests",
   ]
 collections:
   math:
-    output          : true
+    output          : ture
     permalink       : /:collection/:title/
-    alias           : "Mathematics"
+    alias           : "MATH"
   phil:
     output          : true
     permalink       : /:collection/:title/
-    alias           : "Philosophy"
+    alias           : "PHIL"
   hist:
     output          : true
     permalink       : /:collection/:title/
     sort_by         : name
-    alias           : "History"
+    alias           : "HIST"
   lit:
     output          : true
     permalink       : /:collection/:title/
-    alias           : "Literature"
-  cs:
+    alias           : "LIT"
+  cst:
     output          : true
     permalink       : /:collection/:title/
-    alias           : "Computer Science"
+    alias           : "CST"
   lang:
     output          : true
     permalink       : /:collection/:title/
-    alias           : "Language"
-  other:
+    alias           : "LANG"
+  rests:
     output          : true
     permalink       : /:collection/:title/
-    alias           : "Others"
+    alias           : "RESTS"
   zraft:
     output          : true
     permalink       : /:collection/:title/
-    alias           : "Draft Box"
+    alias           : "DRAFT"
   zheat:
     output          : true
     permalink       : /:collection/:title/
-    alias           : "Cheatsheet"
+    alias           : "REFS"
 
 # 3. Comment settings（disqus.com）
 disqus_username     : akiritsu
@@ -105,9 +105,8 @@ sass:
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-seo-tag
-
-gems: [jekyll-mermaid]
+ # - jekyll-seo-tag
+  - jekyll-mermaid
 
 # 8. Others
 # Cross-Origin Resource Sharing header
