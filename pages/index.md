@@ -6,10 +6,11 @@ comment: false
 home_btn: true
 btn_text: true
 footer: true
+highlight: false
 permalink: /
 ---
 
-# Tower of Babel for the Ignorant
+# TOWER OF BABEL FOR THE IGNORANT
 
 ## Quick Access: Learning Notes
 

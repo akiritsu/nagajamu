@@ -1,5 +1,5 @@
 # 1. Site Settings
-title               : 无知者的巴别塔
+title               : TOWER OF BABEL FOR THE IGNORANT
 owner               : "DeerRIDER"
 #url                 : "http://127.0.0.1:4000"
 url                : "https://nagajamu.com"
@@ -8,7 +8,7 @@ permalink           : /:title/
 description         : "Personal site of DeerRIDER"
 markdown            : kramdown
 statement           : "Designed by DeerRIDER, All Rights Reserved"
-bgtext              : "αβγδεζηθικλμνξοπρστυφχψω∷∫∮∝∞∧∨∑∏∪∩∈∵∴⊥‖∠⌒⊙≌∽√" # texts randomly displayed in background
+bgtext              : "αβγδεζηθικλμνξοπρστυφχψω∷∫∮∝∞∧∨∑∏∪∩∈∵∴⊥‖∠⌒⊙≌∽√∀∂∆∇⋈∅∫∬∳∯∱∲ⅈⅉℂℍℚℝℕℙℤⅇℼℽ⅀ℿℾℽℼ" # texts randomly displayed in background
 
 # 2. Collections
 collection_order    : 
@@ -19,7 +19,7 @@ collection_order    :
     "math",
     "cst",
     "prog",
-    "rests",
+    "fart",
   ]
 collections:
   math:
@@ -47,10 +47,10 @@ collections:
     output          : true
     permalink       : /:collection/:title/
     alias           : "LANG"
-  rests:
+  fart:
     output          : true
     permalink       : /:collection/:title/
-    alias           : "RESTS"
+    alias           : "FART"
   zraft:
     output          : true
     permalink       : /:collection/:title/
@@ -84,8 +84,8 @@ defaults:
       post_list           : false       # whether show list of post by default      
       comment             : false
       footer              : false       # whether show footer by default
-
-
+      highlight           : false
+x
 # 5. Social Media Accounts
 email               : "akiritsu@outlook.com" 
 github              : "akiritsu" 
