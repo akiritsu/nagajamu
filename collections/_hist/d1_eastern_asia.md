@@ -1,5 +1,5 @@
 ---
-title: 东亚历史
+title: History of Eastern Asia
 ---
 
 ## 夏 ﹝~2070bc-1617bc﹞

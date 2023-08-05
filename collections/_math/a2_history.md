@@ -1,5 +1,6 @@
 ---
 title: History of Mathematics
+highlight: true
 ---
 
 ## 古希腊时期：几何为主、注重推理和证明、形成抽象

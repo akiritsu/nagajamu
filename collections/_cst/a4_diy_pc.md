@@ -1,5 +1,6 @@
 ---
-title: DIY My First Personal Workstation
+title: DIY My First Personal Workstation 
+highlight: true
 ---
 
 ## Hardware Information

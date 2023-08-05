@@ -1,5 +1,5 @@
 ---
-title: 古代各文明神话
+title: Myths of Ancient Civilizations
 ---
 
 ## 希腊罗马神话

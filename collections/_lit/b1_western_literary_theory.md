@@ -1,5 +1,5 @@
 ---
-title: 西方文学理论史
+title: History ofWestern Literature Theories
 ---
 仍务前置，仅是占位
 

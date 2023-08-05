@@ -1,5 +1,6 @@
 ---
-title: 初等数学定理
+title: Quick Review of Elementary Mathematics
+highlight: true
 ---
 
 <!-- TOC -->

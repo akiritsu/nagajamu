@@ -1,5 +1,6 @@
 ---
-title: 手搓 NAS：TrueNAS Scale + DIY 硬件
+title: DIY Low Power Consumption NAS 
+highlight: true
 ---
 
 ## 硬件规格

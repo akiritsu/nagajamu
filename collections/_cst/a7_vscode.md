@@ -1,5 +1,5 @@
 ---
-title: "极速 Visual Studio Code 教程"
+title: Learn VS Code in Y minutes
 ---
 
 ## 使用技巧

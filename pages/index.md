@@ -12,40 +12,55 @@ permalink: /
 
 # TOWER OF BABEL FOR THE IGNORANT
 
-## Quick Access: Learning Notes
-
-[Philosophy Basics](/phil/b.introduction)
-[History of Philosophy](/phil/c.history)
-
-[Literature Timelines](/lit/a.timelines)
-[History of Literature](lit/b.history)
-
-[Chronology of World History Events](/hist/b.timelines)
-[Egyptian History](/hist/c.egypt)
-[History of Central Asia](/hist/d.middle.asia)
-[Histroy of Eastern Asia](/hist/e.eastern.asia)
-[European History](/hist/f.europe)
-[Japanese History](/hist/g.japan)
-
-[History of Mathematics](/math/b.history)
-[Mathematical Analysis](/math/ca.analysis)
-[Advanced Algebra](/math/da.algebra)
-
-## Quick Access: Utilities
-
-[Cheatsheet and Quick Reference](/ZHEAT)
-
-[Logical Fallacy and Cognitive Bias](/wrtg/逻辑谬误和认知偏差)
-
-[Keep Note Efficiently with Typora + Markdown](/wrtg/Typora+Markdown)
-
-[Work Efficiently with Manjaro + i3 WM](/wrtg/Manjaro+i3wm)
-
-[Network Attached Stroage System DIY](/wrtg/TrueNAS+DIY)
-
-[Personal Workstation Computer DIY](/wrtg/PWC_DIY)
-
 <br>
+ (๑•̀ㅂ•́)و✧
+
+**Being interested or not is the most important thing for me; it can be said to be my everything in life.**
+
+## Quick Access
+
+<tr>
+    <td>
+        <ul>
+            {% if site.collection_order %}
+                {% for col_in_order in site.collection_order %}
+                    {% for collection in site.collections %}
+                        {% if collection.label == col_in_order %}
+                            {% for post in collection.docs %}
+                                {% if post.publish != false %}
+                                   {% if post.highlight == true %}
+                                    <li>
+                                        <a class="a_title" href="{{site.url}}{{site.baseurl}}{{post.url}}">{{post.title}}</a>
+                                    </li>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            {% else %}
+                {% for collection in site.collections %}
+                    <p class="h_collection_label">
+                        {% if collection.alias %}
+                            {{collection.alias}}
+                        {% else %}
+                            {{collection.label}}
+                        {% endif %}
+                    </p>
+                    {% for post in collection.docs %}
+                        {% if post.publish != false %}
+                            <li>
+                                <a class="a_title" href="{{site.url}}{{site.baseurl}}{{post.url}}">{{post.title}}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </td>
+</tr>
+
+
 
 ## Quotes of the lifetime
 

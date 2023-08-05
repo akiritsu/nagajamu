@@ -1,5 +1,5 @@
 ---
-title: 常用数学符号表
+title: Symbols in Mathematics
 layout: compact
 ---
 

@@ -51,14 +51,10 @@ collections:
     output          : true
     permalink       : /:collection/:title/
     alias           : "FART"
-  zraft:
+  zako:
     output          : true
     permalink       : /:collection/:title/
     alias           : "DRAFT"
-  zheat:
-    output          : true
-    permalink       : /:collection/:title/
-    alias           : "REFS"
 
 # 3. Comment settings（disqus.com）
 disqus_username     : akiritsu
@@ -85,7 +81,7 @@ defaults:
       comment             : false
       footer              : false       # whether show footer by default
       highlight           : false
-x
+
 # 5. Social Media Accounts
 email               : "akiritsu@outlook.com" 
 github              : "akiritsu" 

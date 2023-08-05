@@ -1,5 +1,6 @@
 ---
 title: Free Online Resources of Computer Science
+highlight: true
 ---
 
 ## Programming Language Research

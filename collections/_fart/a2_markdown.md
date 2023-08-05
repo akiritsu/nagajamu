@@ -1,5 +1,6 @@
 ---
 title: Keep Notes with Markdown and Typora
+highlight: true
 ---
 
 关键字：`Markdown 语法`，`Typora的安装及使用`

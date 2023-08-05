@@ -1,5 +1,6 @@
 ---
-title: 西方文学史
+title: History of Western Literature
+highlight: true
 ---
 
 ## 西方文学发展脉络

@@ -1,5 +1,6 @@
 ---
-title: Introduction to Western Philosophy
+title: Big Picture of Western Philosophy
+highlight: true
 ---
 
 <!-- TOC -->

@@ -1,5 +1,6 @@
 ---
 title: Algebra
+highlight: true
 ---
 
 主要参考资料：

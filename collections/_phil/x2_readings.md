@@ -1,5 +1,5 @@
 ---
-title: 
+title: Supplementary Readings of Weastern Philosophy
 ---
 
 <!-- TOC -->

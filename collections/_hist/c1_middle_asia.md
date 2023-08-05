@@ -1,5 +1,5 @@
 ---
-title: 中亚历史
+title: History of Middle Asia
 ---
 
 - [中亚主要国家兴衰](#中亚主要国家兴衰)

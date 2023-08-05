@@ -1,5 +1,5 @@
 ---
-title: 如何轻松高效地度过高中
+title: How to Enjoy Learning Cosily
 ---
 
 ## 学习技巧

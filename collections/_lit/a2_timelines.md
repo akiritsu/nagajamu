@@ -1,5 +1,6 @@
 ---
-title: 西方文学大事年表
+title: Timelines of Development of Western Literature
+highlight: true
 ---
 
 ## 古希腊文学

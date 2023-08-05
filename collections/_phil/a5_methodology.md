@@ -1,5 +1,6 @@
 ---
 title: Methodology of Philosophy
+highlight: true
 ---
 
 ## 基本信息

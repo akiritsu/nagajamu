@@ -2,6 +2,7 @@
 title: Outline of Western Philosophy
 toc_level: 3
 layout: compact
+highlight: true
 ---
 
 本文是个人学习西方哲学史的大纲和索引，只代表暂时性的认识，随学习的深入持续改进、订正。其中内容有多种来源。

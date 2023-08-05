@@ -1,5 +1,6 @@
 ---
-title: 欧洲历史
+title: History of Europe
+highlight: true
 ---
 
 ## 腓尼基人 [3000bc-8cbc]

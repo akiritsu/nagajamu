@@ -1,5 +1,5 @@
 ---
-title: 世界历史大事年表
+title: Timelines of Highlighted Events in World History
 highlight: true
 ---
 

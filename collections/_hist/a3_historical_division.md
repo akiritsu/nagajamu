@@ -1,5 +1,6 @@
 ---
-title: 世界各国历史分期
+title: Historical Divisions of the World
+highlight: true
 ---
 
 ## 埃及 [5450bc-639]

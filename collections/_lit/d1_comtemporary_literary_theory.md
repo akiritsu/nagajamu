@@ -1,5 +1,5 @@
 ---
-title: 近代文学理论
+title: Comtemporary Literatury Theories
 ---
 
 ## 文学的定义

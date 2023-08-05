@@ -1,5 +1,5 @@
 ---
-title: Linux 软硬件状态查询
+title: Linux - Check Hardware infomation
 ---
 
 ## 操作系统、内核

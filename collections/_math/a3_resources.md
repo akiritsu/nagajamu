@@ -1,5 +1,6 @@
 ---
-title: Resources
+title: Resources for Learning Mathematics
+highlight: true
 ---
 
 ## 数学科普

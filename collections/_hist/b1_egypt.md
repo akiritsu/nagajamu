@@ -1,5 +1,5 @@
 ---
-title: 古埃及历史
+title: History of Ancient Egypt
 ---
 
 **早期社会的共性**

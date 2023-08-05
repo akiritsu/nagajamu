@@ -1,5 +1,5 @@
 ---
-title: 关于高中英语学习
+title: Big Pictures of Learning English
 ---
 
 本文分三部分：1.英语学习方法；2.高中英语学习技巧；3.英语学习资源
